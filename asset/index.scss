@@ -1,0 +1,948 @@
+body{
+    -webkit-text-size-adjust: 100%;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+// 変数セレクタ
+$main_color: #4ea9ff;
+$sub_color: #00C09B; 
+$title-size: 90px;
+$text-size: 20px;
+$text-color: black;
+$text-ja: serif;
+$text-en: "Comic Sans MS";
+
+
+// @mixin
+@mixin button1{
+    .btn1 {
+        /* アニメーションの起点とするためrelativeを指定 */
+        position: relative;
+        overflow: hidden;
+        /* ボタンの形状 */
+        text-decoration: none;
+        display: inline-block;
+        border: 1px solid #555; /* ボーダーの色と太さ */
+        border-radius: 30px;
+        padding: 5px 60px;
+        text-align: center;
+        outline: none;
+        /* アニメーションの指定 */   
+        transition: ease .2s;
+        @include mobile{
+            padding: 10px 30px;
+        }
+        span {
+            position: relative;
+            z-index: 3; /* z-indexの数値をあげて文字を背景よりも手前に表示 */
+            color: #333;
+            @include mobile{
+                font-size: 15px;
+            }
+        }
+    
+        &:hover {
+            span {
+                color: #fff;
+            }
+    
+            &.bgtop:before {
+                height: 100%;   
+                background-color: #333;
+            }
+        }
+    
+        /* 背景が流れる（上から下） */
+        &.bgtop:before {
+            content: '';
+            /* 絶対配置で位置を指定 */
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            /* 色や形状 */
+            background: #333; /* 背景色 */
+            width: 100%;
+            height: 0;
+            /* アニメーション */
+            transition: .3s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+        }
+    }  
+}
+
+@mixin navigation {
+    ul {
+        list-style-type: none;
+        margin-right: 30px;
+        @include mobile{
+            margin-right: 5px;
+            margin: auto;
+        }
+        li {
+            a {
+                text-decoration: none;
+                font-size: 30px;
+                position: relative;
+                overflow: hidden;
+                transition: all 0.3s ease; // ホバー時のトランジション
+                @include mobile{
+                    font-size: 18px;
+                }
+
+                span {
+                    position: absolute;
+                    left: 50%;
+                    top: 0;
+                    transition: transform 0.3s ease, opacity 0.3s ease; // テキストの入れ替わり時のアニメーション
+                    transform: translateX(-50%);
+                    opacity: 1;
+                    white-space: nowrap;
+                    &:nth-child(2) {
+                        opacity: 0;
+                        transform: translateX(-50%) translateY(100%);
+                    }
+                    @include mobile{
+                        left: auto;
+                    }
+                }
+
+                &:hover {
+                    span:nth-child(1) {
+                        opacity: 0;
+                        transform: translateX(-50%) translateY(-100%);
+                    }
+
+                    span:nth-child(2) {
+                        opacity: 1;
+                        transform: translateX(-50%) translateY(0%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin section-header{
+    h2{
+        font-size: 50px;
+        margin-bottom: 80px;
+        @include mobile{
+            font-size: 25px;
+            margin-bottom: 70px;
+        }
+    }
+}
+
+@mixin row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+$tb: 1024px;
+$mb: 761px;
+@mixin tablet{
+    @media screen and (max-width: $tb){
+        @content;
+    }
+}
+@mixin mobile{
+    @media screen and (max-width: $mb){
+        @content;
+    }
+}
+
+h1, h2, h3{
+    font-family: $text-ja;
+    font-family: $text-en;
+}
+
+p, a{
+    font-size: $text-size;
+    color: $text-color;
+    font-family: $text-ja;
+    text-decoration: none;
+}
+
+
+//要素セレクタ
+header{
+    overflow-x: hidden; 
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    position: relative;
+    z-index: 10;
+    padding-top: 50px;
+    width: 100%;
+    @include mobile{
+        padding-top: 25px;
+        position: fixed;
+        top: 0;
+        gap: 80px;
+    }
+    .header-title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba( #ffffff, 0);
+        z-index: -100;
+        .logo{
+            padding: 20px 20px;
+            background-color: rgba( #ffffff, 0);
+            img{
+                border: 1px solid black;
+                border-radius: 50%;
+                width: 130px;
+                height: 130px;
+                @include mobile{
+                    width: 60px;
+                    height: 60px;
+                }
+            }
+        }
+        h1{
+            font-size: $title-size;
+            @include tablet{
+                font-size: 75px;
+            }
+            @include mobile{
+                font-size: 27px;
+            }
+            &::after{
+                content: "冒険をここから始める";
+                display: flex;
+                flex-direction: column;
+                font-size: 30px;
+                margin-top: 10px;
+                @include tablet{
+                    font-size: 28px;
+                }
+                @include mobile{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    nav{
+        padding: 0 60px 10px 0;
+        display: flex;
+        flex-direction: column;
+        @include navigation;
+        li{
+            padding: 50px 40px;
+            a{
+                font-weight: 90;
+                color: #ffffff;
+                font-family: $text-ja;
+                font-family: $text-en;
+            }
+        }
+        @include mobile{
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            text-align: center;
+            background: linear-gradient(45deg, rgba(#4ea9ff, 0.6), rgba(#a0ffb8, 0.6) 80%);
+            right: -200%;
+            // padding: 80px auto 0 auto;
+            z-index: 1000;
+            transition: all 0.4s ease-in-out; 
+            ul{
+                padding: 0;
+                li{
+                    padding: 35px 40px;
+                    @include mobile{
+                        margin-top: 30px;
+                    }
+                    a{
+                        color: #ffffff;
+                        font-family: $text-ja;
+                        font-family: $text-en;
+                        @include mobile{
+                            font-size: 25px;
+                            color: #000000;
+                        }   
+                    }
+                }
+            }
+        }
+        &.active {
+            right: 0; 
+            padding: 0;
+        }
+    }
+
+    .openbtn{
+        /* ボタン内側の基点となるためrelativeを指定。
+        追従するナビゲーションの場合はfixed＋top、rightといった位置をセットで指定 */
+        position: relative;
+        top: 24px;
+        right: 6%;
+        background: rgba( #9ef9ff, 0);
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        display: none;
+        @include mobile{
+            display: inline-block;
+            z-index: 1000;
+        }   
+        /* ボタン内側 */
+        span{
+            display: inline-block;
+            transition: all 0.4s; /* アニメーションの設定 */
+            position: absolute;
+            left: 14px;
+            height: 3px;
+            border-radius: 2px;
+            background: #000000;
+            width: 45%;
+            &:nth-of-type(1){
+                top: 15px;
+            }
+            &:nth-of-type(2){
+                top: 23px;
+            }
+            &:nth-of-type(3){
+                top: 31px;
+            }
+        }
+      
+        /* activeクラスが付与されると線が回転して×に */
+        &.active{
+            span{
+                &:nth-of-type(1){
+                top: 18px;
+                left: 18px;
+                transform: translateY(6px) rotate(-45deg);
+                width: 30%;
+                }
+        
+                &:nth-of-type(2){
+                opacity: 0; /* 真ん中の線は透過 */
+                }
+        
+                &:nth-of-type(3){
+                top: 30px;
+                left: 18px;
+                transform: translateY(-6px) rotate(45deg);
+                width: 30%;
+                }
+            }
+        }
+    }
+}
+
+.fixed-header {
+    background-image: url(../img/header_back.png);
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: contain;
+    background-color: rgba( #ffffff, 0);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: -200px; 
+    left: 0;
+    width: 100%;
+    height: 15vh;
+    color: #000000;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000;
+    transition: top 0.8s ease; 
+    &.active {
+        top: 0; 
+    }
+    @include mobile{
+        display: none;
+    }
+    .fixed-title{
+        @include row;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0);
+        .fixed-logo{
+            padding: 20px 20px;
+            background-color: rgba( #ffffff, 0);
+            img{
+                border: 1px solid black;
+                border-radius: 50%;
+                width: 100px;
+                height: 100px;
+                @include tablet{
+                    width: 80px;
+                    height: 80px;
+                }
+            }
+        }
+        h1{
+            font-size: 35px
+        }
+    }
+    nav{
+        @include navigation;
+        ul{
+            display: flex;
+            flex-direction: row;
+            gap: 55px;
+            li{
+                a{
+                    color: #000000;
+                    font-size: 20px;
+                    font-weight: bold;
+                    font-family: $text-en;
+                    @include mobile{
+                        font-size: 10px;
+                    }   
+                }
+            }
+            @include tablet{
+                gap: 20px;
+            }
+        }
+       
+    }
+    
+}
+
+.main_hero{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: -10;
+    top: 0;
+    @include mobile{
+        height: 100vh;
+    }
+    
+    &::after{
+        content: "";
+        position: absolute;
+        top: -30px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        box-shadow: inset 0 -60px 40px rgba(255, 255, 255, 1); 
+        @include tablet{
+            box-shadow: inset 0 -100px 40px rgba(255, 255, 255, 1); 
+        }
+        @include mobile{
+            box-shadow: inset 0 -210px 40px rgba(255, 255, 255, 1); 
+        }
+    }
+    img{
+        height: 95vh;
+        object-fit: cover;
+        object-position: 40%;
+        display: block;
+        transition: transform 2s ease, opacity 2s ease;
+        z-index: -10;
+        @include mobile{
+            height: 80vh;
+        }
+    }
+
+    /* Scrollテキストの描写 */
+.scrolldown2 {
+    position: relative;
+  
+    span {
+        z-index: 100;
+      /* 描画位置 */
+      position: absolute;
+      left: 50%;
+      bottom: -20px;
+      /* テキストの形状 */
+      color: #000000;
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+      /* 縦書き設定 */
+      -ms-writing-mode: tb-rl;
+      -webkit-writing-mode: vertical-rl;
+      writing-mode: vertical-rl;
+    }
+  
+    /* 丸の描写 */
+    &:before {
+      content: "";
+      z-index: 100;
+      /* 描画位置 */
+      position: absolute;
+      bottom: 120px;
+      left: 48%;
+      /* 丸の形状 */
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #000000;
+      /* 丸の動き1.6秒かけて透過し、永遠にループ */
+      animation: circlemove 1.6s ease-in-out infinite, circlemovehide 1.6s ease-out infinite;
+    }
+  
+    /* 線の描写 */
+    &:after {
+      content: "";
+      z-index: 100;
+      /* 描画位置 */
+      position: absolute;
+      bottom: -30px;
+      left: 48.25%;
+      /* 線の形状 */
+      width: 2px;
+      height: 80px;
+      background: #000000;
+      @include mobile{
+        left: 48.75%;
+    }
+    }
+  }
+  
+  /* 下からの距離が変化して丸の全体が上から下に動く */
+  @keyframes circlemove {
+    0% { bottom: 40px; }
+    100% { bottom: -30px; }
+  }
+  
+  /* 上から下にかけて丸が透過→不透明→透過する */
+  @keyframes circlemovehide {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    80% { opacity: 0.9; }
+    100% { opacity: 0; }
+  }
+  
+}
+
+main{
+    margin-top: 300px;
+    @include tablet{
+        margin-top: 0;
+    }
+    .phrasebox{
+        text-align: center;
+        line-height: 60px;
+        padding: 50px 0 80px 0;
+        .catchphrase{
+            font-size: 50px;
+            margin-bottom: 30px;
+            @include mobile{
+                font-size: 25px;
+            }
+        }
+        .explanation{
+            margin-bottom: 30px;
+            @include mobile{
+                font-size: 13px;
+                width: 65vw;
+                margin: 30px auto;
+            }
+        }
+        @include button1;
+        @include tablet{
+            margin-top: 650px;
+        }
+        @include mobile{
+            margin-top: 750px;
+            line-height: 30px;
+        }
+    }
+
+    
+    .sub_hero{
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        gap: 80px;
+        div{
+            .sub1{
+                width: 320px;
+                height: 480px;
+                object-fit: cover;
+                object-position: left;
+                @include tablet{
+                    width: 250px;
+                    height: 380px;
+                }
+                @include mobile{
+                    width: 130px;
+                    height: 200px;
+                }
+            }
+
+            .sub2{
+                width: 950px;
+                height: 480px;
+                object-fit: cover;
+                @include tablet{
+                    width: 650px;
+                    height: 380px;
+                }
+                @include mobile{
+                    width: 250px;
+                    height: 200px;
+                }
+            }
+            
+        }
+        @include tablet{
+            gap: 20px;
+        }
+    }
+}
+
+.merit{
+    text-align: center;
+    padding-top: 150px;
+    max-width: 100%;
+    @include section-header;
+    @include tablet{
+        padding-top: 120px;
+    }
+    @include mobile{
+        padding-top: 90px;
+    }
+    div{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 100px;
+        padding-left: 0;
+        @include mobile{
+            flex-direction: column;
+        }
+        p{
+            height: 300px;
+            font-size: 27px;
+            img{
+                margin-top: 120px;
+                width: 400px;
+                display: block;
+                @include tablet{
+                    width: 200px;
+                }
+                @include mobile{
+                    margin-top: 40px;
+                }
+            }
+            @include tablet{
+                font-size: 18px;
+            }
+            // @include mobile{
+            //     font-size: 13px;
+            // }
+        }
+        @include tablet{
+            gap: 45px;
+        }
+        @include mobile{
+            gap: 20px;
+        }
+    }
+}
+
+.news{
+    padding-top: 230px;
+    text-align: center;
+    @include section-header;
+    @include tablet{
+        padding-top: 150px;
+    }
+    @include mobile{
+        padding-top: 50px;
+    }
+    
+    div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .first_row{
+            border-top: 1px solid #ccc;
+        }
+        dl{
+            width: 90vw;
+            text-align: left;
+            padding: 40px 0;
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+            border-bottom: 1px solid #ccc;
+            @include mobile{
+                font-size: 13px;
+                gap: 10px;
+                align-items: center;
+                justify-content: left;
+            }
+            dt{
+                @include mobile{
+                    line-height: 30px;
+                }
+                br{
+                    display: none;
+                    @include mobile{
+                        display: block;
+                    }
+                }
+                span{
+                    padding: 10px 25px;
+                    margin-left: 20px;
+                    background-color: $sub_color;
+                    @include mobile{
+                        margin: 0;
+                        padding: 7px 10px;
+                    }
+                }
+            }
+            
+            a{
+                text-decoration: none;
+                transition: color 0.5s ease;
+                @include mobile{
+                    font-size: 13px;
+                }
+                &:hover{
+                    color: #9a9a9a
+                }
+            }
+        }
+    }
+}
+
+.photo {
+    @include section-header;
+    padding-top: 100px;
+    margin: 0 40px;
+    @include mobile{
+        padding-top: 20px;
+    }
+
+    .zoom-contents {
+        @include row;
+        gap: 40px;
+        @include mobile{
+            flex-direction: column;
+            gap: 15px;
+        }
+        .banner {
+            overflow: hidden;
+            position: relative;
+            width: 500px;
+            height: 280px;
+            @include mobile{
+                width: 350px;
+                height: 250px;
+            }
+
+            &:after {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 100%;
+                background: url('../img/photo1.jpg') no-repeat center center;
+                background-size: cover;
+                transition: transform .8s ease;
+            }
+
+            &:hover:after {
+                transform: scale(1.1);
+            }
+        }
+        .banner2{
+            @extend .banner;
+            &:after {
+                background: url('../img/photo2.jpg') no-repeat center center;
+                background-size: cover;
+            }
+        }
+        .banner3{
+            @extend .banner;
+            &:after {
+                background: url('../img/photo3.jpg') no-repeat center center;
+                background-size: cover;
+            }
+        }
+    }
+}
+
+
+.contact{
+    margin-top: 100px;
+    text-align: center;
+    height: 50vh;
+    position: relative; 
+    @include tablet{
+        height: 30vh;
+    }   
+    @include mobile{
+        margin-top: 50px;
+        height: 20vh;
+    }
+    img{
+        width: 100%;
+        height: 50vh;
+        object-fit: cover;
+        object-position: 50% 40%;  
+        @include tablet{
+            height: 30vh;
+        }   
+        @include mobile{
+            height: 20vh;
+        }   
+    }
+    .content{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); 
+        background-color: rgba( #ffffff, 0);
+        z-index: 100;
+        p{
+            font-size: 25px;
+            color: #fff;
+            margin: 40px 0;
+            @include tablet{
+                font-size: 22px;
+            }
+            @include mobile{
+                font-size: 13px;
+                margin: 20px 0;
+            }   
+        }
+        a{
+            @extend p;
+            padding: 20px 80px;
+            border: 1px solid #fff;
+            border-radius: 40px;
+            transition: background-color 0.4s ease;
+            @include mobile{
+                padding: 10px 40px;
+            }   
+            
+            &:hover{
+                background-color: $sub_color;
+            }
+        }
+        
+    }
+}
+
+footer{
+    padding-top: 50px;
+    background-image: url(../img/footer_back.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: contain;
+    .pagetop{
+        border-radius: 80%;
+        background-color: rgba(#3ae3c2, 0.5);
+        width: 70px;
+        height: 70px;
+        position: fixed;
+        top: 73%;
+        right: 3%;
+        cursor: pointer;
+        border: none;
+        font-size: 15px;
+    }
+    .scroll{
+        opacity: 0;
+        transition: all 0.5s ease;
+        &:hover{
+            transform: scale(1.1);
+            background-color: $sub_color;
+        }
+        &:active{
+            transform: translateY(20px);
+        }
+        &.visible{
+            opacity: 1;
+        }
+        .go-top{
+            font-size: 35px;
+            color: black;
+            padding-left: 24px;
+            line-height: 70px;
+        }
+    }
+    .footer-title{
+        @include row;
+        .logo{
+            padding: 10px 10px;
+            background-color: rgba( #ffffff, 0);
+            img{
+                border: 1px solid black;
+                border-radius: 50%;
+                width: 100px;
+                height: 100px;
+                @include mobile{
+                    width: 40px;
+                    height: 40px;
+                }   
+            }
+        }
+        h1{
+            font-size: 30px;
+            display: flex;
+            flex-direction: column;
+            @include mobile{
+                font-size: 27px;
+            }  
+            &::after{
+                content: "冒険をここから始める";
+                font-size: 20px;
+                margin-top: 10px;
+                @include mobile{
+                    font-size: 13px;
+                }   
+            }
+        }
+    }
+    nav{
+        @include navigation;
+        @include mobile{
+            margin-left: 0;
+            margin-top: 30px;
+        }
+        ul{
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            gap: 130px;
+            padding-bottom: 30px;
+            @include mobile{
+                gap: 61px;
+            }
+            li{
+                a{
+                    font-size: 18px;
+                    font-weight: bold;
+                    font-family: $text-en;
+                    @include mobile{
+                        font-size: 10px;
+                    }   
+                }
+            }
+        }
+    }
+    .copyright{
+        text-align: center;
+        padding: 20px 0;
+        font-family: $text-en;
+        @include mobile{
+            font-size: 7px;
+        }
+    }
+    
+}
+

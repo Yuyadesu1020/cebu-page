@@ -1,0 +1,509 @@
+body{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+// 変数セレクタ
+$main_color: #4ea9ff;
+$sub_color: #00C09B; 
+$title-size: 90px;
+$text-size: 20px;
+$text-color: black;
+$text-ja: serif;
+$text-en: "Comic Sans MS";
+
+
+// @mixin
+@mixin button1{
+    .btn1 {
+        /* アニメーションの起点とするためrelativeを指定 */
+        position: relative;
+        overflow: hidden;
+        /* ボタンの形状 */
+        text-decoration: none;
+        display: inline-block;
+        border: 1px solid #555; /* ボーダーの色と太さ */
+        border-radius: 30px;
+        padding: 5px 60px;
+        text-align: center;
+        outline: none;
+        /* アニメーションの指定 */   
+        transition: ease .2s;
+    
+        span {
+            position: relative;
+            z-index: 3; /* z-indexの数値をあげて文字を背景よりも手前に表示 */
+            color: #333;
+        }
+    
+        &:hover {
+            span {
+                color: #fff;
+            }
+    
+            &.bgtop:before {
+                height: 100%;   
+                background-color: #333;
+            }
+        }
+    
+        /* 背景が流れる（上から下） */
+        &.bgtop:before {
+            content: '';
+            /* 絶対配置で位置を指定 */
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            /* 色や形状 */
+            background: #333; /* 背景色 */
+            width: 100%;
+            height: 0;
+            /* アニメーション */
+            transition: .3s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+        }
+    }  
+}
+
+@mixin navigation {
+    ul {
+        list-style-type: none;
+        li {
+            a {
+                text-decoration: none;
+                font-size: 30px;
+                position: relative;
+                overflow: hidden;
+                transition: all 0.3s ease; // ホバー時のトランジション
+
+                span {
+                    position: absolute;
+                    left: 50%;
+                    top: 0;
+                    transition: transform 0.3s ease, opacity 0.3s ease; // テキストの入れ替わり時のアニメーション
+                    transform: translateX(-50%);
+                    opacity: 1;
+                    white-space: nowrap;
+
+                    &:nth-child(2) {
+                        opacity: 0;
+                        transform: translateX(-50%) translateY(100%);
+                    }
+                }
+
+                &:hover {
+                    span:nth-child(1) {
+                        opacity: 0;
+                        transform: translateX(-50%) translateY(-100%);
+                    }
+
+                    span:nth-child(2) {
+                        opacity: 1;
+                        transform: translateX(-50%) translateY(0%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin section-header{
+    h2{
+        font-size: 50px;
+        margin-bottom: 80px;
+        display: flex;
+        flex-direction: column;
+        &::after{
+            content: "日常生活";
+            font-size: $text-size;
+        }
+    }
+}
+
+@mixin row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+h1, h2, h3{
+    font-family: $text-ja;
+}
+
+p, a{
+    font-size: $text-size;
+    color: $text-color;
+    font-family: $text-ja;
+    text-decoration: none;
+    line-height: 60px;
+    text-align: left;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    .header-title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba( #ffffff, 0);
+        .logo{
+            padding: 20px 20px;
+            background-color: rgba( #ffffff, 0);
+            img{
+                border: 1px solid black;
+                border-radius: 50%;
+            }
+        }
+        h1{
+            font-size: $title-size;
+            &::after{
+                content: "冒険をここから始める";
+                display: flex;
+                flex-direction: column;
+                font-size: 30px;
+                font-family: $text-ja;
+            }
+        }
+    }
+    nav{
+        padding: 0 60px 20px 0;
+        display: flex;
+        flex-direction: column;
+        @include navigation;
+        li{
+            padding: 50px 40px;
+            a{
+                font-weight: 900;
+                color: #ffffff;
+                font-family: $text-ja;
+                font-family: $text-en;
+            }
+        }
+    }
+    
+}
+
+.fixed-header {
+    background-image: url(../img/header_back.png);
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: contain;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 15vh;
+    color: #000000;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000;
+    transition: top 0.8s ease; 
+    &.active {
+        top: 0; 
+    }
+    .fixed-title{
+        @include row;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0);
+        .fixed-logo{
+            padding: 20px 20px;
+            background-color: rgba( #ffffff, 0);
+            img{
+                border: 1px solid black;
+                border-radius: 50%;
+                width: 100px;
+                height: 100px;
+            }
+        }
+        h1{
+            font-family: $text-en;
+        }
+    }
+    nav{
+        @include navigation;
+        ul{
+            display: flex;
+            flex-direction: row;
+            gap: 55px;
+            li{
+                a{
+                    color: #000000;
+                    font-size: 18px;
+                }
+            }
+        }
+        
+    }
+}
+
+main{
+    margin-top: 210px;
+    @include section-header;
+    text-align: center;
+    section{
+        .display, .display2, .display3, .display4{
+            margin-top: 80px;
+            p{
+                text-align: center;
+                span{
+                    background-color: rgba( #ffffff, 0.6);
+                    padding: 2px 25px;
+            }
+            }
+        }
+        .flex-row{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 80px;
+            .first-image{
+                width: 28vw;
+                height: 35vh;
+                border-radius: 0 50px 0 50px;
+                background-image: url(../img/life_photo2.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                transition: all ease-in-out 0.7s;
+
+                &:hover{
+                    background-image: url(../img/life_photo17.jpg); 
+                }
+            }
+            .second-image{
+                @extend .first-image;
+                background-image: url(../img/life_photo8.jpg);
+                &:hover{
+                    background-image: url(../img/life_photo18.jpg); 
+                }
+            }
+            .third-image{
+                @extend .first-image;
+                background-image: url(../img/life_photo6.jpg);
+                &:hover{
+                    background-image: url(../img/life_photo5.jpg); 
+                }
+            }
+                
+        }
+        .flex-row2{
+            @extend .flex-row;
+            gap: 80px;
+            div{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .fourth-image{
+                    width: 25vw;
+                    height: 50vh;
+                    border-radius: 0 50px 0 50px;
+                    background-image: url(../img/life_photo.jpg);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center; 
+                    transition: all ease-in-out 0.7s;
+                    &:hover{
+                        background-image: url(../img/life_photo10.jpg); 
+                    }
+                }
+                p{
+                    text-align: center;
+                    font-size: 30px;
+                    color: #fff;
+                }
+            }
+            
+            .fifth-image{
+                @extend .fourth-image;
+                background-image: url(../img/life_photo3.jpg) !important;
+                &:hover{
+                    background-image: url(../img/life_photo16.jpg)!important; 
+                }
+            }
+            .sixth-image{
+                @extend .fourth-image;
+                background-image: url(../img/life_photo13.jpg) !important;
+                &:hover{
+                    background-image: url(../img/life_photo15.jpg)!important; 
+                }
+            }
+        }
+        .flex-row3{
+            @extend .flex-row;
+            gap: 80px;
+            align-items: center;
+            .seventh-image{
+                width: 25vw;
+                height: 50vh;
+                border-radius: 0 50px 0 50px;
+                background-image: url(../img/life_photo7.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                transition: all ease-in-out 0.7s;
+                &:hover{
+                    background-image: url(../img/life_photo4.jpg); 
+                }
+            }
+            .eighth-image{
+                @extend .seventh-image;
+                width: 31vw;
+                height: 38vh;
+                background-image: url(../img/life_photo12.jpg);
+                background-size: contain;
+                &:hover{
+                    background-image: url(../img/life_photo14.jpg); 
+                }
+            }
+            .ninth-image{
+                @extend .seventh-image;
+                background-image: url(../img/life_photo9.jpg);
+                &:hover{
+                    background-image: url(../img/life_photo11.jpg); 
+                }
+            }
+        }
+            
+    }
+    .back-image{
+        width: 100%;
+        height: 100%;
+        z-index: -100;
+        position: fixed;
+        top: 0;
+    }
+
+    .contact{
+        text-align: center;
+        height: 50vh;
+        position: relative; 
+        margin-top: 80px;
+        img{
+            width: 100%;
+            height: 50vh;
+            object-fit: cover;
+            object-position: 50% 40%;        
+        }
+        .content{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); 
+            background-color: rgba( #ffffff, 0);
+            z-index: 100;
+            p{
+                font-size: 25px;
+                color: #fff;
+                margin: 40px 0;
+            }
+            a{
+                @extend p;
+                padding: 20px 80px;
+                border: 1px solid #fff;
+                border-radius: 40px;
+                transition: background-color 0.4s ease;
+                
+                &:hover{
+                    background-color: $sub_color;
+                }
+            }
+            
+        }
+    }
+    
+}
+
+footer{
+    padding-top: 50px;
+    background-image: url(../img/footer_back.png);
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: contain;
+    margin: 0;
+    .pagetop{
+        border-radius: 80%;
+        background-color: rgba(#3ae3c2, 0.5);
+        width: 70px;
+        height: 70px;
+        position: fixed;
+        top: 73%;
+        right: 3%;
+        cursor: pointer;
+        border: none;
+        font-size: 15px;
+    }
+    .scroll{
+        opacity: 0;
+        transition: all 0.5s ease;
+        &:hover{
+            transform: scale(1.1);
+            background-color: $sub_color;
+        }
+        &:active{
+            transform: translateY(20px);
+        }
+        &.visible{
+            opacity: 1;
+        }
+        .go-top{
+            font-size: 35px;
+            color: black;
+            padding-left: 24px;
+            line-height: 70px;
+        }
+    }
+    .footer-title{
+        @include row;
+        .logo{
+            padding: 20px 20px;
+            background-color: rgba( #ffffff, 0);
+            img{
+                border: 1px solid black;
+                border-radius: 50%;
+                width: 100px;
+                height: 100px;
+            }
+        }
+        h1{
+            font-size: 30px;
+            &::after{
+                content: "冒険をここから始める";
+                display: flex;
+                flex-direction: column;
+                font-size: 20px;
+            }
+        }
+    }
+    nav{
+        @include navigation;
+        ul{
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            gap: 130px;
+            padding-bottom: 30px;
+            li{
+                a{
+                    font-size: 18px;
+                    font-weight: bold;
+                    font-family: $text-en;
+                }
+            }
+        }
+    }
+    .copyright{
+        text-align: center;
+        padding: 20px 0;
+        font-family: $text-en;
+    }
+    
+}
+

@@ -1,0 +1,462 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+h1, h2, h3 {
+  font-family: serif;
+}
+
+p, main .contact .content a, a {
+  font-size: 20px;
+  color: black;
+  font-family: serif;
+  text-decoration: none;
+  line-height: 60px;
+  text-align: left;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+}
+header .header-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0);
+}
+header .header-title .logo {
+  padding: 20px 20px;
+  background-color: rgba(255, 255, 255, 0);
+}
+header .header-title .logo img {
+  border: 1px solid black;
+  border-radius: 50%;
+}
+header .header-title h1 {
+  font-size: 90px;
+}
+header .header-title h1::after {
+  content: "冒険をここから始める";
+  display: flex;
+  flex-direction: column;
+  font-size: 30px;
+  font-family: serif;
+}
+header nav {
+  padding: 0 60px 20px 0;
+  display: flex;
+  flex-direction: column;
+}
+header nav ul {
+  list-style-type: none;
+}
+header nav ul li a {
+  text-decoration: none;
+  font-size: 30px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+header nav ul li a span {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateX(-50%);
+  opacity: 1;
+  white-space: nowrap;
+}
+header nav ul li a span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-50%) translateY(100%);
+}
+header nav ul li a:hover span:nth-child(1) {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-100%);
+}
+header nav ul li a:hover span:nth-child(2) {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0%);
+}
+header nav li {
+  padding: 50px 40px;
+}
+header nav li a {
+  font-weight: 900;
+  color: #ffffff;
+  font-family: serif;
+  font-family: "Comic Sans MS";
+}
+
+.fixed-header {
+  background-image: url(../img/header_back.png);
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: contain;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15vh;
+  color: #000000;
+  padding: 10px 0;
+  text-align: center;
+  z-index: 1000;
+  transition: top 0.8s ease;
+}
+.fixed-header.active {
+  top: 0;
+}
+.fixed-header .fixed-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0);
+}
+.fixed-header .fixed-title .fixed-logo {
+  padding: 20px 20px;
+  background-color: rgba(255, 255, 255, 0);
+}
+.fixed-header .fixed-title .fixed-logo img {
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+.fixed-header .fixed-title h1 {
+  font-family: "Comic Sans MS";
+}
+.fixed-header nav ul {
+  list-style-type: none;
+}
+.fixed-header nav ul li a {
+  text-decoration: none;
+  font-size: 30px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.fixed-header nav ul li a span {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateX(-50%);
+  opacity: 1;
+  white-space: nowrap;
+}
+.fixed-header nav ul li a span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-50%) translateY(100%);
+}
+.fixed-header nav ul li a:hover span:nth-child(1) {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-100%);
+}
+.fixed-header nav ul li a:hover span:nth-child(2) {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0%);
+}
+.fixed-header nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: 55px;
+}
+.fixed-header nav ul li a {
+  color: #000000;
+  font-size: 18px;
+}
+
+main {
+  margin-top: 210px;
+  text-align: center;
+}
+main h2 {
+  font-size: 50px;
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+}
+main h2::after {
+  content: "日常生活";
+  font-size: 20px;
+}
+main section .display, main section .display2, main section .display3, main section .display4 {
+  margin-top: 80px;
+}
+main section .display p, main section .display .contact .content a, main .contact .content section .display a, main section .display2 p, main section .display2 .contact .content a, main .contact .content section .display2 a, main section .display3 p, main section .display3 .contact .content a, main .contact .content section .display3 a, main section .display4 p, main section .display4 .contact .content a, main .contact .content section .display4 a {
+  text-align: center;
+}
+main section .display p span, main section .display .contact .content a span, main .contact .content section .display a span, main section .display2 p span, main section .display2 .contact .content a span, main .contact .content section .display2 a span, main section .display3 p span, main section .display3 .contact .content a span, main .contact .content section .display3 a span, main section .display4 p span, main section .display4 .contact .content a span, main .contact .content section .display4 a span {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 2px 25px;
+}
+main section .flex-row, main section .flex-row3, main section .flex-row2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 80px;
+}
+main section .flex-row .first-image, main section .flex-row3 .first-image, main section .flex-row2 .first-image, main section .flex-row .third-image, main section .flex-row3 .third-image, main section .flex-row2 .third-image, main section .flex-row .second-image, main section .flex-row3 .second-image, main section .flex-row2 .second-image {
+  width: 28vw;
+  height: 35vh;
+  border-radius: 0 50px 0 50px;
+  background-image: url(../img/life_photo2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: all ease-in-out 0.7s;
+}
+main section .flex-row .first-image:hover, main section .flex-row3 .first-image:hover, main section .flex-row2 .first-image:hover, main section .flex-row .third-image:hover, main section .flex-row3 .third-image:hover, main section .flex-row2 .third-image:hover, main section .flex-row .second-image:hover, main section .flex-row3 .second-image:hover, main section .flex-row2 .second-image:hover {
+  background-image: url(../img/life_photo17.jpg);
+}
+main section .flex-row .second-image, main section .flex-row3 .second-image, main section .flex-row2 .second-image {
+  background-image: url(../img/life_photo8.jpg);
+}
+main section .flex-row .second-image:hover, main section .flex-row3 .second-image:hover, main section .flex-row2 .second-image:hover {
+  background-image: url(../img/life_photo18.jpg);
+}
+main section .flex-row .third-image, main section .flex-row3 .third-image, main section .flex-row2 .third-image {
+  background-image: url(../img/life_photo6.jpg);
+}
+main section .flex-row .third-image:hover, main section .flex-row3 .third-image:hover, main section .flex-row2 .third-image:hover {
+  background-image: url(../img/life_photo5.jpg);
+}
+main section .flex-row2 {
+  gap: 80px;
+}
+main section .flex-row2 div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main section .flex-row2 div .fourth-image, main section .flex-row2 div .sixth-image, main section .flex-row2 div .fifth-image {
+  width: 25vw;
+  height: 50vh;
+  border-radius: 0 50px 0 50px;
+  background-image: url(../img/life_photo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: all ease-in-out 0.7s;
+}
+main section .flex-row2 div .fourth-image:hover, main section .flex-row2 div .sixth-image:hover, main section .flex-row2 div .fifth-image:hover {
+  background-image: url(../img/life_photo10.jpg);
+}
+main section .flex-row2 div p, main section .flex-row2 div .contact .content a, main .contact .content section .flex-row2 div a {
+  text-align: center;
+  font-size: 30px;
+  color: #fff;
+}
+main section .flex-row2 .fifth-image {
+  background-image: url(../img/life_photo3.jpg) !important;
+}
+main section .flex-row2 .fifth-image:hover {
+  background-image: url(../img/life_photo16.jpg) !important;
+}
+main section .flex-row2 .sixth-image {
+  background-image: url(../img/life_photo13.jpg) !important;
+}
+main section .flex-row2 .sixth-image:hover {
+  background-image: url(../img/life_photo15.jpg) !important;
+}
+main section .flex-row3 {
+  gap: 80px;
+  align-items: center;
+}
+main section .flex-row3 .seventh-image, main section .flex-row3 .ninth-image, main section .flex-row3 .eighth-image {
+  width: 25vw;
+  height: 50vh;
+  border-radius: 0 50px 0 50px;
+  background-image: url(../img/life_photo7.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: all ease-in-out 0.7s;
+}
+main section .flex-row3 .seventh-image:hover, main section .flex-row3 .ninth-image:hover, main section .flex-row3 .eighth-image:hover {
+  background-image: url(../img/life_photo4.jpg);
+}
+main section .flex-row3 .eighth-image {
+  width: 31vw;
+  height: 38vh;
+  background-image: url(../img/life_photo12.jpg);
+  background-size: contain;
+}
+main section .flex-row3 .eighth-image:hover {
+  background-image: url(../img/life_photo14.jpg);
+}
+main section .flex-row3 .ninth-image {
+  background-image: url(../img/life_photo9.jpg);
+}
+main section .flex-row3 .ninth-image:hover {
+  background-image: url(../img/life_photo11.jpg);
+}
+main .back-image {
+  width: 100%;
+  height: 100%;
+  z-index: -100;
+  position: fixed;
+  top: 0;
+}
+main .contact {
+  text-align: center;
+  height: 50vh;
+  position: relative;
+  margin-top: 80px;
+}
+main .contact img {
+  width: 100%;
+  height: 50vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 40%;
+     object-position: 50% 40%;
+}
+main .contact .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0);
+  z-index: 100;
+}
+main .contact .content p, main .contact .content a {
+  font-size: 25px;
+  color: #fff;
+  margin: 40px 0;
+}
+main .contact .content a {
+  padding: 20px 80px;
+  border: 1px solid #fff;
+  border-radius: 40px;
+  transition: background-color 0.4s ease;
+}
+main .contact .content a:hover {
+  background-color: #00C09B;
+}
+
+footer {
+  padding-top: 50px;
+  background-image: url(../img/footer_back.png);
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: contain;
+  margin: 0;
+}
+footer .pagetop {
+  border-radius: 80%;
+  background-color: rgba(58, 227, 194, 0.5);
+  width: 70px;
+  height: 70px;
+  position: fixed;
+  top: 73%;
+  right: 3%;
+  cursor: pointer;
+  border: none;
+  font-size: 15px;
+}
+footer .scroll {
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+footer .scroll:hover {
+  transform: scale(1.1);
+  background-color: #00C09B;
+}
+footer .scroll:active {
+  transform: translateY(20px);
+}
+footer .scroll.visible {
+  opacity: 1;
+}
+footer .scroll .go-top {
+  font-size: 35px;
+  color: black;
+  padding-left: 24px;
+  line-height: 70px;
+}
+footer .footer-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+footer .footer-title .logo {
+  padding: 20px 20px;
+  background-color: rgba(255, 255, 255, 0);
+}
+footer .footer-title .logo img {
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+footer .footer-title h1 {
+  font-size: 30px;
+}
+footer .footer-title h1::after {
+  content: "冒険をここから始める";
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}
+footer nav ul {
+  list-style-type: none;
+}
+footer nav ul li a {
+  text-decoration: none;
+  font-size: 30px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+footer nav ul li a span {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateX(-50%);
+  opacity: 1;
+  white-space: nowrap;
+}
+footer nav ul li a span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-50%) translateY(100%);
+}
+footer nav ul li a:hover span:nth-child(1) {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-100%);
+}
+footer nav ul li a:hover span:nth-child(2) {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0%);
+}
+footer nav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  gap: 130px;
+  padding-bottom: 30px;
+}
+footer nav ul li a {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Comic Sans MS";
+}
+footer .copyright {
+  text-align: center;
+  padding: 20px 0;
+  font-family: "Comic Sans MS";
+}/*# sourceMappingURL=life.css.map */
