@@ -386,6 +386,12 @@ main h2 {
   display: flex;
   flex-direction: column;
 }
+@media screen and (max-width: 761px) {
+  main h2 {
+    font-size: 27px;
+    margin-bottom: 60px;
+  }
+}
 main h2::after {
   content: "学校";
   font-size: 20px;
@@ -405,14 +411,30 @@ main section .slide-hero {
   /*戻る、次へ矢印の位置*/
   /*ドットナビゲーションの設定*/
 }
+@media screen and (max-width: 761px) {
+  main section .slide-hero h3 {
+    font-size: 12px;
+  }
+}
 main section .slide-hero .slider {
   /*横幅94%で左右に余白を持たせて中央寄せ*/
   width: 94%;
   margin: 40px auto;
 }
+@media screen and (max-width: 761px) {
+  main section .slide-hero .slider {
+    padding: 0;
+  }
+}
 main section .slide-hero .slider img {
   width: 60vw; /*スライダー内の画像を60vwにしてレスポンシブ化*/
   height: 60vh;
+}
+@media screen and (max-width: 761px) {
+  main section .slide-hero .slider img {
+    width: 60vw;
+    height: 23vh;
+  }
 }
 main section .slide-hero .slider .slick-slide {
   transform: scale(0.8); /*左右の画像のサイズを80%に*/
@@ -448,6 +470,11 @@ main section .slide-hero .slick-dots {
   text-align: center;
   margin: 20px 0 0 0;
 }
+@media screen and (max-width: 761px) {
+  main section .slide-hero .slick-dots {
+    padding: 0;
+  }
+}
 main section .slide-hero .slick-dots li {
   display: inline-block;
   margin: 0 5px;
@@ -460,6 +487,12 @@ main section .slide-hero .slick-dots li button {
   display: block;
   border-radius: 50%;
   background: #ccc; /*ドットボタンの色*/
+}
+@media screen and (max-width: 761px) {
+  main section .slide-hero .slick-dots li button {
+    width: 1px;
+    height: 13px;
+  }
 }
 main section .slide-hero .slick-dots li.slick-active button {
   background: #333; /*ドットボタンの現在地表示の色*/
@@ -503,15 +536,39 @@ main section .schedule {
   display: flex;
   justify-content: center;
 }
+@media screen and (max-width: 761px) {
+  main section .schedule {
+    gap: 20px;
+  }
+}
 main section .schedule p, main section .schedule .contact .content a, .contact .content main section .schedule a {
   font-family: serif;
   text-align: left;
-  width: 45%;
+  width: 50%;
   letter-spacing: 0.3em;
   line-height: 45px;
 }
+@media screen and (max-width: 761px) {
+  main section .schedule p, main section .schedule .contact .content a, .contact .content main section .schedule a {
+    font-size: 10px;
+    letter-spacing: 0em;
+    line-height: 17px;
+  }
+}
 main section .schedule p span, main section .schedule .contact .content a span, .contact .content main section .schedule a span {
   font-size: 20px;
+}
+@media screen and (max-width: 761px) {
+  main section .schedule p span, main section .schedule .contact .content a span, .contact .content main section .schedule a span {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 761px) {
+  main section .schedule p small, main section .schedule .contact .content a small, .contact .content main section .schedule a small {
+    font-size: 7px;
+    position: relative;
+    top: 0;
+  }
 }
 main section .schedule div {
   max-width: 100%;
@@ -521,12 +578,25 @@ main section .schedule div img {
   width: 88%;
   height: 50vh;
 }
+@media screen and (max-width: 761px) {
+  main section .schedule div img {
+    width: 70px;
+    height: 13vh;
+  }
+}
 main section .schedule div img:nth-child(2) {
   width: 78%;
   height: 40vh;
   position: absolute;
   top: 400px;
   left: 60%;
+}
+@media screen and (max-width: 761px) {
+  main section .schedule div img:nth-child(2) {
+    width: 65px;
+    height: 11vh;
+    top: 100px;
+  }
 }
 
 .contact {
@@ -581,7 +651,7 @@ main section .schedule div img:nth-child(2) {
 @media screen and (max-width: 1024px) {
   .contact .content p, .contact .content a {
     font-size: 22px;
-    line-height: 30px;
+    line-height: 20px;
   }
 }
 @media screen and (max-width: 761px) {
@@ -660,14 +730,30 @@ footer .footer-title .logo img {
   width: 100px;
   height: 100px;
 }
+@media screen and (max-width: 761px) {
+  footer .footer-title .logo img {
+    width: 40px;
+    height: 40px;
+  }
+}
 footer .footer-title h1 {
   font-size: 30px;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 761px) {
+  footer .footer-title h1 {
+    font-size: 27px;
+  }
 }
 footer .footer-title h1::after {
   content: "冒険をここから始める";
-  display: flex;
-  flex-direction: column;
   font-size: 20px;
+}
+@media screen and (max-width: 761px) {
+  footer .footer-title h1::after {
+    font-size: 13px;
+  }
 }
 footer nav ul {
   list-style-type: none;
@@ -716,6 +802,12 @@ footer nav ul li a:hover span:nth-child(2) {
   opacity: 1;
   transform: translateX(-50%) translateY(0%);
 }
+@media screen and (max-width: 761px) {
+  footer nav {
+    margin-left: 0;
+    margin-top: 30px;
+  }
+}
 footer nav ul {
   display: flex;
   justify-content: center;
@@ -723,13 +815,31 @@ footer nav ul {
   gap: 130px;
   padding-bottom: 30px;
 }
+@media screen and (max-width: 761px) {
+  footer nav ul {
+    position: relative;
+    top: -26px;
+    gap: 61px;
+    padding: 0;
+  }
+}
 footer nav ul li a {
   font-size: 18px;
   font-weight: bold;
   font-family: "Comic Sans MS";
 }
+@media screen and (max-width: 761px) {
+  footer nav ul li a {
+    font-size: 10px;
+  }
+}
 footer .copyright {
   text-align: center;
   padding: 20px 0;
   font-family: "Comic Sans MS";
+}
+@media screen and (max-width: 761px) {
+  footer .copyright {
+    font-size: 7px;
+  }
 }/*# sourceMappingURL=school.css.map */

@@ -123,6 +123,10 @@ $text-en: "Comic Sans MS";
         margin-bottom: 80px;
         display: flex;
         flex-direction: column;
+        @include mobile{
+            font-size: 27px;
+            margin-bottom: 60px;
+        }
         &::after{
             content: "個人概要";
             font-size: $text-size;
@@ -436,12 +440,6 @@ main{
             align-items: center;
             .title{
                 text-align: center;
-                h2{
-                    @include mobile{
-                        font-size: 27px;
-                        margin-bottom: 60px;
-                    }
-                }
             }
 
             .tx-le{

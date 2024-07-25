@@ -123,6 +123,10 @@ $text-en: "Comic Sans MS";
         margin-bottom: 80px;
         display: flex;
         flex-direction: column;
+        @include mobile{
+            font-size: 27px;
+            margin-bottom: 60px;
+        }
         &::after{
             content: "学校";
             font-size: $text-size;
@@ -425,14 +429,25 @@ main{
             margin: 0 20px;
         }
         .slide-hero{
+            h3{
+                @include mobile{
+                    font-size: 12px;
+                }
+            }
             .slider {
                 /*横幅94%で左右に余白を持たせて中央寄せ*/
                 width: 94%;
                 margin: 40px auto;
-              
+                @include mobile{
+                    padding: 0;
+                }
                 img {
                   width: 60vw; /*スライダー内の画像を60vwにしてレスポンシブ化*/
                   height: 60vh;
+                  @include mobile{
+                    width: 60vw;
+                    height: 23vh;
+                  }
                 }
               
                 .slick-slide {
@@ -478,7 +493,9 @@ main{
               .slick-dots {
                 text-align: center;
                 margin: 20px 0 0 0;
-              
+                @include mobile{
+                    padding: 0;
+                }
                 li {
                   display: inline-block;
                   margin: 0 5px;
@@ -491,6 +508,10 @@ main{
                     display: block;
                     border-radius: 50%;
                     background: #ccc; /*ドットボタンの色*/
+                    @include mobile{
+                        width: 1px;
+                        height: 13px;
+                    }
                   }
               
                   &.slick-active button {
@@ -541,14 +562,33 @@ main{
             margin: 100px auto 0 auto;
             display: flex;
             justify-content: center; 
+            @include mobile{
+                gap: 20px;
+            }
             p{
                 font-family: $text-ja;
                 text-align: left;
-                width: 45%;
+                width: 50%;
                 letter-spacing: 0.3em;
                 line-height: 45px;
+                @include mobile{
+                    font-size: 10px;
+                    letter-spacing: 0em;
+                    line-height: 17px;
+                }
                 span{
                     font-size: 20px;
+                    @include mobile{
+                        font-size: 10px;
+                    }
+                }
+                small{
+                    @include mobile{
+                        font-size: 7px;
+                        position: relative;
+                        top: 0;
+                        // left: 40px;
+                    }
                 }
             }
             div{
@@ -557,6 +597,10 @@ main{
                 img{
                     width: 88%;
                     height: 50vh;
+                    @include mobile{
+                        width: 70px;
+                        height: 13vh;
+                    }
                 }
                 img:nth-child(2){
                     width: 78%;
@@ -564,6 +608,11 @@ main{
                     position: absolute;
                     top: 400px;
                     left: 60%;
+                    @include mobile{
+                        width: 65px;
+                        height: 11vh;
+                        top: 100px;
+                    }
                 }
             }
         }
@@ -608,7 +657,7 @@ main{
             margin: 40px 0;
             @include tablet{
                 font-size: 22px;
-                line-height: 30px;
+                line-height: 20px;
             }
             @include mobile{
                 font-size: 13px;
@@ -681,31 +730,54 @@ footer{
                 border-radius: 50%;
                 width: 100px;
                 height: 100px;
+                @include mobile{
+                    width: 40px;
+                    height: 40px;
+                } 
             }
         }
         h1{
             font-size: 30px;
+            display: flex;
+            flex-direction: column;
+            @include mobile{
+                font-size: 27px;
+            }  
             &::after{
                 content: "冒険をここから始める";
-                display: flex;
-                flex-direction: column;
                 font-size: 20px;
+                @include mobile{
+                    font-size: 13px;
+                }  
             }
         }
     }
     nav{
         @include navigation;
+        @include mobile{
+            margin-left: 0;
+            margin-top: 30px;
+        }
         ul{
             display: flex;
             justify-content: center;
             list-style-type: none;
             gap: 130px;
             padding-bottom: 30px;
+            @include mobile{
+                position: relative;
+                top: -26px;
+                gap: 61px;
+                padding: 0;
+            }
             li{
                 a{
                     font-size: 18px;
                     font-weight: bold;
                     font-family: $text-en;
+                    @include mobile{
+                        font-size: 10px;
+                    }  
                 }
             }
         }
@@ -714,6 +786,9 @@ footer{
         text-align: center;
         padding: 20px 0;
         font-family: $text-en;
+        @include mobile{
+            font-size: 7px;
+        }
     }
     
 }
