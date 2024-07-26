@@ -16,6 +16,13 @@ p, .contact .content a, a {
   text-decoration: none;
   line-height: 60px;
   text-align: left;
+  max-width: 95%;
+}
+@media screen and (max-width: 761px) {
+  p, .contact .content a, a {
+    line-height: 20px;
+    font-size: 10px;
+  }
 }
 
 header {
@@ -504,29 +511,45 @@ main section .row-left, main section .row-right {
   align-items: center;
   gap: 100px;
 }
+@media screen and (max-width: 761px) {
+  main section .row-left, main section .row-right {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+}
 main section .row-left div, main section .row-right div {
   max-width: 100%;
   height: 100%;
-  box-shadow: 30px 30px 2px #a5fffd;
 }
-main section .row-left div img, main section .row-right div img {
+main section .row-left div .shadow-img, main section .row-right div .shadow-img {
   width: 18vw;
   height: 45vh;
   -o-object-fit: cover;
      object-fit: cover;
+  box-shadow: 30px 30px 2px #a5fffd;
+}
+@media screen and (max-width: 761px) {
+  main section .row-left div .shadow-img, main section .row-right div .shadow-img {
+    width: 20vw;
+    height: 15vh;
+    box-shadow: 12px 12px 2px #a5fffd;
+  }
 }
 main section .row-right {
   margin-top: 80px;
 }
+@media screen and (max-width: 761px) {
+  main section .row-right {
+    flex-direction: column;
+    margin-top: 40px;
+  }
+}
 main section .row-right div {
   max-width: 100%;
   height: 100%;
-}
-main section .row-right div img {
-  width: 18vw;
-  height: 45vh;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 main section .row-right p span, main section .row-right .contact .content a span, .contact .content main section .row-right a span {
   background: linear-gradient(to top, #00C09B 10%, #ffffff 50%);
@@ -647,6 +670,7 @@ main section .schedule div img:nth-child(2) {
   font-size: 25px;
   color: #fff;
   margin: 40px 0;
+  max-width: 100%;
 }
 @media screen and (max-width: 1024px) {
   .contact .content p, .contact .content a {
