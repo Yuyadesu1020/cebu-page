@@ -18,6 +18,18 @@ p, .contact .content a, a {
   text-align: left;
   max-width: 95%;
 }
+@media screen and (max-width: 1130px) {
+  p, .contact .content a, a {
+    font-size: 17px;
+    line-height: 50px;
+  }
+}
+@media screen and (max-width: 1010px) {
+  p, .contact .content a, a {
+    font-size: 13px;
+    line-height: 40px;
+  }
+}
 @media screen and (max-width: 761px) {
   p, .contact .content a, a {
     line-height: 20px;
@@ -72,7 +84,7 @@ header .header-title h1 {
   font-family: "Comic Sans MS";
   font-size: 90px;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1130px) {
   header .header-title h1 {
     font-size: 75px;
   }
@@ -89,7 +101,7 @@ header .header-title h1::after {
   font-size: 30px;
   margin-top: 10px;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1130px) {
   header .header-title h1::after {
     font-size: 28px;
   }
@@ -305,7 +317,7 @@ header .openbtn.active span:nth-of-type(3) {
   width: 100px;
   height: 100px;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1130px) {
   .fixed-header .fixed-title .fixed-logo img {
     width: 80px;
     height: 80px;
@@ -377,7 +389,7 @@ header .openbtn.active span:nth-of-type(3) {
     font-size: 10px;
   }
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1130px) {
   .fixed-header nav ul {
     gap: 20px;
   }
@@ -437,10 +449,14 @@ main section .slide-hero .slider img {
   width: 60vw; /*スライダー内の画像を60vwにしてレスポンシブ化*/
   height: 60vh;
 }
+@media screen and (max-width: 1130px) {
+  main section .slide-hero .slider img {
+    height: 31vh;
+  }
+}
 @media screen and (max-width: 761px) {
   main section .slide-hero .slider img {
-    width: 60vw;
-    height: 23vh;
+    height: 20vh;
   }
 }
 main section .slide-hero .slider .slick-slide {
@@ -497,8 +513,8 @@ main section .slide-hero .slick-dots li button {
 }
 @media screen and (max-width: 761px) {
   main section .slide-hero .slick-dots li button {
-    width: 1px;
-    height: 13px;
+    width: 7px;
+    height: 8px;
   }
 }
 main section .slide-hero .slick-dots li.slick-active button {
@@ -510,6 +526,11 @@ main section .row-left, main section .row-right {
   justify-content: center;
   align-items: center;
   gap: 100px;
+}
+@media screen and (max-width: 1130px) {
+  main section .row-left, main section .row-right {
+    gap: 20px;
+  }
 }
 @media screen and (max-width: 761px) {
   main section .row-left, main section .row-right {
@@ -531,6 +552,11 @@ main section .row-left div .shadow-img, main section .row-right div .shadow-img 
      object-fit: cover;
   box-shadow: 30px 30px 2px #a5fffd;
 }
+@media screen and (max-width: 1130px) {
+  main section .row-left div .shadow-img, main section .row-right div .shadow-img {
+    height: 23vh;
+  }
+}
 @media screen and (max-width: 761px) {
   main section .row-left div .shadow-img, main section .row-right div .shadow-img {
     width: 20vw;
@@ -538,8 +564,21 @@ main section .row-left div .shadow-img, main section .row-right div .shadow-img 
     box-shadow: 12px 12px 2px #a5fffd;
   }
 }
+main section .row-left div .tb_br, main section .row-right div .tb_br {
+  display: none;
+}
+@media screen and (max-width: 1010px) {
+  main section .row-left div .tb_br, main section .row-right div .tb_br {
+    display: block;
+  }
+}
 main section .row-right {
   margin-top: 80px;
+}
+@media screen and (max-width: 1130px) {
+  main section .row-right {
+    gap: 50px;
+  }
 }
 @media screen and (max-width: 761px) {
   main section .row-right {
@@ -558,6 +597,7 @@ main section .schedule {
   margin: 100px auto 0 auto;
   display: flex;
   justify-content: center;
+  max-width: 100%;
 }
 @media screen and (max-width: 761px) {
   main section .schedule {
@@ -567,9 +607,15 @@ main section .schedule {
 main section .schedule p, main section .schedule .contact .content a, .contact .content main section .schedule a {
   font-family: serif;
   text-align: left;
-  width: 40%;
+  max-width: 50%;
   letter-spacing: 0.3em;
   line-height: 45px;
+}
+@media screen and (max-width: 1130px) {
+  main section .schedule p, main section .schedule .contact .content a, .contact .content main section .schedule a {
+    font-size: 15px;
+    line-height: 25px;
+  }
 }
 @media screen and (max-width: 761px) {
   main section .schedule p, main section .schedule .contact .content a, .contact .content main section .schedule a {
@@ -594,33 +640,44 @@ main section .schedule p span, main section .schedule .contact .content a span, 
   }
 }
 main section .schedule div {
-  max-width: 100%;
+  max-width: 50%;
+  height: auto;
   position: relative;
 }
 main section .schedule div img {
-  width: 24vw;
+  max-width: 90%;
   height: 50vh;
 }
-@media screen and (max-width: 761px) {
+@media screen and (max-width: 1130px) {
   main section .schedule div img {
-    width: 70px;
-    height: 13vh;
+    height: 25vh;
     position: relative;
     top: 30px;
   }
 }
+@media screen and (max-width: 761px) {
+  main section .schedule div img {
+    height: 18vh;
+  }
+}
 main section .schedule div img:nth-child(2) {
-  width: 19vw;
-  height: 40vh;
+  max-width: 60%;
+  height: 35vh;
   position: absolute;
   top: 400px;
-  left: 60%;
+  left: 58%;
+}
+@media screen and (max-width: 1130px) {
+  main section .schedule div img:nth-child(2) {
+    height: 17vh;
+    top: 270px;
+    left: 52%;
+  }
 }
 @media screen and (max-width: 761px) {
   main section .schedule div img:nth-child(2) {
-    width: 65px;
+    top: 160px;
     height: 11vh;
-    top: 130px;
   }
 }
 
@@ -630,7 +687,7 @@ main section .schedule div img:nth-child(2) {
   height: 50vh;
   position: relative;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1130px) {
   .contact {
     height: 30vh;
   }
@@ -649,7 +706,7 @@ main section .schedule div img:nth-child(2) {
   -o-object-position: 50% 40%;
      object-position: 50% 40%;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1130px) {
   .contact img {
     height: 30vh;
   }
@@ -674,7 +731,7 @@ main section .schedule div img:nth-child(2) {
   margin: 40px 0;
   max-width: 100%;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1130px) {
   .contact .content p, .contact .content a {
     font-size: 22px;
     line-height: 20px;

@@ -141,13 +141,21 @@ $text-en: "Comic Sans MS";
     align-items: center;
 }
 
-$tb: 1024px;
+$tb: 1130px;
+$mini-tb: 1010px;
 $mb: 761px;
 @mixin tablet{
     @media screen and (max-width: $tb){
         @content;
     }
 }
+ 
+@mixin mini-tablet{
+    @media screen and (max-width: $mini-tb){
+        @content;
+    }
+}
+
 @mixin mobile{
     @media screen and (max-width: $mb){
         @content;
@@ -166,6 +174,14 @@ p, a{
     line-height: 60px;
     text-align: left;
     max-width: 95%;
+    @include tablet{
+        font-size: 17px;
+        line-height: 50px;
+    }
+    @include mini-tablet{
+        font-size: 13px;
+        line-height: 40px;
+    }
     @include mobile{
         line-height: 20px;
         font-size: 10px;
@@ -448,9 +464,11 @@ main{
                 img {
                   width: 60vw; /*スライダー内の画像を60vwにしてレスポンシブ化*/
                   height: 60vh;
+                  @include tablet{
+                    height: 31vh;
+                  }
                   @include mobile{
-                    width: 60vw;
-                    height: 23vh;
+                    height: 20vh;
                   }
                 }
               
@@ -513,8 +531,8 @@ main{
                     border-radius: 50%;
                     background: #ccc; /*ドットボタンの色*/
                     @include mobile{
-                        width: 1px;
-                        height: 13px;
+                        width: 7px;
+                        height: 8px;
                     }
                   }
               
@@ -530,6 +548,9 @@ main{
             justify-content: center;
             align-items: center;
             gap: 100px;
+            @include tablet{
+                gap: 20px;
+            }
             @include mobile{
                 display: flex;
                 flex-direction: column-reverse;
@@ -545,10 +566,19 @@ main{
                     height: 45vh;
                     object-fit: cover;
                     box-shadow: 30px 30px 2px #a5fffd;
+                    @include tablet{
+                        height: 23vh;
+                    }
                     @include mobile{
                         width: 20vw;
                         height: 15vh;
                         box-shadow: 12px 12px 2px #a5fffd;
+                    }
+                }
+                .tb_br{
+                    display: none;
+                    @include mini-tablet{
+                        display: block;
                     }
                 }
             }
@@ -556,6 +586,9 @@ main{
         .row-right{
             @extend .row-left;
             margin-top: 80px;
+            @include tablet{
+                gap: 50px;
+            }
             @include mobile{
                 flex-direction: column;
                 margin-top: 40px;
@@ -575,15 +608,20 @@ main{
             margin: 100px auto 0 auto;
             display: flex;
             justify-content: center; 
+            max-width: 100%;
             @include mobile{
                 gap: 20px;
             }
             p{
                 font-family: $text-ja;
                 text-align: left;
-                width: 40%;
+                max-width: 50%;
                 letter-spacing: 0.3em;
                 line-height: 45px;
+                @include tablet{
+                    font-size: 15px;
+                    line-height: 25px;
+                }
                 @include mobile{
                     font-size: 10px;
                     letter-spacing: 0em;
@@ -605,28 +643,36 @@ main{
                 }
             }
             div{
-                max-width: 100%;
+                max-width: 50%;
+                height: auto;
                 position: relative;
                 img{
-                    width: 24vw;
-                    height: 50vh;
-                    @include mobile{
-                        width: 70px;
-                        height: 13vh;
+                    max-width: 90%;
+	                height: 50vh;
+                    @include tablet{
+                        height: 25vh;
                         position: relative;
                         top: 30px;
                     }
+                    @include mobile{
+                        height: 18vh;
+                    }
                 }
+
                 img:nth-child(2){
-                    width: 19vw;
-                    height: 40vh;
+                    max-width: 60%;
+	                height: 35vh;
                     position: absolute;
                     top: 400px;
-                    left: 60%;
+                    left: 58%;
+                    @include tablet{
+                        height: 17vh;
+                        top: 270px;
+                        left: 52%;
+                    }
                     @include mobile{
-                        width: 65px;
+                        top: 160px;
                         height: 11vh;
-                        top: 130px;
                     }
                 }
             }
