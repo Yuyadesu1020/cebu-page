@@ -136,6 +136,7 @@ header nav ul li a span {
   top: 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
   transform: translateX(-50%);
+  font-family: "Comic Sans MS";
   opacity: 1;
   white-space: nowrap;
 }
@@ -376,6 +377,7 @@ header .openbtn.active span:nth-of-type(3) {
   top: 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
   transform: translateX(-50%);
+  font-family: "Comic Sans MS";
   opacity: 1;
   white-space: nowrap;
 }
@@ -958,7 +960,6 @@ main .sub_hero div .sub2 {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(255, 255, 255, 0);
-  z-index: 100;
 }
 .contact .content p, .contact .content a {
   font-size: 25px;
@@ -1119,6 +1120,7 @@ footer nav ul li a span {
   top: 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
   transform: translateX(-50%);
+  font-family: "Comic Sans MS";
   opacity: 1;
   white-space: nowrap;
 }

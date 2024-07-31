@@ -490,6 +490,10 @@ main{
             justify-content: center;
             gap: 80px;
             margin-top: 80px;
+            @include tablet{
+                gap: 30px;
+                margin: 80px 10px 0 10px;
+            }
             @include mobile{
                 flex-direction: column;
                 align-items: center;
@@ -505,6 +509,10 @@ main{
                 background-size: cover;
                 background-position: center;
                 transition: all ease-in-out 0.7s;
+                @include tablet{
+                    width: 43vw;
+                    height: 20vh;
+                }
                 @include mobile{
                     width: 47vw;
                     height: 17vh;
@@ -544,6 +552,10 @@ main{
                     background-size: cover;
                     background-position: center; 
                     transition: all ease-in-out 0.7s;
+                    @include tablet{
+                        width: 30vw;
+                        height: 27vh;
+                    }
                     @include mobile{
                         width: 42vw;
                         height: 24vh;
@@ -591,6 +603,10 @@ main{
                 background-size: cover;
                 background-position: center;
                 transition: all ease-in-out 0.7s;
+                @include tablet{
+                    width: 30vw;
+                    height: 24vh;
+                }
                 @include mobile{
                     width: 42vw;
                     height: 24vh;
@@ -622,7 +638,7 @@ main{
         z-index: -100;
         position: fixed;
         top: 0;
-        @include mobile{
+        @include tablet{
             object-fit: cover;
         }
     }
@@ -657,7 +673,6 @@ main{
             left: 50%;
             transform: translate(-50%, -50%); 
             background-color: rgba( #ffffff, 0);
-            z-index: 100;
             p{
                 text-align: center;
                 font-size: 25px;

@@ -496,6 +496,12 @@ main section .flex-row, main section .flex-row3, main section .flex-row2 {
   gap: 80px;
   margin-top: 80px;
 }
+@media screen and (max-width: 1130px) {
+  main section .flex-row, main section .flex-row3, main section .flex-row2 {
+    gap: 30px;
+    margin: 80px 10px 0 10px;
+  }
+}
 @media screen and (max-width: 761px) {
   main section .flex-row, main section .flex-row3, main section .flex-row2 {
     flex-direction: column;
@@ -513,6 +519,12 @@ main section .flex-row .first-image, main section .flex-row3 .first-image, main 
   background-size: cover;
   background-position: center;
   transition: all ease-in-out 0.7s;
+}
+@media screen and (max-width: 1130px) {
+  main section .flex-row .first-image, main section .flex-row3 .first-image, main section .flex-row3 .eighth-image, main section .flex-row2 .first-image, main section .flex-row .third-image, main section .flex-row3 .third-image, main section .flex-row2 .third-image, main section .flex-row .second-image, main section .flex-row3 .second-image, main section .flex-row2 .second-image {
+    width: 43vw;
+    height: 20vh;
+  }
 }
 @media screen and (max-width: 761px) {
   main section .flex-row .first-image, main section .flex-row3 .first-image, main section .flex-row3 .eighth-image, main section .flex-row2 .first-image, main section .flex-row .third-image, main section .flex-row3 .third-image, main section .flex-row2 .third-image, main section .flex-row .second-image, main section .flex-row3 .second-image, main section .flex-row2 .second-image {
@@ -549,6 +561,12 @@ main section .flex-row2 div .fourth-image, main section .flex-row2 div .flex-row
   background-size: cover;
   background-position: center;
   transition: all ease-in-out 0.7s;
+}
+@media screen and (max-width: 1130px) {
+  main section .flex-row2 div .fourth-image, main section .flex-row2 div .flex-row3 .seventh-image, main section .flex-row2 div .flex-row3 .ninth-image, main section .flex-row3 .flex-row2 div .seventh-image, main section .flex-row3 .flex-row2 div .ninth-image, main section .flex-row2 div .sixth-image, main section .flex-row2 div .fifth-image {
+    width: 30vw;
+    height: 27vh;
+  }
 }
 @media screen and (max-width: 761px) {
   main section .flex-row2 div .fourth-image, main section .flex-row2 div .flex-row3 .seventh-image, main section .flex-row2 div .flex-row3 .ninth-image, main section .flex-row3 .flex-row2 div .seventh-image, main section .flex-row3 .flex-row2 div .ninth-image, main section .flex-row2 div .sixth-image, main section .flex-row2 div .fifth-image {
@@ -595,6 +613,12 @@ main section .flex-row3 .seventh-image, main section .flex-row3 .ninth-image {
   background-position: center;
   transition: all ease-in-out 0.7s;
 }
+@media screen and (max-width: 1130px) {
+  main section .flex-row3 .seventh-image, main section .flex-row3 .ninth-image {
+    width: 30vw;
+    height: 24vh;
+  }
+}
 @media screen and (max-width: 761px) {
   main section .flex-row3 .seventh-image, main section .flex-row3 .ninth-image {
     width: 42vw;
@@ -623,7 +647,7 @@ main .back-image {
   position: fixed;
   top: 0;
 }
-@media screen and (max-width: 761px) {
+@media screen and (max-width: 1130px) {
   main .back-image {
     -o-object-fit: cover;
        object-fit: cover;
@@ -670,7 +694,6 @@ main .contact .content {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(255, 255, 255, 0);
-  z-index: 100;
 }
 main .contact .content p, main .contact .content a {
   text-align: center;
