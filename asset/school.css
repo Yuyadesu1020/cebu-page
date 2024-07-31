@@ -5,12 +5,12 @@ body {
   height: 100%;
 }
 
-h1, h2, h3 {
+h2, h3 {
   font-family: serif;
 }
 
 p, .contact .content a, a {
-  font-size: 20px;
+  font-size: 17px;
   color: black;
   font-family: serif;
   text-decoration: none;
@@ -45,7 +45,7 @@ header {
   padding-top: 50px;
   width: 100%;
 }
-@media screen and (max-width: 761px) {
+@media screen and (max-width: 1130px) {
   header {
     display: flex;
     flex-direction: row;
@@ -74,6 +74,12 @@ header .header-title .logo img {
   width: 130px;
   height: 130px;
 }
+@media screen and (max-width: 1130px) {
+  header .header-title .logo img {
+    width: 100px;
+    height: 100px;
+  }
+}
 @media screen and (max-width: 761px) {
   header .header-title .logo img {
     width: 60px;
@@ -82,33 +88,33 @@ header .header-title .logo img {
 }
 header .header-title h1 {
   font-family: "Comic Sans MS";
-  font-size: 90px;
+  font-size: 40px;
 }
 @media screen and (max-width: 1130px) {
   header .header-title h1 {
-    font-size: 75px;
+    font-size: 37px;
   }
 }
 @media screen and (max-width: 761px) {
   header .header-title h1 {
-    font-size: 30px;
+    font-size: 25px;
   }
 }
 header .header-title h1::after {
   content: "冒険をここから始める";
   display: flex;
   flex-direction: column;
-  font-size: 30px;
+  font-size: 22px;
+  font-family: serif;
   margin-top: 10px;
 }
 @media screen and (max-width: 1130px) {
   header .header-title h1::after {
-    font-size: 28px;
+    font-size: 18px;
   }
 }
 @media screen and (max-width: 761px) {
   header .header-title h1::after {
-    margin-top: 0;
     font-size: 15px;
   }
 }
@@ -120,7 +126,7 @@ header nav {
 header nav ul {
   list-style-type: none;
 }
-@media screen and (max-width: 761px) {
+@media screen and (max-width: 1130px) {
   header nav ul {
     margin-right: 5px;
     margin: auto;
@@ -148,10 +154,11 @@ header nav ul li a span {
   white-space: nowrap;
 }
 header nav ul li a span:nth-child(2) {
+  font-family: serif;
   opacity: 0;
   transform: translateX(-50%) translateY(100%);
 }
-@media screen and (max-width: 761px) {
+@media screen and (max-width: 1130px) {
   header nav ul li a span {
     left: auto;
   }
@@ -173,7 +180,7 @@ header nav li a {
   font-family: serif;
   font-family: "Comic Sans MS";
 }
-@media screen and (max-width: 761px) {
+@media screen and (max-width: 1130px) {
   header nav {
     position: fixed;
     top: 0;
@@ -192,19 +199,19 @@ header nav li a {
     padding: 35px 40px;
   }
 }
-@media screen and (max-width: 761px) and (max-width: 761px) {
+@media screen and (max-width: 1130px) and (max-width: 1130px) {
   header nav ul li {
     margin-top: 30px;
   }
 }
-@media screen and (max-width: 761px) {
+@media screen and (max-width: 1130px) {
   header nav ul li a {
     color: #ffffff;
     font-family: serif;
     font-family: "Comic Sans MS";
   }
 }
-@media screen and (max-width: 761px) and (max-width: 761px) {
+@media screen and (max-width: 1130px) and (max-width: 1130px) {
   header nav ul li a {
     font-size: 25px;
     color: #000000;
@@ -229,7 +236,7 @@ header .openbtn {
   /* ボタン内側 */
   /* activeクラスが付与されると線が回転して×に */
 }
-@media screen and (max-width: 761px) {
+@media screen and (max-width: 1130px) {
   header .openbtn {
     display: inline-block;
     z-index: 1000;
@@ -294,7 +301,7 @@ header .openbtn.active span:nth-of-type(3) {
 .fixed-header.active {
   top: 0;
 }
-@media screen and (max-width: 761px) {
+@media screen and (max-width: 1130px) {
   .fixed-header {
     display: none;
   }
@@ -324,12 +331,41 @@ header .openbtn.active span:nth-of-type(3) {
   }
 }
 .fixed-header .fixed-title h1 {
-  font-size: 35px;
+  font-family: "Comic Sans MS";
+  font-size: 40px;
+}
+@media screen and (max-width: 1130px) {
+  .fixed-header .fixed-title h1 {
+    font-size: 37px;
+  }
+}
+@media screen and (max-width: 761px) {
+  .fixed-header .fixed-title h1 {
+    font-size: 25px;
+  }
+}
+.fixed-header .fixed-title h1::after {
+  content: "冒険をここから始める";
+  display: flex;
+  flex-direction: column;
+  font-size: 22px;
+  font-family: serif;
+  margin-top: 10px;
+}
+@media screen and (max-width: 1130px) {
+  .fixed-header .fixed-title h1::after {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 761px) {
+  .fixed-header .fixed-title h1::after {
+    font-size: 15px;
+  }
 }
 .fixed-header nav ul {
   list-style-type: none;
 }
-@media screen and (max-width: 761px) {
+@media screen and (max-width: 1130px) {
   .fixed-header nav ul {
     margin-right: 5px;
     margin: auto;
@@ -357,10 +393,11 @@ header .openbtn.active span:nth-of-type(3) {
   white-space: nowrap;
 }
 .fixed-header nav ul li a span:nth-child(2) {
+  font-family: serif;
   opacity: 0;
   transform: translateX(-50%) translateY(100%);
 }
-@media screen and (max-width: 761px) {
+@media screen and (max-width: 1130px) {
   .fixed-header nav ul li a span {
     left: auto;
   }
@@ -413,7 +450,7 @@ main h2 {
 }
 main h2::after {
   content: "学校";
-  font-size: 20px;
+  font-size: 17px;
 }
 @media screen and (max-width: 761px) {
   main {
@@ -734,13 +771,13 @@ main section .schedule div img:nth-child(2) {
 @media screen and (max-width: 1130px) {
   .contact .content p, .contact .content a {
     font-size: 22px;
-    line-height: 20px;
   }
 }
 @media screen and (max-width: 761px) {
   .contact .content p, .contact .content a {
     font-size: 13px;
     margin: 20px 0;
+    line-height: 20px;
   }
 }
 .contact .content a {
@@ -804,7 +841,7 @@ footer .footer-title {
   align-items: center;
 }
 footer .footer-title .logo {
-  padding: 20px 20px;
+  padding: 10px 10px;
   background-color: rgba(255, 255, 255, 0);
 }
 footer .footer-title .logo img {
@@ -812,6 +849,18 @@ footer .footer-title .logo img {
   border-radius: 50%;
   width: 100px;
   height: 100px;
+}
+@media screen and (max-width: 1130px) {
+  footer .footer-title .logo img {
+    width: 80px;
+    height: 80px;
+  }
+}
+@media screen and (max-width: 1010px) {
+  footer .footer-title .logo img {
+    width: 60px;
+    height: 60px;
+  }
 }
 @media screen and (max-width: 761px) {
   footer .footer-title .logo img {
@@ -821,6 +870,7 @@ footer .footer-title .logo img {
 }
 footer .footer-title h1 {
   font-size: 30px;
+  font-family: "Comic Sans MS";
   display: flex;
   flex-direction: column;
 }
@@ -832,6 +882,7 @@ footer .footer-title h1 {
 footer .footer-title h1::after {
   content: "冒険をここから始める";
   font-size: 20px;
+  font-family: serif;
 }
 @media screen and (max-width: 761px) {
   footer .footer-title h1::after {
@@ -841,7 +892,7 @@ footer .footer-title h1::after {
 footer nav ul {
   list-style-type: none;
 }
-@media screen and (max-width: 761px) {
+@media screen and (max-width: 1130px) {
   footer nav ul {
     margin-right: 5px;
     margin: auto;
@@ -869,10 +920,11 @@ footer nav ul li a span {
   white-space: nowrap;
 }
 footer nav ul li a span:nth-child(2) {
+  font-family: serif;
   opacity: 0;
   transform: translateX(-50%) translateY(100%);
 }
-@media screen and (max-width: 761px) {
+@media screen and (max-width: 1130px) {
   footer nav ul li a span {
     left: auto;
   }
