@@ -6,30 +6,12 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3 {
+h2, h3 {
   font-family: serif;
-}
-h1::after, h2::after, h3::after {
-  content: "冒険をここから始める";
-  display: flex;
-  flex-direction: column;
-  font-size: 30px;
-  margin-top: 10px;
-}
-@media screen and (max-width: 1024px) {
-  h1::after, h2::after, h3::after {
-    font-size: 28px;
-  }
-}
-@media screen and (max-width: 761px) {
-  h1::after, h2::after, h3::after {
-    margin-top: 0;
-    font-size: 15px;
-  }
 }
 
 p, main .contact .content a, a {
-  font-size: 20px;
+  font-size: 17px;
   color: black;
   font-family: serif;
   text-decoration: none;
@@ -52,7 +34,7 @@ header {
   padding-top: 50px;
   width: 100%;
 }
-@media screen and (max-width: 761px) {
+@media screen and (max-width: 1130px) {
   header {
     display: flex;
     flex-direction: row;
@@ -81,6 +63,12 @@ header .header-title .logo img {
   width: 130px;
   height: 130px;
 }
+@media screen and (max-width: 1130px) {
+  header .header-title .logo img {
+    width: 100px;
+    height: 100px;
+  }
+}
 @media screen and (max-width: 761px) {
   header .header-title .logo img {
     width: 60px;
@@ -89,16 +77,35 @@ header .header-title .logo img {
 }
 header .header-title h1 {
   font-family: "Comic Sans MS";
-  font-size: 90px;
+  font-size: 40px;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1130px) {
   header .header-title h1 {
-    font-size: 75px;
+    font-size: 37px;
   }
 }
 @media screen and (max-width: 761px) {
   header .header-title h1 {
-    font-size: 30px;
+    font-size: 25px;
+  }
+}
+header .header-title h1::after {
+  content: "冒険をここから始める";
+  display: flex;
+  flex-direction: column;
+  font-size: 22px;
+  font-family: serif;
+  margin-top: 10px;
+}
+@media screen and (max-width: 1130px) {
+  header .header-title h1::after {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 761px) {
+  header .header-title h1::after {
+    margin-top: 0;
+    font-size: 15px;
   }
 }
 header nav {
@@ -109,7 +116,7 @@ header nav {
 header nav ul {
   list-style-type: none;
 }
-@media screen and (max-width: 761px) {
+@media screen and (max-width: 1130px) {
   header nav ul {
     margin-right: 5px;
     margin: auto;
@@ -137,10 +144,11 @@ header nav ul li a span {
   white-space: nowrap;
 }
 header nav ul li a span:nth-child(2) {
+  font-family: serif;
   opacity: 0;
   transform: translateX(-50%) translateY(100%);
 }
-@media screen and (max-width: 761px) {
+@media screen and (max-width: 1130px) {
   header nav ul li a span {
     left: auto;
   }
@@ -162,7 +170,7 @@ header nav li a {
   font-family: serif;
   font-family: "Comic Sans MS";
 }
-@media screen and (max-width: 761px) {
+@media screen and (max-width: 1130px) {
   header nav {
     position: fixed;
     top: 0;
@@ -181,19 +189,19 @@ header nav li a {
     padding: 35px 40px;
   }
 }
-@media screen and (max-width: 761px) and (max-width: 761px) {
+@media screen and (max-width: 1130px) and (max-width: 1130px) {
   header nav ul li {
     margin-top: 30px;
   }
 }
-@media screen and (max-width: 761px) {
+@media screen and (max-width: 1130px) {
   header nav ul li a {
     color: #ffffff;
     font-family: serif;
     font-family: "Comic Sans MS";
   }
 }
-@media screen and (max-width: 761px) and (max-width: 761px) {
+@media screen and (max-width: 1130px) and (max-width: 1130px) {
   header nav ul li a {
     font-size: 25px;
     color: #000000;
@@ -218,7 +226,7 @@ header .openbtn {
   /* ボタン内側 */
   /* activeクラスが付与されると線が回転して×に */
 }
-@media screen and (max-width: 761px) {
+@media screen and (max-width: 1130px) {
   header .openbtn {
     display: inline-block;
     z-index: 1000;
@@ -273,7 +281,7 @@ header .openbtn.active span:nth-of-type(3) {
   top: 0;
   left: 0;
   width: 100%;
-  height: 15vh;
+  height: 22vh;
   color: #000000;
   padding: 10px 0;
   text-align: center;
@@ -283,7 +291,7 @@ header .openbtn.active span:nth-of-type(3) {
 .fixed-header.active {
   top: 0;
 }
-@media screen and (max-width: 761px) {
+@media screen and (max-width: 1130px) {
   .fixed-header {
     display: none;
   }
@@ -306,37 +314,49 @@ header .openbtn.active span:nth-of-type(3) {
   width: 100px;
   height: 100px;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1130px) {
   .fixed-header .fixed-title .fixed-logo img {
     width: 80px;
     height: 80px;
   }
 }
 .fixed-header .fixed-title h1 {
-  font-size: 35px;
-  text-align: left;
+  font-family: "Comic Sans MS";
+  font-size: 40px;
+}
+@media screen and (max-width: 1130px) {
+  .fixed-header .fixed-title h1 {
+    font-size: 37px;
+  }
+}
+@media screen and (max-width: 761px) {
+  .fixed-header .fixed-title h1 {
+    font-size: 25px;
+  }
 }
 .fixed-header .fixed-title h1::after {
   content: "冒険をここから始める";
   display: flex;
   flex-direction: column;
-  font-size: 20px;
+  font-size: 22px;
+  font-family: serif;
+  margin-top: 10px;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1130px) {
   .fixed-header .fixed-title h1::after {
-    font-size: 15px;
+    font-size: 18px;
   }
 }
 @media screen and (max-width: 761px) {
   .fixed-header .fixed-title h1::after {
     margin-top: 0;
-    font-size: 11px;
+    font-size: 15px;
   }
 }
 .fixed-header nav ul {
   list-style-type: none;
 }
-@media screen and (max-width: 761px) {
+@media screen and (max-width: 1130px) {
   .fixed-header nav ul {
     margin-right: 5px;
     margin: auto;
@@ -364,10 +384,11 @@ header .openbtn.active span:nth-of-type(3) {
   white-space: nowrap;
 }
 .fixed-header nav ul li a span:nth-child(2) {
+  font-family: serif;
   opacity: 0;
   transform: translateX(-50%) translateY(100%);
 }
-@media screen and (max-width: 761px) {
+@media screen and (max-width: 1130px) {
   .fixed-header nav ul li a span {
     left: auto;
   }
@@ -396,14 +417,14 @@ header .openbtn.active span:nth-of-type(3) {
     font-size: 10px;
   }
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1130px) {
   .fixed-header nav ul {
     gap: 20px;
   }
 }
 
 main {
-  margin-top: 210px;
+  margin-top: 250px;
   text-align: center;
 }
 main h2 {
@@ -420,7 +441,7 @@ main h2 {
 }
 main h2::after {
   content: "学校";
-  font-size: 20px;
+  font-size: 17px;
 }
 @media screen and (max-width: 761px) {
   main {
@@ -450,7 +471,15 @@ main section .display p, main section .display .contact .content a, main .contac
 }
 main section .display p span, main section .display .contact .content a span, main .contact .content section .display a span, main section .display2 p span, main section .display2 .contact .content a span, main .contact .content section .display2 a span, main section .display3 p span, main section .display3 .contact .content a span, main .contact .content section .display3 a span, main section .display4 p span, main section .display4 .contact .content a span, main .contact .content section .display4 a span {
   background-color: rgba(255, 255, 255, 0.6);
-  padding: 2px 25px;
+  padding: 2px 0;
+}
+main section .display p span .mini_tr, main section .display .contact .content a span .mini_tr, main .contact .content section .display a span .mini_tr, main section .display2 p span .mini_tr, main section .display2 .contact .content a span .mini_tr, main .contact .content section .display2 a span .mini_tr, main section .display3 p span .mini_tr, main section .display3 .contact .content a span .mini_tr, main .contact .content section .display3 a span .mini_tr, main section .display4 p span .mini_tr, main section .display4 .contact .content a span .mini_tr, main .contact .content section .display4 a span .mini_tr {
+  display: none;
+}
+@media screen and (max-width: 1010px) {
+  main section .display p span .mini_tr, main section .display .contact .content a span .mini_tr, main .contact .content section .display a span .mini_tr, main section .display2 p span .mini_tr, main section .display2 .contact .content a span .mini_tr, main .contact .content section .display2 a span .mini_tr, main section .display3 p span .mini_tr, main section .display3 .contact .content a span .mini_tr, main .contact .content section .display3 a span .mini_tr, main section .display4 p span .mini_tr, main section .display4 .contact .content a span .mini_tr, main .contact .content section .display4 a span .mini_tr {
+    display: block;
+  }
 }
 main section .display p span .mb_br, main section .display .contact .content a span .mb_br, main .contact .content section .display a span .mb_br, main section .display2 p span .mb_br, main section .display2 .contact .content a span .mb_br, main .contact .content section .display2 a span .mb_br, main section .display3 p span .mb_br, main section .display3 .contact .content a span .mb_br, main .contact .content section .display3 a span .mb_br, main section .display4 p span .mb_br, main section .display4 .contact .content a span .mb_br, main .contact .content section .display4 a span .mb_br {
   display: none;
@@ -606,7 +635,7 @@ main .contact {
   height: 50vh;
   position: relative;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1130px) {
   main .contact {
     height: 30vh;
   }
@@ -625,7 +654,7 @@ main .contact img {
   -o-object-position: 50% 40%;
      object-position: 50% 40%;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1130px) {
   main .contact img {
     height: 30vh;
   }
@@ -650,16 +679,16 @@ main .contact .content p, main .contact .content a {
   margin: 40px 0;
   max-width: 100%;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1130px) {
   main .contact .content p, main .contact .content a {
     font-size: 22px;
-    line-height: 20px;
   }
 }
 @media screen and (max-width: 761px) {
   main .contact .content p, main .contact .content a {
     font-size: 13px;
     margin: 20px 0;
+    line-height: 20px;
   }
 }
 main .contact .content a {
@@ -761,7 +790,7 @@ footer .footer-title h1::after {
 footer nav ul {
   list-style-type: none;
 }
-@media screen and (max-width: 761px) {
+@media screen and (max-width: 1130px) {
   footer nav ul {
     margin-right: 5px;
     margin: auto;
@@ -789,10 +818,11 @@ footer nav ul li a span {
   white-space: nowrap;
 }
 footer nav ul li a span:nth-child(2) {
+  font-family: serif;
   opacity: 0;
   transform: translateX(-50%) translateY(100%);
 }
-@media screen and (max-width: 761px) {
+@media screen and (max-width: 1130px) {
   footer nav ul li a span {
     left: auto;
   }

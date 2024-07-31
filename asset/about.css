@@ -577,6 +577,7 @@ main section .date, main section .school {
   font-size: 25px;
   color: #fff;
   margin: 40px 0;
+  line-height: 60px;
 }
 @media screen and (max-width: 1024px) {
   .contact .content p, .contact .content a {
