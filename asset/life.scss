@@ -234,7 +234,7 @@ header{
         background-color: rgba( #ffffff, 0);
         z-index: -100;
         .logo{
-            padding: 20px 20px;
+            padding: 20px 10px;
             background-color: rgba( #ffffff, 0);
             img{
                 border: 1px solid black;
@@ -733,7 +733,7 @@ footer{
     .footer-title{
         @include row;
         .logo{
-            padding: 20px 20px;
+            padding: 10px 10px;
             background-color: rgba( #ffffff, 0);
             img{
                 border: 1px solid black;
@@ -748,6 +748,7 @@ footer{
         }
         h1{
             font-size: 30px;
+            font-family: $text-en;
             display: flex;
             flex-direction: column;
             @include mobile{
@@ -756,6 +757,7 @@ footer{
             &::after{
                 content: "冒険をここから始める";
                 font-size: 20px;
+                font-family: $text-ja;
                 @include mobile{
                     font-size: 13px;
                 }  
@@ -767,6 +769,7 @@ footer{
         @include mobile{
             margin-left: 0;
             margin-top: 30px;
+            margin-bottom: 28px;
         }
         ul{
             display: flex;
@@ -775,8 +778,6 @@ footer{
             gap: 130px;
             padding-bottom: 30px;
             @include mobile{
-                position: relative;
-                top: -26px;
                 gap: 61px;
                 padding: 0;
             }
@@ -787,7 +788,7 @@ footer{
                     font-family: $text-en;
                     @include mobile{
                         font-size: 10px;
-                    }  
+                    }   
                 }
             }
         }

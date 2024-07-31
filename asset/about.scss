@@ -719,10 +719,13 @@ footer{
     .copyright{
         text-align: center;
         padding: 20px 0;
-        font-family: $text-en;
+        small{
+            font-family: $text-en;
         @include mobile{
             font-size: 7px;
         }
+        }
+
     }
     
 }

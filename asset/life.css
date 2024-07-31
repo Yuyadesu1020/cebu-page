@@ -54,7 +54,7 @@ header .header-title {
   z-index: -100;
 }
 header .header-title .logo {
-  padding: 20px 20px;
+  padding: 20px 10px;
   background-color: rgba(255, 255, 255, 0);
 }
 header .header-title .logo img {
@@ -753,7 +753,7 @@ footer .footer-title {
   align-items: center;
 }
 footer .footer-title .logo {
-  padding: 20px 20px;
+  padding: 10px 10px;
   background-color: rgba(255, 255, 255, 0);
 }
 footer .footer-title .logo img {
@@ -770,6 +770,7 @@ footer .footer-title .logo img {
 }
 footer .footer-title h1 {
   font-size: 30px;
+  font-family: "Comic Sans MS";
   display: flex;
   flex-direction: column;
 }
@@ -781,6 +782,7 @@ footer .footer-title h1 {
 footer .footer-title h1::after {
   content: "冒険をここから始める";
   font-size: 20px;
+  font-family: serif;
 }
 @media screen and (max-width: 761px) {
   footer .footer-title h1::after {
@@ -839,6 +841,7 @@ footer nav ul li a:hover span:nth-child(2) {
   footer nav {
     margin-left: 0;
     margin-top: 30px;
+    margin-bottom: 28px;
   }
 }
 footer nav ul {
@@ -850,8 +853,6 @@ footer nav ul {
 }
 @media screen and (max-width: 761px) {
   footer nav ul {
-    position: relative;
-    top: -26px;
     gap: 61px;
     padding: 0;
   }

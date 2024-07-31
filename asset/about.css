@@ -765,10 +765,12 @@ footer nav ul li a {
 footer .copyright {
   text-align: center;
   padding: 20px 0;
+}
+footer .copyright small {
   font-family: "Comic Sans MS";
 }
 @media screen and (max-width: 761px) {
-  footer .copyright {
+  footer .copyright small {
     font-size: 7px;
   }
 }/*# sourceMappingURL=about.css.map */
