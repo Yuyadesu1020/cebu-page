@@ -3,7 +3,6 @@ body {
   margin: 0;
   width: 100%;
   height: 100%;
-  overflow-x: hidden;
 }
 
 h2, h3 {
@@ -104,7 +103,6 @@ header .header-title h1::after {
 }
 @media screen and (max-width: 761px) {
   header .header-title h1::after {
-    margin-top: 0;
     font-size: 15px;
   }
 }
@@ -349,7 +347,6 @@ header .openbtn.active span:nth-of-type(3) {
 }
 @media screen and (max-width: 761px) {
   .fixed-header .fixed-title h1::after {
-    margin-top: 0;
     font-size: 15px;
   }
 }
@@ -442,6 +439,7 @@ main h2 {
 main h2::after {
   content: "学校";
   font-size: 17px;
+  margin-top: 10px;
 }
 @media screen and (max-width: 761px) {
   main {
@@ -646,6 +644,7 @@ main .back-image {
   z-index: -100;
   position: fixed;
   top: 0;
+  left: 0;
 }
 @media screen and (max-width: 1130px) {
   main .back-image {
@@ -806,6 +805,7 @@ footer .footer-title h1::after {
   content: "冒険をここから始める";
   font-size: 20px;
   font-family: serif;
+  margin-top: 10px;
 }
 @media screen and (max-width: 761px) {
   footer .footer-title h1::after {
@@ -862,9 +862,7 @@ footer nav ul li a:hover span:nth-child(2) {
 }
 @media screen and (max-width: 761px) {
   footer nav {
-    margin-left: 0;
-    margin-top: 30px;
-    margin-bottom: 28px;
+    margin: 30px 0 25px 0;
   }
 }
 footer nav ul {
@@ -872,7 +870,7 @@ footer nav ul {
   justify-content: center;
   list-style-type: none;
   gap: 130px;
-  padding-bottom: 30px;
+  padding-bottom: 40px;
 }
 @media screen and (max-width: 761px) {
   footer nav ul {
@@ -892,7 +890,7 @@ footer nav ul li a {
 }
 footer .copyright {
   text-align: center;
-  padding: 20px 0;
+  padding: 30px 0;
   font-family: "Comic Sans MS";
 }
 @media screen and (max-width: 761px) {
