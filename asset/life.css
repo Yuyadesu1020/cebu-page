@@ -3,10 +3,29 @@ body {
   margin: 0;
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
 }
 
 h1, h2, h3 {
   font-family: serif;
+}
+h1::after, h2::after, h3::after {
+  content: "冒険をここから始める";
+  display: flex;
+  flex-direction: column;
+  font-size: 30px;
+  margin-top: 10px;
+}
+@media screen and (max-width: 1024px) {
+  h1::after, h2::after, h3::after {
+    font-size: 28px;
+  }
+}
+@media screen and (max-width: 761px) {
+  h1::after, h2::after, h3::after {
+    margin-top: 0;
+    font-size: 15px;
+  }
 }
 
 p, main .contact .content a, a {
@@ -20,7 +39,7 @@ p, main .contact .content a, a {
 }
 @media screen and (max-width: 761px) {
   p, main .contact .content a, a {
-    font-size: 7px;
+    font-size: 11px;
     line-height: 25px;
   }
 }
@@ -80,24 +99,6 @@ header .header-title h1 {
 @media screen and (max-width: 761px) {
   header .header-title h1 {
     font-size: 30px;
-  }
-}
-header .header-title h1::after {
-  content: "冒険をここから始める";
-  display: flex;
-  flex-direction: column;
-  font-size: 30px;
-  margin-top: 10px;
-}
-@media screen and (max-width: 1024px) {
-  header .header-title h1::after {
-    font-size: 28px;
-  }
-}
-@media screen and (max-width: 761px) {
-  header .header-title h1::after {
-    margin-top: 0;
-    font-size: 15px;
   }
 }
 header nav {
@@ -313,6 +314,24 @@ header .openbtn.active span:nth-of-type(3) {
 }
 .fixed-header .fixed-title h1 {
   font-size: 35px;
+  text-align: left;
+}
+.fixed-header .fixed-title h1::after {
+  content: "冒険をここから始める";
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}
+@media screen and (max-width: 1024px) {
+  .fixed-header .fixed-title h1::after {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 761px) {
+  .fixed-header .fixed-title h1::after {
+    margin-top: 0;
+    font-size: 11px;
+  }
 }
 .fixed-header nav ul {
   list-style-type: none;
@@ -433,11 +452,19 @@ main section .display p span, main section .display .contact .content a span, ma
   background-color: rgba(255, 255, 255, 0.6);
   padding: 2px 25px;
 }
+main section .display p span .mb_br, main section .display .contact .content a span .mb_br, main .contact .content section .display a span .mb_br, main section .display2 p span .mb_br, main section .display2 .contact .content a span .mb_br, main .contact .content section .display2 a span .mb_br, main section .display3 p span .mb_br, main section .display3 .contact .content a span .mb_br, main .contact .content section .display3 a span .mb_br, main section .display4 p span .mb_br, main section .display4 .contact .content a span .mb_br, main .contact .content section .display4 a span .mb_br {
+  display: none;
+}
+@media screen and (max-width: 761px) {
+  main section .display p span .mb_br, main section .display .contact .content a span .mb_br, main .contact .content section .display a span .mb_br, main section .display2 p span .mb_br, main section .display2 .contact .content a span .mb_br, main .contact .content section .display2 a span .mb_br, main section .display3 p span .mb_br, main section .display3 .contact .content a span .mb_br, main .contact .content section .display3 a span .mb_br, main section .display4 p span .mb_br, main section .display4 .contact .content a span .mb_br, main .contact .content section .display4 a span .mb_br {
+    display: block;
+  }
+}
 main section .flex-row, main section .flex-row3, main section .flex-row2 {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 50px;
+  gap: 80px;
   margin-top: 80px;
 }
 @media screen and (max-width: 761px) {
@@ -445,9 +472,10 @@ main section .flex-row, main section .flex-row3, main section .flex-row2 {
     flex-direction: column;
     align-items: center;
     margin-top: 40px;
+    gap: 40px;
   }
 }
-main section .flex-row .first-image, main section .flex-row3 .first-image, main section .flex-row2 .first-image, main section .flex-row .third-image, main section .flex-row3 .third-image, main section .flex-row2 .third-image, main section .flex-row .second-image, main section .flex-row3 .second-image, main section .flex-row2 .second-image {
+main section .flex-row .first-image, main section .flex-row3 .first-image, main section .flex-row3 .eighth-image, main section .flex-row2 .first-image, main section .flex-row .third-image, main section .flex-row3 .third-image, main section .flex-row2 .third-image, main section .flex-row .second-image, main section .flex-row3 .second-image, main section .flex-row2 .second-image {
   width: 28vw;
   height: 35vh;
   border-radius: 0 50px 0 50px;
@@ -458,12 +486,12 @@ main section .flex-row .first-image, main section .flex-row3 .first-image, main 
   transition: all ease-in-out 0.7s;
 }
 @media screen and (max-width: 761px) {
-  main section .flex-row .first-image, main section .flex-row3 .first-image, main section .flex-row2 .first-image, main section .flex-row .third-image, main section .flex-row3 .third-image, main section .flex-row2 .third-image, main section .flex-row .second-image, main section .flex-row3 .second-image, main section .flex-row2 .second-image {
-    width: 67vw;
-    height: 20vh;
+  main section .flex-row .first-image, main section .flex-row3 .first-image, main section .flex-row3 .eighth-image, main section .flex-row2 .first-image, main section .flex-row .third-image, main section .flex-row3 .third-image, main section .flex-row2 .third-image, main section .flex-row .second-image, main section .flex-row3 .second-image, main section .flex-row2 .second-image {
+    width: 47vw;
+    height: 17vh;
   }
 }
-main section .flex-row .first-image:hover, main section .flex-row3 .first-image:hover, main section .flex-row2 .first-image:hover, main section .flex-row .third-image:hover, main section .flex-row3 .third-image:hover, main section .flex-row2 .third-image:hover, main section .flex-row .second-image:hover, main section .flex-row3 .second-image:hover, main section .flex-row2 .second-image:hover {
+main section .flex-row .first-image:hover, main section .flex-row3 .first-image:hover, main section .flex-row3 .eighth-image:hover, main section .flex-row2 .first-image:hover, main section .flex-row .third-image:hover, main section .flex-row3 .third-image:hover, main section .flex-row2 .third-image:hover, main section .flex-row .second-image:hover, main section .flex-row3 .second-image:hover, main section .flex-row2 .second-image:hover {
   background-image: url(../img/life_photo17.jpg);
 }
 main section .flex-row .second-image, main section .flex-row3 .second-image, main section .flex-row2 .second-image {
@@ -478,15 +506,12 @@ main section .flex-row .third-image, main section .flex-row3 .third-image, main 
 main section .flex-row .third-image:hover, main section .flex-row3 .third-image:hover, main section .flex-row2 .third-image:hover {
   background-image: url(../img/life_photo5.jpg);
 }
-main section .flex-row2 {
-  gap: 80px;
-}
 main section .flex-row2 div {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-main section .flex-row2 div .fourth-image, main section .flex-row2 div .sixth-image, main section .flex-row2 div .fifth-image {
+main section .flex-row2 div .fourth-image, main section .flex-row2 div .flex-row3 .seventh-image, main section .flex-row2 div .flex-row3 .ninth-image, main section .flex-row3 .flex-row2 div .seventh-image, main section .flex-row3 .flex-row2 div .ninth-image, main section .flex-row2 div .sixth-image, main section .flex-row2 div .fifth-image {
   width: 25vw;
   height: 50vh;
   border-radius: 0 50px 0 50px;
@@ -497,12 +522,12 @@ main section .flex-row2 div .fourth-image, main section .flex-row2 div .sixth-im
   transition: all ease-in-out 0.7s;
 }
 @media screen and (max-width: 761px) {
-  main section .flex-row2 div .fourth-image, main section .flex-row2 div .sixth-image, main section .flex-row2 div .fifth-image {
-    width: 45vw;
-    height: 28vh;
+  main section .flex-row2 div .fourth-image, main section .flex-row2 div .flex-row3 .seventh-image, main section .flex-row2 div .flex-row3 .ninth-image, main section .flex-row3 .flex-row2 div .seventh-image, main section .flex-row3 .flex-row2 div .ninth-image, main section .flex-row2 div .sixth-image, main section .flex-row2 div .fifth-image {
+    width: 42vw;
+    height: 24vh;
   }
 }
-main section .flex-row2 div .fourth-image:hover, main section .flex-row2 div .sixth-image:hover, main section .flex-row2 div .fifth-image:hover {
+main section .flex-row2 div .fourth-image:hover, main section .flex-row2 div .flex-row3 .seventh-image:hover, main section .flex-row2 div .flex-row3 .ninth-image:hover, main section .flex-row3 .flex-row2 div .seventh-image:hover, main section .flex-row3 .flex-row2 div .ninth-image:hover, main section .flex-row2 div .sixth-image:hover, main section .flex-row2 div .fifth-image:hover {
   background-image: url(../img/life_photo10.jpg);
 }
 main section .flex-row2 div p, main section .flex-row2 div .contact .content a, main .contact .content section .flex-row2 div a {
@@ -529,10 +554,9 @@ main section .flex-row2 .sixth-image:hover {
   background-image: url(../img/life_photo15.jpg) !important;
 }
 main section .flex-row3 {
-  gap: 80px;
   align-items: center;
 }
-main section .flex-row3 .seventh-image, main section .flex-row3 .ninth-image, main section .flex-row3 .eighth-image {
+main section .flex-row3 .seventh-image, main section .flex-row3 .ninth-image {
   width: 25vw;
   height: 50vh;
   border-radius: 0 50px 0 50px;
@@ -543,25 +567,16 @@ main section .flex-row3 .seventh-image, main section .flex-row3 .ninth-image, ma
   transition: all ease-in-out 0.7s;
 }
 @media screen and (max-width: 761px) {
-  main section .flex-row3 .seventh-image, main section .flex-row3 .ninth-image, main section .flex-row3 .eighth-image {
-    width: 45vw;
-    height: 28vh;
+  main section .flex-row3 .seventh-image, main section .flex-row3 .ninth-image {
+    width: 42vw;
+    height: 24vh;
   }
 }
-main section .flex-row3 .seventh-image:hover, main section .flex-row3 .ninth-image:hover, main section .flex-row3 .eighth-image:hover {
+main section .flex-row3 .seventh-image:hover, main section .flex-row3 .ninth-image:hover {
   background-image: url(../img/life_photo4.jpg);
 }
 main section .flex-row3 .eighth-image {
-  width: 31vw;
-  height: 38vh;
   background-image: url(../img/life_photo12.jpg);
-  background-size: contain;
-}
-@media screen and (max-width: 761px) {
-  main section .flex-row3 .eighth-image {
-    width: 67vw;
-    height: 20vh;
-  }
 }
 main section .flex-row3 .eighth-image:hover {
   background-image: url(../img/life_photo14.jpg);

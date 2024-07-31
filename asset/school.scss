@@ -581,7 +581,7 @@ main{
             p{
                 font-family: $text-ja;
                 text-align: left;
-                width: 50%;
+                width: 40%;
                 letter-spacing: 0.3em;
                 line-height: 45px;
                 @include mobile{
@@ -608,15 +608,17 @@ main{
                 max-width: 100%;
                 position: relative;
                 img{
-                    width: 88%;
+                    width: 24vw;
                     height: 50vh;
                     @include mobile{
                         width: 70px;
                         height: 13vh;
+                        position: relative;
+                        top: 30px;
                     }
                 }
                 img:nth-child(2){
-                    width: 78%;
+                    width: 19vw;
                     height: 40vh;
                     position: absolute;
                     top: 400px;
@@ -624,7 +626,7 @@ main{
                     @include mobile{
                         width: 65px;
                         height: 11vh;
-                        top: 100px;
+                        top: 140px;
                     }
                 }
             }

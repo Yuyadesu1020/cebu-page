@@ -567,7 +567,7 @@ main section .schedule {
 main section .schedule p, main section .schedule .contact .content a, .contact .content main section .schedule a {
   font-family: serif;
   text-align: left;
-  width: 50%;
+  width: 40%;
   letter-spacing: 0.3em;
   line-height: 45px;
 }
@@ -598,17 +598,19 @@ main section .schedule div {
   position: relative;
 }
 main section .schedule div img {
-  width: 88%;
+  width: 24vw;
   height: 50vh;
 }
 @media screen and (max-width: 761px) {
   main section .schedule div img {
     width: 70px;
     height: 13vh;
+    position: relative;
+    top: 30px;
   }
 }
 main section .schedule div img:nth-child(2) {
-  width: 78%;
+  width: 19vw;
   height: 40vh;
   position: absolute;
   top: 400px;
@@ -618,7 +620,7 @@ main section .schedule div img:nth-child(2) {
   main section .schedule div img:nth-child(2) {
     width: 65px;
     height: 11vh;
-    top: 100px;
+    top: 140px;
   }
 }
 
