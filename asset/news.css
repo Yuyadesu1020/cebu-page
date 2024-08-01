@@ -441,7 +441,7 @@ main h2 {
   }
 }
 main h2::after {
-  content: "学校";
+  content: "ニュース記事";
   font-size: 17px;
   margin-top: 10px;
 }
@@ -466,12 +466,12 @@ main section h2 {
   }
 }
 main section h2::after {
-  content: "学校";
+  content: "ニュース記事";
   font-size: 17px;
   margin-top: 10px;
 }
 main section .notice {
-  max-width: 100vw;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -596,7 +596,6 @@ main .contact .content {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(255, 255, 255, 0);
-  z-index: 100;
 }
 main .contact .content p, main .contact .content a {
   font-size: 25px;

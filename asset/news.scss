@@ -162,7 +162,7 @@ $text-en:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             margin-bottom: 60px;
         }
         &::after{
-            content: "学校";
+            content: "ニュース記事";
             font-size: $text-size;
             margin-top: 10px;
         }
@@ -464,7 +464,7 @@ main{
         text-align: center;
         @include section-header;
         .notice{
-            max-width: 100vw;
+            max-width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -571,7 +571,6 @@ main{
             left: 50%;
             transform: translate(-50%, -50%); 
             background-color: rgba( #ffffff, 0);
-            z-index: 100;
             p{
                 font-size: 25px;
                 color: #fff;
