@@ -735,6 +735,7 @@ footer {
   background-position: bottom right;
   background-size: contain;
   background-color: #ffffff;
+  height: 22svh;
 }
 footer .pagetop {
   border-radius: 80%;
@@ -768,72 +769,78 @@ footer .scroll .go-top {
   padding-left: 24px;
   line-height: 70px;
 }
-footer .footer-title {
+footer .column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+footer .column .footer-title {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-footer .footer-title .logo {
-  padding: 10px 10px;
+footer .column .footer-title .logo {
   background-color: rgba(255, 255, 255, 0);
 }
-footer .footer-title .logo img {
+footer .column .footer-title .logo img {
   border: 1px solid black;
   border-radius: 50%;
   width: 100px;
   height: 100px;
 }
 @media screen and (max-width: 1130px) {
-  footer .footer-title .logo img {
+  footer .column .footer-title .logo img {
     width: 80px;
     height: 80px;
   }
 }
 @media screen and (max-width: 1010px) {
-  footer .footer-title .logo img {
+  footer .column .footer-title .logo img {
     width: 60px;
     height: 60px;
   }
 }
 @media screen and (max-width: 761px) {
-  footer .footer-title .logo img {
+  footer .column .footer-title .logo img {
     width: 40px;
     height: 40px;
   }
 }
-footer .footer-title h1 {
+footer .column .footer-title h1 {
   font-size: 30px;
   font-family: "Comic Sans MS";
   display: flex;
   flex-direction: column;
 }
 @media screen and (max-width: 761px) {
-  footer .footer-title h1 {
+  footer .column .footer-title h1 {
     font-size: 27px;
   }
 }
-footer .footer-title h1::after {
+footer .column .footer-title h1::after {
   content: "冒険をここから始める";
   font-size: 20px;
   font-family: serif;
   margin-top: 10px;
 }
 @media screen and (max-width: 761px) {
-  footer .footer-title h1::after {
+  footer .column .footer-title h1::after {
     font-size: 13px;
   }
 }
-footer nav ul {
+footer .column nav ul {
   list-style-type: none;
 }
 @media screen and (max-width: 1130px) {
-  footer nav ul {
+  footer .column nav ul {
     margin-right: 5px;
     margin: auto;
   }
 }
-footer nav ul li a {
+footer .column nav ul li a {
   text-decoration: none;
   font-size: 30px;
   position: relative;
@@ -841,11 +848,11 @@ footer nav ul li a {
   transition: all 0.3s ease;
 }
 @media screen and (max-width: 761px) {
-  footer nav ul li a {
+  footer .column nav ul li a {
     font-size: 18px;
   }
 }
-footer nav ul li a span {
+footer .column nav ul li a span {
   position: absolute;
   left: 50%;
   top: 0;
@@ -854,59 +861,54 @@ footer nav ul li a span {
   opacity: 1;
   white-space: nowrap;
 }
-footer nav ul li a span:nth-child(2) {
+footer .column nav ul li a span:nth-child(2) {
   font-family: serif;
   opacity: 0;
   transform: translateX(-50%) translateY(100%);
 }
 @media screen and (max-width: 1130px) {
-  footer nav ul li a span {
+  footer .column nav ul li a span {
     left: auto;
   }
 }
-footer nav ul li a:hover span:nth-child(1) {
+footer .column nav ul li a:hover span:nth-child(1) {
   opacity: 0;
   transform: translateX(-50%) translateY(-100%);
 }
-footer nav ul li a:hover span:nth-child(2) {
+footer .column nav ul li a:hover span:nth-child(2) {
   opacity: 1;
   transform: translateX(-50%) translateY(0%);
 }
-@media screen and (max-width: 761px) {
-  footer nav {
-    margin: 30px 0 25px 0;
-  }
-}
-footer nav ul {
+footer .column nav ul {
   display: flex;
   justify-content: center;
   list-style-type: none;
   gap: 130px;
-  padding-bottom: 40px;
 }
 @media screen and (max-width: 761px) {
-  footer nav ul {
+  footer .column nav ul {
+    position: relative;
     gap: 61px;
     padding: 0;
   }
 }
-footer nav ul li a {
+footer .column nav ul li a {
   font-size: 18px;
   font-weight: bold;
   font-family: "Comic Sans MS";
 }
 @media screen and (max-width: 761px) {
-  footer nav ul li a {
+  footer .column nav ul li a {
     font-size: 10px;
   }
 }
-footer .copyright {
+footer .column .copyright {
   text-align: center;
-  padding: 30px 0;
+  padding: 20px 0;
   font-family: "Comic Sans MS";
 }
 @media screen and (max-width: 761px) {
-  footer .copyright {
+  footer .column .copyright {
     font-size: 7px;
   }
 }/*# sourceMappingURL=life.css.map */

@@ -9,14 +9,14 @@ h1, h2, h3 {
   font-family: serif;
 }
 
-p, .contact .content a, a {
+p, main .contact .content a, a {
   font-size: 17px;
   color: black;
   font-family: serif;
   text-decoration: none;
 }
 @media screen and (max-width: 761px) {
-  p, .contact .content a, a {
+  p, main .contact .content a, a {
     font-size: 11px;
     line-height: 25px;
   }
@@ -421,61 +421,49 @@ header .openbtn.active span:nth-of-type(3) {
   }
 }
 
-.main_hero {
+main .main_hero {
   position: absolute;
   width: 100%;
-  height: 100vh;
-  z-index: -10;
+  height: 95svh;
+  z-index: 1;
   top: 0;
   /* Scrollテキストの描写 */
   /* 下からの距離が変化して丸の全体が上から下に動く */
   /* 上から下にかけて丸が透過→不透明→透過する */
 }
 @media screen and (max-width: 761px) {
-  .main_hero {
-    height: 100vh;
+  main .main_hero {
+    position: relative;
   }
 }
-.main_hero::after {
+main .main_hero::after {
   content: "";
   position: absolute;
-  top: -30px;
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  box-shadow: inset 0 -60px 40px rgb(255, 255, 255);
+  z-index: 10;
+  box-shadow: inset 0 -56px 40px rgb(255, 255, 255);
 }
-@media screen and (max-width: 1130px) {
-  .main_hero::after {
-    box-shadow: inset 0 -100px 40px rgb(255, 255, 255);
-  }
-}
-@media screen and (max-width: 761px) {
-  .main_hero::after {
-    box-shadow: inset 0 -210px 40px rgb(255, 255, 255);
-  }
-}
-.main_hero img {
-  height: 95vh;
+main .main_hero img {
+  position: relative;
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: 40%;
      object-position: 40%;
   display: block;
   transition: transform 2s ease, opacity 2s ease;
-  z-index: -10;
+  z-index: 1;
 }
-@media screen and (max-width: 761px) {
-  .main_hero img {
-    height: 80vh;
-  }
-}
-.main_hero .scrolldown2 {
+main .main_hero .scrolldown2 {
   position: relative;
   /* 丸の描写 */
   /* 線の描写 */
 }
-.main_hero .scrolldown2 span {
+main .main_hero .scrolldown2 span {
   z-index: 100;
   /* 描画位置 */
   position: absolute;
@@ -488,7 +476,7 @@ header .openbtn.active span:nth-of-type(3) {
   /* 縦書き設定 */
   writing-mode: vertical-rl;
 }
-.main_hero .scrolldown2:before {
+main .main_hero .scrolldown2:before {
   content: "";
   z-index: 100;
   /* 描画位置 */
@@ -503,7 +491,7 @@ header .openbtn.active span:nth-of-type(3) {
   /* 丸の動き1.6秒かけて透過し、永遠にループ */
   animation: circlemove 1.6s ease-in-out infinite, circlemovehide 1.6s ease-out infinite;
 }
-.main_hero .scrolldown2:after {
+main .main_hero .scrolldown2:after {
   content: "";
   z-index: 100;
   /* 描画位置 */
@@ -516,7 +504,7 @@ header .openbtn.active span:nth-of-type(3) {
   background: #000000;
 }
 @media screen and (max-width: 761px) {
-  .main_hero .scrolldown2:after {
+  main .main_hero .scrolldown2:after {
     left: 48.75%;
   }
 }
@@ -542,29 +530,26 @@ header .openbtn.active span:nth-of-type(3) {
     opacity: 0;
   }
 }
-
-main {
-  margin-top: 300px;
-}
-@media screen and (max-width: 1130px) {
-  main {
-    margin-top: 1400px;
-  }
-}
-@media screen and (max-width: 1130px) and (max-width: 1010px) {
-  main {
-    margin-top: 1200px;
-  }
-}
-@media screen and (max-width: 1130px) and (max-width: 761px) {
-  main {
-    margin-top: 750px;
-  }
-}
 main .phrasebox {
+  margin-top: 300px;
   text-align: center;
   line-height: 60px;
   padding: 50px 0 80px 0;
+}
+@media screen and (max-width: 1130px) {
+  main .phrasebox {
+    margin-top: 1350px;
+  }
+}
+@media screen and (max-width: 1010px) {
+  main .phrasebox {
+    margin-top: 1100px;
+  }
+}
+@media screen and (max-width: 761px) {
+  main .phrasebox {
+    margin-top: 50px;
+  }
 }
 main .phrasebox .btn1 {
   /* アニメーションの起点とするためrelativeを指定 */
@@ -691,33 +676,32 @@ main .sub_hero div .sub2 {
     gap: 20px;
   }
 }
-
-.merit {
+main .merit {
   text-align: center;
   padding-top: 150px;
   max-width: 100%;
 }
-.merit h2 {
+main .merit h2 {
   font-size: 50px;
   margin-bottom: 80px;
 }
 @media screen and (max-width: 761px) {
-  .merit h2 {
+  main .merit h2 {
     font-size: 25px;
     margin-bottom: 70px;
   }
 }
 @media screen and (max-width: 1130px) {
-  .merit {
+  main .merit {
     padding-top: 120px;
   }
 }
 @media screen and (max-width: 761px) {
-  .merit {
+  main .merit {
     padding-top: 90px;
   }
 }
-.merit div {
+main .merit div {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -726,81 +710,80 @@ main .sub_hero div .sub2 {
   padding-left: 0;
 }
 @media screen and (max-width: 761px) {
-  .merit div {
+  main .merit div {
     flex-direction: column;
   }
 }
-.merit div p, .merit div .contact .content a, .contact .content .merit div a {
+main .merit div p, main .merit div .contact .content a, main .contact .content .merit div a {
   height: 300px;
   font-size: 27px;
 }
-.merit div p img, .merit div .contact .content a img, .contact .content .merit div a img {
+main .merit div p img, main .merit div .contact .content a img, main .contact .content .merit div a img {
   margin-top: 120px;
   width: 400px;
   display: block;
 }
 @media screen and (max-width: 1130px) {
-  .merit div p img, .merit div .contact .content a img, .contact .content .merit div a img {
+  main .merit div p img, main .merit div .contact .content a img, main .contact .content .merit div a img {
     width: 200px;
   }
 }
 @media screen and (max-width: 761px) {
-  .merit div p img, .merit div .contact .content a img, .contact .content .merit div a img {
+  main .merit div p img, main .merit div .contact .content a img, main .contact .content .merit div a img {
     margin-top: 40px;
   }
 }
 @media screen and (max-width: 1130px) {
-  .merit div p, .merit div .contact .content a, .contact .content .merit div a {
+  main .merit div p, main .merit div .contact .content a, main .contact .content .merit div a {
     font-size: 18px;
   }
 }
 @media screen and (max-width: 1130px) {
-  .merit div {
+  main .merit div {
     gap: 45px;
   }
 }
 @media screen and (max-width: 761px) {
-  .merit div {
+  main .merit div {
     gap: 20px;
   }
 }
-
-.news {
+main .news {
   padding-top: 230px;
   text-align: center;
 }
-.news h2 {
+main .news h2 {
   font-family: "Comic Sans MS";
 }
-.news h2 {
+main .news h2 {
   font-size: 50px;
   margin-bottom: 80px;
 }
 @media screen and (max-width: 761px) {
-  .news h2 {
+  main .news h2 {
     font-size: 25px;
     margin-bottom: 70px;
   }
 }
 @media screen and (max-width: 1130px) {
-  .news {
+  main .news {
     padding-top: 150px;
   }
 }
 @media screen and (max-width: 761px) {
-  .news {
+  main .news {
     padding-top: 50px;
   }
 }
-.news div {
+main .news div {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.news div .first_row {
+main .news div .first_row {
   border-top: 1px solid #ccc;
 }
-.news div dl {
+main .news div dl {
   width: 90vw;
   text-align: left;
   padding: 40px 0;
@@ -810,7 +793,7 @@ main .sub_hero div .sub2 {
   border-bottom: 1px solid #ccc;
 }
 @media screen and (max-width: 761px) {
-  .news div dl {
+  main .news div dl {
     font-size: 13px;
     gap: 10px;
     align-items: center;
@@ -818,62 +801,61 @@ main .sub_hero div .sub2 {
   }
 }
 @media screen and (max-width: 761px) {
-  .news div dl dt {
+  main .news div dl dt {
     line-height: 30px;
   }
 }
-.news div dl dt br {
+main .news div dl dt br {
   display: none;
 }
 @media screen and (max-width: 761px) {
-  .news div dl dt br {
+  main .news div dl dt br {
     display: block;
   }
 }
-.news div dl dt span {
+main .news div dl dt span {
   padding: 10px 25px;
   margin-left: 20px;
   background-color: #00C09B;
 }
 @media screen and (max-width: 761px) {
-  .news div dl dt span {
+  main .news div dl dt span {
     margin: 0;
     padding: 7px 10px;
   }
 }
-.news div dl a {
+main .news div dl a {
   text-decoration: none;
   transition: color 0.5s ease;
 }
 @media screen and (max-width: 761px) {
-  .news div dl a {
+  main .news div dl a {
     font-size: 13px;
   }
 }
-.news div dl a:hover {
+main .news div dl a:hover {
   color: #9a9a9a;
 }
-
-.photo {
+main .photo {
   padding-top: 100px;
   margin: 0 40px;
 }
-.photo h2 {
+main .photo h2 {
   font-size: 50px;
   margin-bottom: 80px;
 }
 @media screen and (max-width: 761px) {
-  .photo h2 {
+  main .photo h2 {
     font-size: 25px;
     margin-bottom: 70px;
   }
 }
 @media screen and (max-width: 761px) {
-  .photo {
+  main .photo {
     padding-top: 20px;
   }
 }
-.photo .zoom-contents {
+main .photo .zoom-contents {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -881,24 +863,24 @@ main .sub_hero div .sub2 {
   gap: 40px;
 }
 @media screen and (max-width: 761px) {
-  .photo .zoom-contents {
+  main .photo .zoom-contents {
     flex-direction: column;
     gap: 15px;
   }
 }
-.photo .zoom-contents .banner, .photo .zoom-contents .banner3, .photo .zoom-contents .banner2 {
+main .photo .zoom-contents .banner, main .photo .zoom-contents .banner3, main .photo .zoom-contents .banner2 {
   overflow: hidden;
   position: relative;
   width: 500px;
   height: 280px;
 }
 @media screen and (max-width: 761px) {
-  .photo .zoom-contents .banner, .photo .zoom-contents .banner3, .photo .zoom-contents .banner2 {
+  main .photo .zoom-contents .banner, main .photo .zoom-contents .banner3, main .photo .zoom-contents .banner2 {
     width: 350px;
     height: 200px;
   }
 }
-.photo .zoom-contents .banner:after, .photo .zoom-contents .banner3:after, .photo .zoom-contents .banner2:after {
+main .photo .zoom-contents .banner:after, main .photo .zoom-contents .banner3:after, main .photo .zoom-contents .banner2:after {
   content: "";
   display: block;
   width: 100%;
@@ -907,36 +889,35 @@ main .sub_hero div .sub2 {
   background-size: cover;
   transition: transform 0.8s ease;
 }
-.photo .zoom-contents .banner:hover:after, .photo .zoom-contents .banner3:hover:after, .photo .zoom-contents .banner2:hover:after {
+main .photo .zoom-contents .banner:hover:after, main .photo .zoom-contents .banner3:hover:after, main .photo .zoom-contents .banner2:hover:after {
   transform: scale(1.1);
 }
-.photo .zoom-contents .banner2:after {
+main .photo .zoom-contents .banner2:after {
   background: url("../img/photo2.jpg") no-repeat center center;
   background-size: cover;
 }
-.photo .zoom-contents .banner3:after {
+main .photo .zoom-contents .banner3:after {
   background: url("../img/photo3.jpg") no-repeat center center;
   background-size: cover;
 }
-
-.contact {
+main .contact {
   margin-top: 100px;
   text-align: center;
   height: 50vh;
   position: relative;
 }
 @media screen and (max-width: 1130px) {
-  .contact {
+  main .contact {
     height: 30vh;
   }
 }
 @media screen and (max-width: 761px) {
-  .contact {
+  main .contact {
     margin-top: 50px;
     height: 20vh;
   }
 }
-.contact img {
+main .contact img {
   width: 100%;
   height: 50vh;
   -o-object-fit: cover;
@@ -945,52 +926,52 @@ main .sub_hero div .sub2 {
      object-position: 50% 40%;
 }
 @media screen and (max-width: 1130px) {
-  .contact img {
+  main .contact img {
     height: 30vh;
   }
 }
 @media screen and (max-width: 761px) {
-  .contact img {
+  main .contact img {
     height: 20vh;
   }
 }
-.contact .content {
+main .contact .content {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(255, 255, 255, 0);
 }
-.contact .content p, .contact .content a {
+main .contact .content p, main .contact .content a {
   font-size: 25px;
   color: #fff;
   margin: 40px 0;
   line-height: 60px;
 }
 @media screen and (max-width: 1130px) {
-  .contact .content p, .contact .content a {
+  main .contact .content p, main .contact .content a {
     font-size: 22px;
   }
 }
 @media screen and (max-width: 761px) {
-  .contact .content p, .contact .content a {
+  main .contact .content p, main .contact .content a {
     font-size: 13px;
     margin: 20px 0;
     line-height: 20px;
   }
 }
-.contact .content a {
+main .contact .content a {
   padding: 20px 80px;
   border: 1px solid #fff;
   border-radius: 40px;
   transition: background-color 0.4s ease;
 }
 @media screen and (max-width: 761px) {
-  .contact .content a {
+  main .contact .content a {
     padding: 10px 40px;
   }
 }
-.contact .content a:hover {
+main .contact .content a:hover {
   background-color: #00C09B;
 }
 
@@ -1033,76 +1014,79 @@ footer .scroll .go-top {
   padding-left: 24px;
   line-height: 70px;
 }
-footer .footer-title {
+footer .column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+footer .column .footer-title {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-footer .footer-title .logo {
-  padding: 10px 10px;
+footer .column .footer-title .logo {
   background-color: rgba(255, 255, 255, 0);
 }
-footer .footer-title .logo img {
+footer .column .footer-title .logo img {
   border: 1px solid black;
   border-radius: 50%;
   width: 100px;
   height: 100px;
 }
 @media screen and (max-width: 1130px) {
-  footer .footer-title .logo img {
+  footer .column .footer-title .logo img {
     width: 80px;
     height: 80px;
   }
 }
 @media screen and (max-width: 1010px) {
-  footer .footer-title .logo img {
+  footer .column .footer-title .logo img {
     width: 60px;
     height: 60px;
   }
 }
 @media screen and (max-width: 761px) {
-  footer .footer-title .logo img {
+  footer .column .footer-title .logo img {
     width: 40px;
     height: 40px;
   }
 }
-footer .footer-title h1 {
+footer .column .footer-title h1 {
   font-size: 30px;
   font-family: "Comic Sans MS";
   display: flex;
   flex-direction: column;
 }
 @media screen and (max-width: 761px) {
-  footer .footer-title h1 {
+  footer .column .footer-title h1 {
     font-size: 27px;
   }
 }
-footer .footer-title h1::after {
+footer .column .footer-title h1::after {
   content: "冒険をここから始める";
   font-size: 20px;
   font-family: serif;
   margin-top: 10px;
 }
 @media screen and (max-width: 761px) {
-  footer .footer-title h1::after {
+  footer .column .footer-title h1::after {
     font-size: 13px;
   }
 }
-footer nav {
-  margin-top: 30px;
-}
-footer nav ul {
+footer .column nav ul {
   list-style-type: none;
   margin-right: 30px;
 }
 @media screen and (max-width: 1130px) {
-  footer nav ul {
+  footer .column nav ul {
     margin-right: 5px;
     margin: auto;
   }
 }
-footer nav ul li a {
+footer .column nav ul li a {
   text-decoration: none;
   font-size: 30px;
   position: relative;
@@ -1110,11 +1094,11 @@ footer nav ul li a {
   transition: all 0.3s ease;
 }
 @media screen and (max-width: 761px) {
-  footer nav ul li a {
+  footer .column nav ul li a {
     font-size: 18px;
   }
 }
-footer nav ul li a span {
+footer .column nav ul li a span {
   position: absolute;
   left: 50%;
   top: 0;
@@ -1124,58 +1108,54 @@ footer nav ul li a span {
   opacity: 1;
   white-space: nowrap;
 }
-footer nav ul li a span:nth-child(2) {
+footer .column nav ul li a span:nth-child(2) {
   font-family: serif;
   opacity: 0;
   transform: translateX(-50%) translateY(100%);
 }
 @media screen and (max-width: 1130px) {
-  footer nav ul li a span {
+  footer .column nav ul li a span {
     left: auto;
   }
 }
-footer nav ul li a:hover span:nth-child(1) {
+footer .column nav ul li a:hover span:nth-child(1) {
   opacity: 0;
   transform: translateX(-50%) translateY(-100%);
 }
-footer nav ul li a:hover span:nth-child(2) {
+footer .column nav ul li a:hover span:nth-child(2) {
   opacity: 1;
   transform: translateX(-50%) translateY(0%);
 }
-@media screen and (max-width: 761px) {
-  footer nav {
-    margin-left: 0;
-  }
-}
-footer nav ul {
+footer .column nav ul {
   display: flex;
   justify-content: center;
   list-style-type: none;
   gap: 130px;
-  padding-bottom: 30px;
 }
 @media screen and (max-width: 761px) {
-  footer nav ul {
+  footer .column nav ul {
+    position: relative;
     gap: 61px;
+    padding: 0;
   }
 }
-footer nav ul li a {
+footer .column nav ul li a {
   font-size: 18px;
   font-weight: bold;
   font-family: "Comic Sans MS";
 }
 @media screen and (max-width: 761px) {
-  footer nav ul li a {
+  footer .column nav ul li a {
     font-size: 10px;
   }
 }
-footer .copyright {
+footer .column .copyright {
   text-align: center;
   padding: 20px 0;
   font-family: "Comic Sans MS";
 }
 @media screen and (max-width: 761px) {
-  footer .copyright {
+  footer .column .copyright {
     font-size: 7px;
   }
 }/*# sourceMappingURL=index.css.map */
