@@ -73,7 +73,7 @@ header .header-title .logo img {
 }
 header .header-title h1 {
   font-size: 60px;
-  font-family: "Comic Sans MS";
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 @media screen and (max-width: 1130px) {
   header .header-title h1 {
@@ -131,12 +131,12 @@ header nav ul li a {
   }
 }
 header nav ul li a span {
+  font-family: serif;
   position: absolute;
   left: 50%;
   top: 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
   transform: translateX(-50%);
-  font-family: "Comic Sans MS";
   opacity: 1;
   white-space: nowrap;
 }
@@ -164,8 +164,6 @@ header nav li {
 header nav li a {
   font-weight: 90;
   color: #ffffff;
-  font-family: serif;
-  font-family: "Comic Sans MS";
 }
 @media screen and (max-width: 1130px) {
   header nav {
@@ -194,7 +192,6 @@ header nav li a {
 @media screen and (max-width: 1130px) {
   header nav ul li a {
     color: #ffffff;
-    font-family: "Comic Sans MS";
   }
 }
 @media screen and (max-width: 1130px) and (max-width: 1130px) {
@@ -317,7 +314,7 @@ header .openbtn.active span:nth-of-type(3) {
   }
 }
 .fixed-header .fixed-title h1 {
-  font-family: "Comic Sans MS";
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 40px;
 }
 @media screen and (max-width: 1130px) {
@@ -372,12 +369,12 @@ header .openbtn.active span:nth-of-type(3) {
   }
 }
 .fixed-header nav ul li a span {
+  font-family: serif;
   position: absolute;
   left: 50%;
   top: 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
   transform: translateX(-50%);
-  font-family: "Comic Sans MS";
   opacity: 1;
   white-space: nowrap;
 }
@@ -408,7 +405,7 @@ header .openbtn.active span:nth-of-type(3) {
   color: #000000;
   font-size: 20px;
   font-weight: bold;
-  font-family: "Comic Sans MS";
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 @media screen and (max-width: 761px) {
   .fixed-header nav ul li a {
@@ -753,9 +750,6 @@ main .news {
   text-align: center;
 }
 main .news h2 {
-  font-family: "Comic Sans MS";
-}
-main .news h2 {
   font-size: 50px;
   margin-bottom: 80px;
 }
@@ -1056,7 +1050,7 @@ footer .column .footer-title .logo img {
 }
 footer .column .footer-title h1 {
   font-size: 30px;
-  font-family: "Comic Sans MS";
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   display: flex;
   flex-direction: column;
 }
@@ -1099,12 +1093,12 @@ footer .column nav ul li a {
   }
 }
 footer .column nav ul li a span {
+  font-family: serif;
   position: absolute;
   left: 50%;
   top: 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
   transform: translateX(-50%);
-  font-family: "Comic Sans MS";
   opacity: 1;
   white-space: nowrap;
 }
@@ -1142,7 +1136,7 @@ footer .column nav ul {
 footer .column nav ul li a {
   font-size: 18px;
   font-weight: bold;
-  font-family: "Comic Sans MS";
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 @media screen and (max-width: 761px) {
   footer .column nav ul li a {
@@ -1152,7 +1146,7 @@ footer .column nav ul li a {
 footer .column .copyright {
   text-align: center;
   padding: 20px 0;
-  font-family: "Comic Sans MS";
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 @media screen and (max-width: 761px) {
   footer .column .copyright {

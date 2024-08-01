@@ -1,7 +1,8 @@
 body{
     margin: 0;
+    padding: 0;
     width: 100%;
-    height: 100%;
+    // height: 100%;
 }
 
 // 変数セレクタ
@@ -11,7 +12,7 @@ $title-size: 40px;
 $text-size: 17px;
 $text-color: black;
 $text-ja: serif;
-$text-en: "Comic Sans MS";
+$text-en:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 
 // @mixin
@@ -84,6 +85,7 @@ $text-en: "Comic Sans MS";
                     font-size: 18px;
                 }
                 span {
+                    font-family: serif;
                     position: absolute;
                     left: 50%;
                     top: 0;
@@ -173,6 +175,7 @@ $text-en: "Comic Sans MS";
 $tb: 1130px;
 $mini-tb: 1010px;
 $mb: 761px;
+$mini-mb: 400px;
 @mixin tablet{
     @media screen and (max-width: $tb){
         @content;
@@ -187,6 +190,12 @@ $mb: 761px;
 
 @mixin mobile{
     @media screen and (max-width: $mb){
+        @content;
+    }
+}
+
+@mixin mini-mobile{
+    @media screen and (max-width: $mini-mb){
         @content;
     }
 }
@@ -632,6 +641,7 @@ main{
             
     }
     .back-image{
+        display: block;
         width: 100%;
         height: 100%;
         z-index: -100;
@@ -708,12 +718,24 @@ main{
 
 footer{
     padding-top: 50px;
+    background-color: #ffffff;
     background-image: url(../img/footer_back.png);
     background-repeat: no-repeat;
     background-position: bottom right;
     background-size: contain;
-    background-color: #ffffff;
-    height: 22svh;
+    height: 26svh;
+    @include tablet{
+        height: 18vh;
+    }
+    @include mini-tablet{
+        height: 20vh;
+    }
+    @include mobile{
+        height: 16svh;
+    }
+    @include mini-mobile{
+        height: 21svh;
+    }
     .pagetop{
         border-radius: 80%;
         background-color: rgba(#3ae3c2, 0.5);
@@ -751,7 +773,7 @@ footer{
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 40px;
+        gap: 20px;
         .footer-title{
             @include row;
             .logo{
@@ -822,10 +844,11 @@ footer{
         }
         .copyright{
             text-align: center;
-            padding: 20px 0;
+            padding-top: 60px;
             font-family: $text-en;
             @include mobile{
                 font-size: 7px;
+                padding: 20px 0 20px 0;
             }
         }
     }

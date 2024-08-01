@@ -11,7 +11,7 @@ $title-size: 40px;
 $text-size: 17px;
 $text-color: black;
 $text-ja: serif;
-$text-en: "Comic Sans MS";
+$text-en:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 
 // @mixin
@@ -84,6 +84,7 @@ $text-en: "Comic Sans MS";
                     font-size: 18px;
                 }
                 span {
+                    font-family: serif;
                     position: absolute;
                     left: 50%;
                     top: 0;
@@ -118,33 +119,6 @@ $text-en: "Comic Sans MS";
     }
 }
 
-// @mixin header{
-//     h1{
-//         font-family: $text-en;
-//         font-size: $title-size;
-//         @include tablet{
-//             font-size: 37px;
-//         }
-//         @include mobile{
-//             font-size: 25px;
-//         }
-//         &::after{
-//             content: "冒険をここから始める";
-//             display: flex;
-//             flex-direction: column;
-//             font-size: 22px;
-//             font-family: $text-ja;
-//             margin-top: 10px;
-//             @include tablet{
-//                 font-size: 18px;
-//             }
-//             @include mobile{
-//                 font-size: 15px;
-//             }
-//         }
-//     }
-// }
-
 @mixin section-header{
     h2{
         font-size: 50px;
@@ -161,9 +135,7 @@ $text-en: "Comic Sans MS";
             margin-top: 10px;
         }
     }
-}
-                    
-                    
+}           
 
 @mixin row{
     display: flex;
@@ -175,6 +147,7 @@ $text-en: "Comic Sans MS";
 $tb: 1130px;
 $mini-tb: 1010px;
 $mb: 761px;
+$mini-mb: 400px;
 @mixin tablet{
     @media screen and (max-width: $tb){
         @content;
@@ -189,6 +162,11 @@ $mb: 761px;
 
 @mixin mobile{
     @media screen and (max-width: $mb){
+        @content;
+    }
+}
+@mixin mini-mobile{
+    @media screen and (max-width: $mini-mb){
         @content;
     }
 }
@@ -513,7 +491,7 @@ main{
                         font-size: 32px;
                     }
                     @include mobile{
-                        font-size: 18px;
+                        font-size: 16px;
                         flex-wrap: nowrap;
                     }
                 }
@@ -626,71 +604,72 @@ main{
             }
         }
     }
-}
-
-
-
-.contact{
-    margin-top: 100px;
-    text-align: center;
-    height: 50vh;
-    position: relative; 
-    @include tablet{
-        height: 30vh;
-    }   
-    @include mobile{
-        margin-top: 50px;
-        height: 20vh;
-    }
-    img{
-        width: 100%;
+    .contact{
+        margin-top: 100px;
+        text-align: center;
         height: 50vh;
-        object-fit: cover;
-        object-position: 50% 40%;  
+        position: relative; 
         @include tablet{
             height: 30vh;
         }   
         @include mobile{
+            margin-top: 50px;
             height: 20vh;
-        }         
-    }
-    .content{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%); 
-        background-color: rgba( #ffffff, 0);
-        z-index: 100;
-        p{
-            font-size: 25px;
-            color: #fff;
-            margin: 40px 0;
-            line-height: 60px;
+        }
+        img{
+            width: 100%;
+            height: 50vh;
+            object-fit: cover;
+            object-position: 50% 40%;  
             @include tablet{
-                font-size: 22px;
-            }
-            @include mobile{
-                font-size: 13px;
-                margin: 20px 0;
-                line-height: 20px
-            } 
-        }
-        a{
-            @extend p;
-            padding: 20px 80px;
-            border: 1px solid #fff;
-            border-radius: 40px;
-            transition: background-color 0.4s ease;
-            @include mobile{
-                padding: 10px 40px;
+                height: 30vh;
             }   
-            &:hover{
-                background-color: $sub_color;
-            }
+            @include mobile{
+                height: 20vh;
+            }         
         }
-        
+        .content{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); 
+            background-color: rgba( #ffffff, 0);
+            z-index: 100;
+            p{
+                font-size: 25px;
+                color: #fff;
+                margin: 40px 0;
+                line-height: 60px;
+                @include tablet{
+                    font-size: 22px;
+                }
+                @include mobile{
+                    font-size: 13px;
+                    margin: 20px 0;
+                    line-height: 20px
+                } 
+            }
+            a{
+                @extend p;
+                padding: 20px 80px;
+                border: 1px solid #fff;
+                border-radius: 40px;
+                transition: background-color 0.4s ease;
+                @include mobile{
+                    padding: 10px 40px;
+                }   
+                &:hover{
+                    background-color: $sub_color;
+                }
+            }
+            
+        }
     }
 }
+
+
+
+
 
 
 footer{
@@ -699,7 +678,19 @@ footer{
     background-repeat: no-repeat;
     background-position: bottom right;
     background-size: contain;
-    height: 22svh;
+    height: 26svh;
+    @include tablet{
+        height: 18vh;
+    }
+    @include mini-tablet{
+        height: 20vh;
+    }
+    @include mobile{
+        height: 16svh;
+    }
+    @include mini-mobile{
+        height: 27svh;
+    }
     .pagetop{
         border-radius: 80%;
         background-color: rgba(#3ae3c2, 0.5);
@@ -853,6 +844,9 @@ footer{
             font-family: $text-en;
             @include mobile{
                 font-size: 7px;
+            }
+            @include mini-mobile{
+                padding: 0;
             }
         }
     }

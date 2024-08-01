@@ -11,7 +11,7 @@ $title-size: 40px;
 $text-size: 17px;
 $text-color: black;
 $text-ja: serif;
-$text-en: "Comic Sans MS";
+$text-en:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 
 
@@ -85,6 +85,7 @@ $text-en: "Comic Sans MS";
                     font-size: 18px;
                 }
                 span {
+                    font-family: serif;
                     position: absolute;
                     left: 50%;
                     top: 0;
@@ -135,7 +136,6 @@ $text-en: "Comic Sans MS";
             flex-direction: column;
             font-size: 22px;
             font-family: $text-ja;
-            margin-top: 10px;
             @include tablet{
                 font-size: 18px;
             }
@@ -471,12 +471,12 @@ main{
                 }
                 img {
                   width: 60vw; /*スライダー内の画像を60vwにしてレスポンシブ化*/
-                  height: 60svh;
+                  height: 65svh;
                   @include tablet{
                     height: 31svh;
                   }
                   @include mobile{
-                    height: 20svh;
+                    height: 25svh;
                   }
                 }
               
@@ -539,8 +539,7 @@ main{
                     border-radius: 50%;
                     background: #ccc; /*ドットボタンの色*/
                     @include mobile{
-                        width: 3px;
-                        height: 8px;
+                        display: none;
                     }
                   }
               
@@ -578,8 +577,8 @@ main{
                         height: 23vh;
                     }
                     @include mobile{
-                        width: 20vw;
-                        height: 15vh;
+                        width: 54vw;
+                        height: 33vh;
                         box-shadow: 12px 12px 2px #a5fffd;
                     }
                 }

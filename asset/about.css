@@ -9,7 +9,7 @@ h2, h3 {
   font-family: serif;
 }
 
-p, .contact .content a, a {
+p, main .contact .content a, a {
   font-size: 17px;
   color: black;
   font-family: serif;
@@ -66,7 +66,7 @@ header .header-title .logo img {
   }
 }
 header .header-title h1 {
-  font-family: "Comic Sans MS";
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 40px;
 }
 @media screen and (max-width: 1130px) {
@@ -124,6 +124,7 @@ header nav ul li a {
   }
 }
 header nav ul li a span {
+  font-family: serif;
   position: absolute;
   left: 50%;
   top: 0;
@@ -157,7 +158,7 @@ header nav li a {
   font-weight: 90;
   color: #ffffff;
   font-family: serif;
-  font-family: "Comic Sans MS";
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 @media screen and (max-width: 1130px) {
   header nav {
@@ -187,7 +188,7 @@ header nav li a {
   header nav ul li a {
     color: #ffffff;
     font-family: serif;
-    font-family: "Comic Sans MS";
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   }
 }
 @media screen and (max-width: 1130px) and (max-width: 1130px) {
@@ -310,7 +311,7 @@ header .openbtn.active span:nth-of-type(3) {
   }
 }
 .fixed-header .fixed-title h1 {
-  font-family: "Comic Sans MS";
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 40px;
 }
 @media screen and (max-width: 1130px) {
@@ -364,6 +365,7 @@ header .openbtn.active span:nth-of-type(3) {
   }
 }
 .fixed-header nav ul li a span {
+  font-family: serif;
   position: absolute;
   left: 50%;
   top: 0;
@@ -399,7 +401,7 @@ header .openbtn.active span:nth-of-type(3) {
   color: #000000;
   font-size: 20px;
   font-weight: bold;
-  font-family: "Comic Sans MS";
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 @media screen and (max-width: 761px) {
   .fixed-header nav ul li a {
@@ -468,7 +470,7 @@ main section .display .tx-le h3 {
 }
 @media screen and (max-width: 761px) {
   main section .display .tx-le h3 {
-    font-size: 18px;
+    font-size: 16px;
     flex-wrap: nowrap;
   }
 }
@@ -584,25 +586,24 @@ main section .date, main section .school {
     font-size: 10px;
   }
 }
-
-.contact {
+main .contact {
   margin-top: 100px;
   text-align: center;
   height: 50vh;
   position: relative;
 }
 @media screen and (max-width: 1130px) {
-  .contact {
+  main .contact {
     height: 30vh;
   }
 }
 @media screen and (max-width: 761px) {
-  .contact {
+  main .contact {
     margin-top: 50px;
     height: 20vh;
   }
 }
-.contact img {
+main .contact img {
   width: 100%;
   height: 50vh;
   -o-object-fit: cover;
@@ -611,16 +612,16 @@ main section .date, main section .school {
      object-position: 50% 40%;
 }
 @media screen and (max-width: 1130px) {
-  .contact img {
+  main .contact img {
     height: 30vh;
   }
 }
 @media screen and (max-width: 761px) {
-  .contact img {
+  main .contact img {
     height: 20vh;
   }
 }
-.contact .content {
+main .contact .content {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -628,36 +629,36 @@ main section .date, main section .school {
   background-color: rgba(255, 255, 255, 0);
   z-index: 100;
 }
-.contact .content p, .contact .content a {
+main .contact .content p, main .contact .content a {
   font-size: 25px;
   color: #fff;
   margin: 40px 0;
   line-height: 60px;
 }
 @media screen and (max-width: 1130px) {
-  .contact .content p, .contact .content a {
+  main .contact .content p, main .contact .content a {
     font-size: 22px;
   }
 }
 @media screen and (max-width: 761px) {
-  .contact .content p, .contact .content a {
+  main .contact .content p, main .contact .content a {
     font-size: 13px;
     margin: 20px 0;
     line-height: 20px;
   }
 }
-.contact .content a {
+main .contact .content a {
   padding: 20px 80px;
   border: 1px solid #fff;
   border-radius: 40px;
   transition: background-color 0.4s ease;
 }
 @media screen and (max-width: 761px) {
-  .contact .content a {
+  main .contact .content a {
     padding: 10px 40px;
   }
 }
-.contact .content a:hover {
+main .contact .content a:hover {
   background-color: #00C09B;
 }
 
@@ -667,7 +668,27 @@ footer {
   background-repeat: no-repeat;
   background-position: bottom right;
   background-size: contain;
-  height: 22svh;
+  height: 26svh;
+}
+@media screen and (max-width: 1130px) {
+  footer {
+    height: 18vh;
+  }
+}
+@media screen and (max-width: 1010px) {
+  footer {
+    height: 20vh;
+  }
+}
+@media screen and (max-width: 761px) {
+  footer {
+    height: 16svh;
+  }
+}
+@media screen and (max-width: 400px) {
+  footer {
+    height: 27svh;
+  }
 }
 footer .pagetop {
   border-radius: 80%;
@@ -735,7 +756,7 @@ footer .footer-title .logo img {
   }
 }
 footer .footer-title h1 {
-  font-family: "Comic Sans MS";
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 30px;
   display: flex;
   flex-direction: column;
@@ -797,7 +818,7 @@ footer .column .footer-title .logo img {
 }
 footer .column .footer-title h1 {
   font-size: 30px;
-  font-family: "Comic Sans MS";
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   display: flex;
   flex-direction: column;
 }
@@ -838,6 +859,7 @@ footer .column nav ul li a {
   }
 }
 footer .column nav ul li a span {
+  font-family: serif;
   position: absolute;
   left: 50%;
   top: 0;
@@ -880,7 +902,7 @@ footer .column nav ul {
 footer .column nav ul li a {
   font-size: 18px;
   font-weight: bold;
-  font-family: "Comic Sans MS";
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 @media screen and (max-width: 761px) {
   footer .column nav ul li a {
@@ -890,10 +912,15 @@ footer .column nav ul li a {
 footer .column .copyright {
   text-align: center;
   padding: 20px 0;
-  font-family: "Comic Sans MS";
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 @media screen and (max-width: 761px) {
   footer .column .copyright {
     font-size: 7px;
+  }
+}
+@media screen and (max-width: 400px) {
+  footer .column .copyright {
+    padding: 0;
   }
 }/*# sourceMappingURL=about.css.map */

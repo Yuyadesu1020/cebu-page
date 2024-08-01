@@ -1,17 +1,23 @@
+html{
+    overflow-x: hidden;
+}
+
 body{
     margin: 0;
+    padding: 0;
     width: 100%;
-    height: 100%;
+    overflow: hidden;
+    // height: 100%;
 }
 
 // 変数セレクタ
 $main_color: #4ea9ff;
 $sub_color: #00C09B; 
-$title-size: 90px;
-$text-size: 20px;
+$title-size: 40px;
+$text-size: 17px;
 $text-color: black;
 $text-ja: serif;
-$text-en: Comic Sans MS;
+$text-en:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 
 // @mixin
@@ -66,10 +72,13 @@ $text-en: Comic Sans MS;
     }  
 }
 
-
 @mixin navigation {
     ul {
         list-style-type: none;
+        @include tablet{
+            margin-right: 5px;
+            margin: auto;
+        }
         li {
             a {
                 text-decoration: none;
@@ -77,8 +86,11 @@ $text-en: Comic Sans MS;
                 position: relative;
                 overflow: hidden;
                 transition: all 0.3s ease; // ホバー時のトランジション
-
+                @include mobile{
+                    font-size: 18px;
+                }
                 span {
+                    font-family: serif;
                     position: absolute;
                     left: 50%;
                     top: 0;
@@ -88,8 +100,12 @@ $text-en: Comic Sans MS;
                     white-space: nowrap;
 
                     &:nth-child(2) {
+                        font-family: $text-ja;
                         opacity: 0;
                         transform: translateX(-50%) translateY(100%);
+                    }
+                    @include tablet{
+                        left: auto;
                     }
                 }
 
@@ -109,15 +125,46 @@ $text-en: Comic Sans MS;
     }
 }
 
+@mixin header{
+    h1{
+        font-family: $text-en;
+        font-size: $title-size;
+        @include tablet{
+            font-size: 37px;
+        }
+        @include mobile{
+            font-size: 25px;
+        }
+        &::after{
+            content: "冒険をここから始める";
+            display: flex;
+            flex-direction: column;
+            font-size: 22px;
+            font-family: $text-ja;
+            @include tablet{
+                font-size: 18px;
+            }
+            @include mobile{
+                font-size: 15px;
+            }
+        }
+    }
+}
+
 @mixin section-header{
     h2{
         font-size: 50px;
         margin-bottom: 80px;
         display: flex;
         flex-direction: column;
+        @include mobile{
+            font-size: 27px;
+            margin-bottom: 60px;
+        }
         &::after{
-            content: "ニュース記事";
+            content: "学校";
             font-size: $text-size;
+            margin-top: 10px;
         }
     }
 }
@@ -129,7 +176,35 @@ $text-en: Comic Sans MS;
     align-items: center;
 }
 
-h1, h2, h3{
+$tb: 1130px;
+$mini-tb: 1010px;
+$mb: 761px;
+$mini-mb: 400px;
+@mixin tablet{
+    @media screen and (max-width: $tb){
+        @content;
+    }
+}
+ 
+@mixin mini-tablet{
+    @media screen and (max-width: $mini-tb){
+        @content;
+    }
+}
+
+@mixin mobile{
+    @media screen and (max-width: $mb){
+        @content;
+    }
+}
+
+@mixin mini-mobile{
+    @media screen and (max-width: $mini-mb){
+        @content;
+    }
+}
+
+h2, h3{
     font-family: $text-ja;
 }
 
@@ -139,52 +214,168 @@ p, a{
     font-family: $text-ja;
     text-decoration: none;
     line-height: 60px;
-    text-align: left;
+    // margin: 0 auto;
+    max-width: 100%;
+    @include mobile{
+        font-size: 11px;
+        line-height: 25px;
+    }
 }
 
 header{
-    display: flex;
-    flex-direction: row;
-    align-items: start;
+    overflow-x: hidden; 
+    overflow-y: hidden;
+    display: none;
+    z-index: 10;
+    padding-top: 50px;
+    width: 100%;
+    @include tablet{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-top: 25px;
+        position: fixed;
+        top: 0;
+        gap: 80px;
+    }
     .header-title{
         display: flex;
         justify-content: center;
         align-items: center;
         background-color: rgba( #ffffff, 0);
+        z-index: -100;
         .logo{
-            padding: 20px 20px;
+            padding: 20px 10px;
             background-color: rgba( #ffffff, 0);
             img{
                 border: 1px solid black;
                 border-radius: 50%;
+                width: 130px;
+                height: 130px;
+                @include tablet{
+                    width: 100px;
+                    height: 100px;
+                }
+                @include mobile{
+                    width: 60px;
+                    height: 60px;
+                }
             }
         }
-        h1{
-            font-size: $title-size;
-            &::after{
-                content: "冒険をここから始める";
-                display: flex;
-                flex-direction: column;
-                font-size: 30px;
-            }
-        }
+        @include header;
     }
+
     nav{
-        padding: 0 60px 20px 0;
+        padding: 0 60px 10px 0;
         display: flex;
         flex-direction: column;
         @include navigation;
         li{
             padding: 50px 40px;
             a{
-                font-weight: 900;
+                font-weight: 90;
                 color: #ffffff;
                 font-family: $text-ja;
                 font-family: $text-en;
             }
         }
+        @include tablet{
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            text-align: center;
+            background: linear-gradient(45deg, rgba(#4ea9ff, 0.6), rgba(#a0ffb8, 0.6) 80%);
+            right: -200%;
+            // padding: 80px auto 0 auto;
+            z-index: 1000;
+            transition: all 0.4s ease-in-out; 
+            ul{
+                padding: 0;
+                li{
+                    padding: 35px 40px;
+                    @include tablet{
+                        margin-top: 30px;
+                    }
+                    a{
+                        color: #ffffff;
+                        font-family: $text-ja;
+                        font-family: $text-en;
+                        @include tablet{
+                            font-size: 25px;
+                            color: #000000;
+                        }   
+                    }
+                }
+            }
+        }
+        &.active {
+            right: 0; 
+            padding: 0;
+        }
     }
-    
+
+    .openbtn{
+        /* ボタン内側の基点となるためrelativeを指定。
+        追従するナビゲーションの場合はfixed＋top、rightといった位置をセットで指定 */
+        position: relative;
+        top: 24px;
+        right: 6%;
+        background: rgba( #9ef9ff, 0);
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        display: none;
+        @include tablet{
+            display: inline-block;
+            z-index: 1000;
+        }   
+        /* ボタン内側 */
+        span{
+            display: inline-block;
+            transition: all 0.4s; /* アニメーションの設定 */
+            position: absolute;
+            left: 14px;
+            height: 3px;
+            border-radius: 2px;
+            background: #000000;
+            width: 45%;
+            &:nth-of-type(1){
+                top: 15px;
+            }
+            &:nth-of-type(2){
+                top: 23px;
+            }
+            &:nth-of-type(3){
+                top: 31px;
+            }
+        }
+      
+        /* activeクラスが付与されると線が回転して×に */
+        &.active{
+            span{
+                &:nth-of-type(1){
+                top: 18px;
+                left: 18px;
+                transform: translateY(6px) rotate(-45deg);
+                width: 30%;
+                }
+        
+                &:nth-of-type(2){
+                opacity: 0; /* 真ん中の線は透過 */
+                }
+        
+                &:nth-of-type(3){
+                top: 30px;
+                left: 18px;
+                transform: translateY(-6px) rotate(45deg);
+                width: 30%;
+                }
+            }
+        }
+    }
 }
 
 .fixed-header {
@@ -192,13 +383,16 @@ header{
     background-repeat: no-repeat;
     background-position: top left;
     background-size: contain;
+    background-color: rgba( #ffffff, 0);
+    display: flex;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
     position: fixed;
     top: 0; 
     left: 0;
     width: 100%;
-    height: 15vh;
+    height: 22vh;
     color: #000000;
     padding: 10px 0;
     text-align: center;
@@ -206,6 +400,9 @@ header{
     transition: top 0.8s ease; 
     &.active {
         top: 0; 
+    }
+    @include tablet{
+        display: none;
     }
     .fixed-title{
         @include row;
@@ -219,11 +416,14 @@ header{
                 border-radius: 50%;
                 width: 100px;
                 height: 100px;
+                @include tablet{
+                    width: 80px;
+                    height: 80px;
+                }
             }
         }
-        h1{
-            font-family: $text-en;
-        }
+        @include header;
+        
     }
     nav{
         @include navigation;
@@ -234,20 +434,31 @@ header{
             li{
                 a{
                     color: #000000;
-                    font-size: 18px;
+                    font-size: 20px;
+                    font-weight: bold;
+                    font-family: $text-en;
+                    @include mobile{
+                        font-size: 10px;
+                    }   
                 }
             }
+            @include tablet{
+                gap: 20px;
+            }
         }
-        
+       
     }
+    
 }
 
 main{
-    margin-top: 0px;
+    margin-top: 210px;
     @include section-header;
+    @include mobile{
+        margin-top: 170px;
+    }
     text-align: center;
     section{
-        padding-top: 230px;
         text-align: center;
         @include section-header;
         .notice{
@@ -267,27 +478,57 @@ main{
                 align-items: flex-start;
                 gap: 30px;
                 border-bottom: 1px solid #ccc;
-                img{
+                @include mobile{
+                    flex-direction: column;
+                    align-items: center;
+                }
+                a{
                     width: 280px;
                     height: 300px;
-                    object-fit: cover;
-                    display: inline-block;
-                    transition: opacity 0.3s ease-in-out;
-                    &:hover{
-                        opacity: 0.6;
-                    } 
+                    @include mini-tablet{
+                        width: 200px;
+                        height: 230px;
+                    }
+                    @include mobile{
+                        width: 220px;
+                        height: 291px;
+                    }
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        display: inline-block;
+                        transition: opacity 0.3s ease-in-out;
+                        &:hover{
+                            opacity: 0.6;
+                        } 
+                    }
                 }
                 div{
-                    span{
-                        padding: 10px 25px;
-                        margin-left: 20px;
-                        background-color: $sub_color;
-                        
+                    dt{
+                        @include mobile{
+                            font-size: 14px;
+                        }
+                        span{
+                            padding: 10px 25px;
+                            margin-left: 20px;
+                            background-color: $sub_color;
+                            @include mobile{
+                                padding: 5px 13px;
+                            }
+                            
+                        }
                     }
                     a{
                         font-size: 23px;
                         text-decoration: none;
                         transition: color 0.5s ease;
+                        @include tablet{
+                            font-size: 19px;
+                        }
+                        @include mobile{
+                            font-size: 14px;
+                        }
                         &:hover{
                             color: #9a9a9a
                         }
@@ -299,15 +540,28 @@ main{
     }
 
     .contact{
+        margin-top: 100px;
         text-align: center;
         height: 50vh;
         position: relative; 
-        margin-top: 80px;
+        @include tablet{
+            height: 30vh;
+        }   
+        @include mobile{
+            margin-top: 50px;
+            height: 20vh;
+        }
         img{
             width: 100%;
             height: 50vh;
             object-fit: cover;
-            object-position: 50% 40%;       
+            object-position: 50% 40%;  
+            @include tablet{
+                height: 30vh;
+            }   
+            @include mobile{
+                height: 20vh;
+            }         
         }
         .content{
             position: absolute;
@@ -320,6 +574,15 @@ main{
                 font-size: 25px;
                 color: #fff;
                 margin: 40px 0;
+                line-height: 60px;
+                @include tablet{
+                    font-size: 22px;
+                }
+                @include mobile{
+                    font-size: 13px;
+                    margin: 20px 0;
+                    line-height: 20px
+                } 
             }
             a{
                 @extend p;
@@ -327,7 +590,9 @@ main{
                 border: 1px solid #fff;
                 border-radius: 40px;
                 transition: background-color 0.4s ease;
-                
+                @include mobile{
+                    padding: 10px 40px;
+                }   
                 &:hover{
                     background-color: $sub_color;
                 }
@@ -340,7 +605,6 @@ main{
 footer{
     padding-top: 50px;
     background-image: url(../img/footer_back.png);
-    background-color: #fff;
     background-repeat: no-repeat;
     background-position: bottom right;
     background-size: contain;
@@ -376,50 +640,92 @@ footer{
             line-height: 70px;
         }
     }
-    .footer-title{
-        @include row;
-        .logo{
-            padding: 20px 20px;
-            background-color: rgba( #ffffff, 0);
-            img{
-                border: 1px solid black;
-                border-radius: 50%;
-                width: 100px;
-                height: 100px;
+    .column{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        .footer-title{
+            @include row;
+            .logo{
+                background-color: rgba( #ffffff, 0);
+                img{
+                    border: 1px solid black;
+                    border-radius: 50%;
+                    width: 100px;
+                    height: 100px;
+                    @include tablet{
+                        width: 80px;
+                        height: 80px;
+                    }
+                    @include mini-tablet{
+                        width: 60px;
+                        height: 60px;
+                    }
+                    @include mobile{
+                        width: 40px;
+                        height: 40px;
+                    } 
+                }
             }
-        }
-        h1{
-            font-size: 30px;
-            &::after{
-                content: "冒険をここから始める";
+            h1{
+                font-size: 30px;
+                font-family: $text-en;
                 display: flex;
                 flex-direction: column;
-                font-size: 20px;
-            }
-        }
-    }
-    nav{
-        @include navigation;
-        ul{
-            display: flex;
-            justify-content: center;
-            list-style-type: none;
-            gap: 130px;
-            padding-bottom: 30px;
-            li{
-                a{
-                    font-size: 18px;
-                    font-weight: bold;
-                    font-family: $text-en;
+                @include mobile{
+                    font-size: 27px;
+                }  
+                &::after{
+                    content: "冒険をここから始める";
+                    font-size: 20px;
+                    font-family: $text-ja;
+                    @include mobile{
+                        font-size: 13px;
+                    }  
                 }
             }
         }
+        nav{
+            
+            @include navigation;
+            @include mini-tablet{
+                padding: 0 40px 30px 0;
+            }
+            @include mobile{
+                padding: 0;
+            }
+            ul{
+                display: flex;
+                justify-content: center;
+                list-style-type: none;
+                gap: 130px;
+                @include mobile{
+                    position: relative;
+                    gap: 61px;
+                    padding: 0;
+                }
+                li{
+                    a{
+                        font-size: 18px;
+                        font-weight: bold;
+                        font-family: $text-en;
+                        @include mobile{
+                            font-size: 10px;
+                        }  
+                    }
+                }
+            }
+        }
+        .copyright{
+            text-align: center;
+            padding: 20px 0;
+            font-family: $text-en;
+            @include mobile{
+                font-size: 7px;
+            }
+        }
     }
-    .copyright{
-        text-align: center;
-        padding: 20px 0;
-        font-family: $text-en;
-    }
-    
 }
 

@@ -1,58 +1,127 @@
 @charset "UTF-8";
-body {
-  margin: 0;
-  width: 100%;
-  height: 100%;
+html {
+  overflow-x: hidden;
 }
 
-h1, h2, h3 {
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+h2, h3 {
   font-family: serif;
 }
 
 p, main .contact .content a, a {
-  font-size: 20px;
+  font-size: 17px;
   color: black;
   font-family: serif;
   text-decoration: none;
   line-height: 60px;
-  text-align: left;
+  max-width: 100%;
+}
+@media screen and (max-width: 761px) {
+  p, main .contact .content a, a {
+    font-size: 11px;
+    line-height: 25px;
+  }
 }
 
 header {
-  display: flex;
-  flex-direction: row;
-  align-items: start;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: none;
+  z-index: 10;
+  padding-top: 50px;
+  width: 100%;
+}
+@media screen and (max-width: 1130px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 25px;
+    position: fixed;
+    top: 0;
+    gap: 80px;
+  }
 }
 header .header-title {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: rgba(255, 255, 255, 0);
+  z-index: -100;
 }
 header .header-title .logo {
-  padding: 20px 20px;
+  padding: 20px 10px;
   background-color: rgba(255, 255, 255, 0);
 }
 header .header-title .logo img {
   border: 1px solid black;
   border-radius: 50%;
+  width: 130px;
+  height: 130px;
+}
+@media screen and (max-width: 1130px) {
+  header .header-title .logo img {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media screen and (max-width: 761px) {
+  header .header-title .logo img {
+    width: 60px;
+    height: 60px;
+  }
 }
 header .header-title h1 {
-  font-size: 90px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 40px;
+}
+@media screen and (max-width: 1130px) {
+  header .header-title h1 {
+    font-size: 37px;
+  }
+}
+@media screen and (max-width: 761px) {
+  header .header-title h1 {
+    font-size: 25px;
+  }
 }
 header .header-title h1::after {
   content: "冒険をここから始める";
   display: flex;
   flex-direction: column;
-  font-size: 30px;
+  font-size: 22px;
+  font-family: serif;
+}
+@media screen and (max-width: 1130px) {
+  header .header-title h1::after {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 761px) {
+  header .header-title h1::after {
+    font-size: 15px;
+  }
 }
 header nav {
-  padding: 0 60px 20px 0;
+  padding: 0 60px 10px 0;
   display: flex;
   flex-direction: column;
 }
 header nav ul {
   list-style-type: none;
+}
+@media screen and (max-width: 1130px) {
+  header nav ul {
+    margin-right: 5px;
+    margin: auto;
+  }
 }
 header nav ul li a {
   text-decoration: none;
@@ -61,7 +130,13 @@ header nav ul li a {
   overflow: hidden;
   transition: all 0.3s ease;
 }
+@media screen and (max-width: 761px) {
+  header nav ul li a {
+    font-size: 18px;
+  }
+}
 header nav ul li a span {
+  font-family: serif;
   position: absolute;
   left: 50%;
   top: 0;
@@ -71,8 +146,14 @@ header nav ul li a span {
   white-space: nowrap;
 }
 header nav ul li a span:nth-child(2) {
+  font-family: serif;
   opacity: 0;
   transform: translateX(-50%) translateY(100%);
+}
+@media screen and (max-width: 1130px) {
+  header nav ul li a span {
+    left: auto;
+  }
 }
 header nav ul li a:hover span:nth-child(1) {
   opacity: 0;
@@ -86,10 +167,106 @@ header nav li {
   padding: 50px 40px;
 }
 header nav li a {
-  font-weight: 900;
+  font-weight: 90;
   color: #ffffff;
   font-family: serif;
-  font-family: Comic Sans MS;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+@media screen and (max-width: 1130px) {
+  header nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    background: linear-gradient(45deg, rgba(78, 169, 255, 0.6), rgba(160, 255, 184, 0.6) 80%);
+    right: -200%;
+    z-index: 1000;
+    transition: all 0.4s ease-in-out;
+  }
+  header nav ul {
+    padding: 0;
+  }
+  header nav ul li {
+    padding: 35px 40px;
+  }
+}
+@media screen and (max-width: 1130px) and (max-width: 1130px) {
+  header nav ul li {
+    margin-top: 30px;
+  }
+}
+@media screen and (max-width: 1130px) {
+  header nav ul li a {
+    color: #ffffff;
+    font-family: serif;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  }
+}
+@media screen and (max-width: 1130px) and (max-width: 1130px) {
+  header nav ul li a {
+    font-size: 25px;
+    color: #000000;
+  }
+}
+header nav.active {
+  right: 0;
+  padding: 0;
+}
+header .openbtn {
+  /* ボタン内側の基点となるためrelativeを指定。
+  追従するナビゲーションの場合はfixed＋top、rightといった位置をセットで指定 */
+  position: relative;
+  top: 24px;
+  right: 6%;
+  background: rgba(158, 249, 255, 0);
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  display: none;
+  /* ボタン内側 */
+  /* activeクラスが付与されると線が回転して×に */
+}
+@media screen and (max-width: 1130px) {
+  header .openbtn {
+    display: inline-block;
+    z-index: 1000;
+  }
+}
+header .openbtn span {
+  display: inline-block;
+  transition: all 0.4s; /* アニメーションの設定 */
+  position: absolute;
+  left: 14px;
+  height: 3px;
+  border-radius: 2px;
+  background: #000000;
+  width: 45%;
+}
+header .openbtn span:nth-of-type(1) {
+  top: 15px;
+}
+header .openbtn span:nth-of-type(2) {
+  top: 23px;
+}
+header .openbtn span:nth-of-type(3) {
+  top: 31px;
+}
+header .openbtn.active span:nth-of-type(1) {
+  top: 18px;
+  left: 18px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 30%;
+}
+header .openbtn.active span:nth-of-type(2) {
+  opacity: 0; /* 真ん中の線は透過 */
+}
+header .openbtn.active span:nth-of-type(3) {
+  top: 30px;
+  left: 18px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 30%;
 }
 
 .fixed-header {
@@ -97,13 +274,16 @@ header nav li a {
   background-repeat: no-repeat;
   background-position: top left;
   background-size: contain;
+  background-color: rgba(255, 255, 255, 0);
+  display: flex;
+  flex-direction: row;
   justify-content: space-around;
   align-items: center;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 15vh;
+  height: 22vh;
   color: #000000;
   padding: 10px 0;
   text-align: center;
@@ -112,6 +292,11 @@ header nav li a {
 }
 .fixed-header.active {
   top: 0;
+}
+@media screen and (max-width: 1130px) {
+  .fixed-header {
+    display: none;
+  }
 }
 .fixed-header .fixed-title {
   display: flex;
@@ -131,11 +316,51 @@ header nav li a {
   width: 100px;
   height: 100px;
 }
+@media screen and (max-width: 1130px) {
+  .fixed-header .fixed-title .fixed-logo img {
+    width: 80px;
+    height: 80px;
+  }
+}
 .fixed-header .fixed-title h1 {
-  font-family: Comic Sans MS;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 40px;
+}
+@media screen and (max-width: 1130px) {
+  .fixed-header .fixed-title h1 {
+    font-size: 37px;
+  }
+}
+@media screen and (max-width: 761px) {
+  .fixed-header .fixed-title h1 {
+    font-size: 25px;
+  }
+}
+.fixed-header .fixed-title h1::after {
+  content: "冒険をここから始める";
+  display: flex;
+  flex-direction: column;
+  font-size: 22px;
+  font-family: serif;
+}
+@media screen and (max-width: 1130px) {
+  .fixed-header .fixed-title h1::after {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 761px) {
+  .fixed-header .fixed-title h1::after {
+    font-size: 15px;
+  }
 }
 .fixed-header nav ul {
   list-style-type: none;
+}
+@media screen and (max-width: 1130px) {
+  .fixed-header nav ul {
+    margin-right: 5px;
+    margin: auto;
+  }
 }
 .fixed-header nav ul li a {
   text-decoration: none;
@@ -144,7 +369,13 @@ header nav li a {
   overflow: hidden;
   transition: all 0.3s ease;
 }
+@media screen and (max-width: 761px) {
+  .fixed-header nav ul li a {
+    font-size: 18px;
+  }
+}
 .fixed-header nav ul li a span {
+  font-family: serif;
   position: absolute;
   left: 50%;
   top: 0;
@@ -154,8 +385,14 @@ header nav li a {
   white-space: nowrap;
 }
 .fixed-header nav ul li a span:nth-child(2) {
+  font-family: serif;
   opacity: 0;
   transform: translateX(-50%) translateY(100%);
+}
+@media screen and (max-width: 1130px) {
+  .fixed-header nav ul li a span {
+    left: auto;
+  }
 }
 .fixed-header nav ul li a:hover span:nth-child(1) {
   opacity: 0;
@@ -172,11 +409,23 @@ header nav li a {
 }
 .fixed-header nav ul li a {
   color: #000000;
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+@media screen and (max-width: 761px) {
+  .fixed-header nav ul li a {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 1130px) {
+  .fixed-header nav ul {
+    gap: 20px;
+  }
 }
 
 main {
-  margin-top: 0px;
+  margin-top: 210px;
   text-align: center;
 }
 main h2 {
@@ -185,12 +434,23 @@ main h2 {
   display: flex;
   flex-direction: column;
 }
+@media screen and (max-width: 761px) {
+  main h2 {
+    font-size: 27px;
+    margin-bottom: 60px;
+  }
+}
 main h2::after {
-  content: "ニュース記事";
-  font-size: 20px;
+  content: "学校";
+  font-size: 17px;
+  margin-top: 10px;
+}
+@media screen and (max-width: 761px) {
+  main {
+    margin-top: 170px;
+  }
 }
 main section {
-  padding-top: 230px;
   text-align: center;
 }
 main section h2 {
@@ -199,9 +459,16 @@ main section h2 {
   display: flex;
   flex-direction: column;
 }
+@media screen and (max-width: 761px) {
+  main section h2 {
+    font-size: 27px;
+    margin-bottom: 60px;
+  }
+}
 main section h2::after {
-  content: "ニュース記事";
-  font-size: 20px;
+  content: "学校";
+  font-size: 17px;
+  margin-top: 10px;
 }
 main section .notice {
   max-width: 100vw;
@@ -222,35 +489,88 @@ main section .notice dl {
   gap: 30px;
   border-bottom: 1px solid #ccc;
 }
-main section .notice dl img {
+@media screen and (max-width: 761px) {
+  main section .notice dl {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+main section .notice dl a {
   width: 280px;
   height: 300px;
+}
+@media screen and (max-width: 1010px) {
+  main section .notice dl a {
+    width: 200px;
+    height: 230px;
+  }
+}
+@media screen and (max-width: 761px) {
+  main section .notice dl a {
+    width: 220px;
+    height: 291px;
+  }
+}
+main section .notice dl a img {
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   display: inline-block;
   transition: opacity 0.3s ease-in-out;
 }
-main section .notice dl img:hover {
+main section .notice dl a img:hover {
   opacity: 0.6;
 }
-main section .notice dl div span {
+@media screen and (max-width: 761px) {
+  main section .notice dl div dt {
+    font-size: 14px;
+  }
+}
+main section .notice dl div dt span {
   padding: 10px 25px;
   margin-left: 20px;
   background-color: #00C09B;
+}
+@media screen and (max-width: 761px) {
+  main section .notice dl div dt span {
+    padding: 5px 13px;
+  }
 }
 main section .notice dl div a {
   font-size: 23px;
   text-decoration: none;
   transition: color 0.5s ease;
 }
+@media screen and (max-width: 1130px) {
+  main section .notice dl div a {
+    font-size: 19px;
+  }
+}
+@media screen and (max-width: 761px) {
+  main section .notice dl div a {
+    font-size: 14px;
+  }
+}
 main section .notice dl div a:hover {
   color: #9a9a9a;
 }
 main .contact {
+  margin-top: 100px;
   text-align: center;
   height: 50vh;
   position: relative;
-  margin-top: 80px;
+}
+@media screen and (max-width: 1130px) {
+  main .contact {
+    height: 30vh;
+  }
+}
+@media screen and (max-width: 761px) {
+  main .contact {
+    margin-top: 50px;
+    height: 20vh;
+  }
 }
 main .contact img {
   width: 100%;
@@ -259,6 +579,16 @@ main .contact img {
      object-fit: cover;
   -o-object-position: 50% 40%;
      object-position: 50% 40%;
+}
+@media screen and (max-width: 1130px) {
+  main .contact img {
+    height: 30vh;
+  }
+}
+@media screen and (max-width: 761px) {
+  main .contact img {
+    height: 20vh;
+  }
 }
 main .contact .content {
   position: absolute;
@@ -272,12 +602,30 @@ main .contact .content p, main .contact .content a {
   font-size: 25px;
   color: #fff;
   margin: 40px 0;
+  line-height: 60px;
+}
+@media screen and (max-width: 1130px) {
+  main .contact .content p, main .contact .content a {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 761px) {
+  main .contact .content p, main .contact .content a {
+    font-size: 13px;
+    margin: 20px 0;
+    line-height: 20px;
+  }
 }
 main .contact .content a {
   padding: 20px 80px;
   border: 1px solid #fff;
   border-radius: 40px;
   transition: background-color 0.4s ease;
+}
+@media screen and (max-width: 761px) {
+  main .contact .content a {
+    padding: 10px 40px;
+  }
 }
 main .contact .content a:hover {
   background-color: #00C09B;
@@ -286,7 +634,6 @@ main .contact .content a:hover {
 footer {
   padding-top: 50px;
   background-image: url(../img/footer_back.png);
-  background-color: #fff;
   background-repeat: no-repeat;
   background-position: bottom right;
   background-size: contain;
@@ -323,42 +670,90 @@ footer .scroll .go-top {
   padding-left: 24px;
   line-height: 70px;
 }
-footer .footer-title {
+footer .column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+footer .column .footer-title {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-footer .footer-title .logo {
-  padding: 20px 20px;
+footer .column .footer-title .logo {
   background-color: rgba(255, 255, 255, 0);
 }
-footer .footer-title .logo img {
+footer .column .footer-title .logo img {
   border: 1px solid black;
   border-radius: 50%;
   width: 100px;
   height: 100px;
 }
-footer .footer-title h1 {
-  font-size: 30px;
+@media screen and (max-width: 1130px) {
+  footer .column .footer-title .logo img {
+    width: 80px;
+    height: 80px;
+  }
 }
-footer .footer-title h1::after {
-  content: "冒険をここから始める";
+@media screen and (max-width: 1010px) {
+  footer .column .footer-title .logo img {
+    width: 60px;
+    height: 60px;
+  }
+}
+@media screen and (max-width: 761px) {
+  footer .column .footer-title .logo img {
+    width: 40px;
+    height: 40px;
+  }
+}
+footer .column .footer-title h1 {
+  font-size: 30px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   display: flex;
   flex-direction: column;
-  font-size: 20px;
 }
-footer nav ul {
+@media screen and (max-width: 761px) {
+  footer .column .footer-title h1 {
+    font-size: 27px;
+  }
+}
+footer .column .footer-title h1::after {
+  content: "冒険をここから始める";
+  font-size: 20px;
+  font-family: serif;
+}
+@media screen and (max-width: 761px) {
+  footer .column .footer-title h1::after {
+    font-size: 13px;
+  }
+}
+footer .column nav ul {
   list-style-type: none;
 }
-footer nav ul li a {
+@media screen and (max-width: 1130px) {
+  footer .column nav ul {
+    margin-right: 5px;
+    margin: auto;
+  }
+}
+footer .column nav ul li a {
   text-decoration: none;
   font-size: 30px;
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
 }
-footer nav ul li a span {
+@media screen and (max-width: 761px) {
+  footer .column nav ul li a {
+    font-size: 18px;
+  }
+}
+footer .column nav ul li a span {
+  font-family: serif;
   position: absolute;
   left: 50%;
   top: 0;
@@ -367,32 +762,64 @@ footer nav ul li a span {
   opacity: 1;
   white-space: nowrap;
 }
-footer nav ul li a span:nth-child(2) {
+footer .column nav ul li a span:nth-child(2) {
+  font-family: serif;
   opacity: 0;
   transform: translateX(-50%) translateY(100%);
 }
-footer nav ul li a:hover span:nth-child(1) {
+@media screen and (max-width: 1130px) {
+  footer .column nav ul li a span {
+    left: auto;
+  }
+}
+footer .column nav ul li a:hover span:nth-child(1) {
   opacity: 0;
   transform: translateX(-50%) translateY(-100%);
 }
-footer nav ul li a:hover span:nth-child(2) {
+footer .column nav ul li a:hover span:nth-child(2) {
   opacity: 1;
   transform: translateX(-50%) translateY(0%);
 }
-footer nav ul {
+@media screen and (max-width: 1010px) {
+  footer .column nav {
+    padding: 0 40px 30px 0;
+  }
+}
+@media screen and (max-width: 761px) {
+  footer .column nav {
+    padding: 0;
+  }
+}
+footer .column nav ul {
   display: flex;
   justify-content: center;
   list-style-type: none;
   gap: 130px;
-  padding-bottom: 30px;
 }
-footer nav ul li a {
+@media screen and (max-width: 761px) {
+  footer .column nav ul {
+    position: relative;
+    gap: 61px;
+    padding: 0;
+  }
+}
+footer .column nav ul li a {
   font-size: 18px;
   font-weight: bold;
-  font-family: Comic Sans MS;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
-footer .copyright {
+@media screen and (max-width: 761px) {
+  footer .column nav ul li a {
+    font-size: 10px;
+  }
+}
+footer .column .copyright {
   text-align: center;
   padding: 20px 0;
-  font-family: Comic Sans MS;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+@media screen and (max-width: 761px) {
+  footer .column .copyright {
+    font-size: 7px;
+  }
 }/*# sourceMappingURL=news.css.map */
