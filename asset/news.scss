@@ -176,6 +176,8 @@ $text-en:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     align-items: center;
 }
 
+
+
 $tb: 1130px;
 $mini-tb: 1010px;
 $mb: 761px;
@@ -619,6 +621,17 @@ footer{
         cursor: pointer;
         border: none;
         font-size: 15px;
+    }
+    .translate{
+        @extend .pagetop;
+        font-size: 10px;
+        background-color: rgba( #9ef9ff, 0);
+        top: 85%;
+        right: 1%;
+        width: 90px;
+        display:  flex;
+        flex-direction: column;
+        z-index: 1000;
     }
     .scroll{
         opacity: 0;

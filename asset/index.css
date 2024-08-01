@@ -976,7 +976,7 @@ footer {
   background-position: bottom right;
   background-size: contain;
 }
-footer .pagetop {
+footer .pagetop, footer .translate {
   border-radius: 80%;
   background-color: rgba(58, 227, 194, 0.5);
   width: 70px;
@@ -987,6 +987,16 @@ footer .pagetop {
   cursor: pointer;
   border: none;
   font-size: 15px;
+}
+footer .translate {
+  font-size: 10px;
+  background-color: rgba(158, 249, 255, 0);
+  top: 85%;
+  right: 1%;
+  width: 90px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
 }
 footer .scroll {
   opacity: 0;
