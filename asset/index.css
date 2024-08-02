@@ -644,6 +644,11 @@ main .sub_hero div .sub1 {
     height: 380px;
   }
 }
+@media screen and (max-width: 1010px) {
+  main .sub_hero div .sub1 {
+    width: 238px;
+  }
+}
 @media screen and (max-width: 761px) {
   main .sub_hero div .sub1 {
     width: 130px;
@@ -660,6 +665,11 @@ main .sub_hero div .sub2 {
   main .sub_hero div .sub2 {
     width: 650px;
     height: 380px;
+  }
+}
+@media screen and (max-width: 1010px) {
+  main .sub_hero div .sub2 {
+    width: 512px;
   }
 }
 @media screen and (max-width: 761px) {
@@ -769,16 +779,36 @@ main .news h2 {
     padding-top: 50px;
   }
 }
-main .news div {
+main .news .flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+  gap: 100px;
+}
+@media screen and (max-width: 1130px) {
+  main .news .flex {
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+@media screen and (max-width: 761px) {
+  main .news .flex {
+    gap: 20px;
+  }
+}
+main .news .flex div {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-main .news div .first_row {
+main .news .flex div .first_row {
   border-top: 1px solid #ccc;
 }
-main .news div dl {
-  width: 90vw;
+main .news .flex div dl {
+  width: 100%;
   text-align: left;
   padding: 40px 0;
   display: flex;
@@ -787,7 +817,7 @@ main .news div dl {
   border-bottom: 1px solid #ccc;
 }
 @media screen and (max-width: 761px) {
-  main .news div dl {
+  main .news .flex div dl {
     font-size: 13px;
     gap: 10px;
     align-items: center;
@@ -795,40 +825,60 @@ main .news div dl {
   }
 }
 @media screen and (max-width: 761px) {
-  main .news div dl dt {
+  main .news .flex div dl dt {
     line-height: 30px;
   }
 }
-main .news div dl dt br {
+main .news .flex div dl dt br {
   display: none;
 }
 @media screen and (max-width: 761px) {
-  main .news div dl dt br {
+  main .news .flex div dl dt br {
     display: block;
   }
 }
-main .news div dl dt span {
+main .news .flex div dl dt span {
   padding: 10px 25px;
   margin-left: 20px;
   background-color: #00C09B;
 }
 @media screen and (max-width: 761px) {
-  main .news div dl dt span {
+  main .news .flex div dl dt span {
     margin: 0;
     padding: 7px 10px;
   }
 }
-main .news div dl a {
+main .news .flex div dl a {
   text-decoration: none;
   transition: color 0.5s ease;
 }
 @media screen and (max-width: 761px) {
-  main .news div dl a {
+  main .news .flex div dl a {
     font-size: 13px;
   }
 }
-main .news div dl a:hover {
+main .news .flex div dl a:hover {
   color: #9a9a9a;
+}
+main .news .flex figure {
+  width: 33svw;
+  height: 37svh;
+}
+@media screen and (max-width: 1130px) {
+  main .news .flex figure {
+    width: 54vw;
+    height: 23svh;
+  }
+}
+@media screen and (max-width: 761px) {
+  main .news .flex figure {
+    width: 74vw;
+    height: 23svh;
+  }
+}
+main .news .flex figure iframe {
+  width: 100%;
+  height: 100%;
 }
 main .photo {
   padding-top: 100px;
