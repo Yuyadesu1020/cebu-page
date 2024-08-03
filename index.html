@@ -76,9 +76,6 @@
             </ul>
         </nav>
     </header>
-
-    
-    
     <main>
         <div class="main_hero">
             <img src="img/hero_image.jpg" alt="水族館を見上げる自分" width="100%" class="hero-image"  loading="lazy">
@@ -87,11 +84,11 @@
             </div>
         </div>
         <div class="phrasebox">
-            <h1 class="catchphrase">自分に必要なものを追い求めて</h1>
+            <h1 class="catchphrase lang" data-ja="自分に必要なものを追い求めて" data-en="Pursuing what I need">自分に必要なものを追い求めて</h1>
             <p class="explanation">将来が五里霧中で悩んでいた私は、その状況を打破するためにセブへ向かうことに<br>
                そこでは、日本では体験できない新たな日常が待っていた
             </p>
-            <a href="about.html" class="btn1 bgtop"><span>more me...</span></a>
+            <a href="about.html" class="btn1 bgtop"><span>もっと見る...</span></a>
         </div>
         <div class="sub_hero">
             <div>
@@ -181,27 +178,21 @@
                 <a href="https://forms.gle/mgzdsBHHaKaX2qce9" target="_blank" class="button2">お問い合わせする</a>
             </div>
         </section>
-        
-
     </main>
     <footer>
         <div href="#" class="pagetop scroll" id="top">
             <i class="fa-solid fa-caret-up go-top"></i>
         </div>
-        <div id="label-container" class="translate">
-            <div>
-                ↓現在作成中✍️
-                <br>
-                <br>
+        <form id="language-form">
+            <div id="label-container" class="translate">
+                <label id="hoge1Label" for="hoge1">
+                    <input type="radio" name="language" class="checkBtn" id="hoge1" checked="true">日本語
+                </label>
+                <label id="hoge2Label" for="hoge2">
+                    <input type="radio" name="language" class="checkBtn" id="hoge2">English
+                </label>
             </div>
-            <label id="hoge1Label" for="hoge1">
-                <input type="checkbox" class="checkBtn" id="hoge1" checked="true">日本語
-            </label>
-            
-            <label id="hoge2Label" for="hoge2">
-                <input type="checkbox" class="checkBtn" id="hoge2">English
-            </label>
-        </div>
+        </form>
         <div class="column">
             <div class="footer-title">
                 <div class="logo">

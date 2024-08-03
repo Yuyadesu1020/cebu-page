@@ -88,6 +88,42 @@ window.addEventListener('scroll', function() {
     }
 });
 
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("DOM fully loaded and parsed"); // 確認用
+
+    const langRadios = document.querySelectorAll('input[name="language"]');
+    const langElements = document.querySelectorAll('.lang');
+
+    console.log(langRadios); // 確認用
+    console.log(langElements); // 確認用
+
+    function updateLanguage() {
+        const selectedLang = document.querySelector('input[name="language"]:checked').id;
+        console.log("Selected Language: ", selectedLang); // 確認用
+
+        if (selectedLang === 'hoge1') {
+            langElements.forEach(el => {
+                el.innerHTML = el.dataset.ja;
+            });
+        } else if (selectedLang === 'hoge2') {
+            langElements.forEach(el => {
+                el.innerHTML = el.dataset.en;
+            });
+        }
+    }
+
+    langRadios.forEach(radio => {
+        radio.addEventListener('change', updateLanguage);
+    });
+
+    updateLanguage(); // 初期状態で言語を設定
+});
+
+
+
 //スライドショー/矢印移動
 $('.slider').slick({
     autoplay: true,//自動的に動き出すか。初期値はfalse。
@@ -101,4 +137,3 @@ $('.slider').slick({
     variableWidth: true,//幅の違う画像の高さを揃えて表示
     dots: true,//下部ドットナビゲーションの表示
 });
-
