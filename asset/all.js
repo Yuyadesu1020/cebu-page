@@ -90,27 +90,37 @@ window.addEventListener('scroll', function() {
 
 
 
-
+// 言語翻訳・同時に動画変更
 document.addEventListener('DOMContentLoaded', function() {
-    console.log("DOM fully loaded and parsed"); // 確認用
+    // console.log("DOM fully loaded and parsed"); // 確認用
 
     const langRadios = document.querySelectorAll('input[name="language"]');
     const langElements = document.querySelectorAll('.lang');
+    const youtubeVideo = document.getElementById('youtube-video');
+    const headings = document.querySelectorAll('h1'); 
 
-    console.log(langRadios); // 確認用
-    console.log(langElements); // 確認用
+    // console.log(langRadios); // 確認用
+    // console.log(langElements); // 確認用
 
     function updateLanguage() {
         const selectedLang = document.querySelector('input[name="language"]:checked').id;
-        console.log("Selected Language: ", selectedLang); // 確認用
+        // console.log("Selected Language: ", selectedLang); // 確認用
 
-        if (selectedLang === 'hoge1') {
+        if (selectedLang === 'japanese') {
             langElements.forEach(el => {
                 el.innerHTML = el.dataset.ja;
             });
-        } else if (selectedLang === 'hoge2') {
+            youtubeVideo.src = 'https://www.youtube.com/embed/l2TN06l8akE?si=K3Q9_YpscDPtMA31'; 
+            headings.forEach(heading => {
+                heading.setAttribute('data-content', '冒険をここから始める');
+            });
+        } else if (selectedLang === 'english') {
             langElements.forEach(el => {
                 el.innerHTML = el.dataset.en;
+            });
+            youtubeVideo.src = 'https://www.youtube.com/embed/4jzph6P38l8?si=YdGbrnQ45FSBx1US'; 
+            headings.forEach(heading => {
+                heading.setAttribute('data-content', 'Start your adventure here');
             });
         }
     }
