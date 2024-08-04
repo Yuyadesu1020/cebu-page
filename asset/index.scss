@@ -714,6 +714,7 @@ main{
     }
 
     .news{
+        margin: 0 11px;
         padding-top: 230px;
         text-align: center;
         @include section-header;
@@ -759,7 +760,7 @@ main{
                     }
                     @include mobile{
                         width: 100%;
-                        font-size: 13px;
+                        font-size: 10px;
                         gap: 10px;
                         align-items: center;
                         justify-content: left;

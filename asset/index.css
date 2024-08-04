@@ -765,6 +765,7 @@ main .merit div div img {
   }
 }
 main .news {
+  margin: 0 11px;
   padding-top: 230px;
   text-align: center;
 }
@@ -839,7 +840,7 @@ main .news .flex div dl {
 @media screen and (max-width: 761px) {
   main .news .flex div dl {
     width: 100%;
-    font-size: 13px;
+    font-size: 10px;
     gap: 10px;
     align-items: center;
     justify-content: left;
