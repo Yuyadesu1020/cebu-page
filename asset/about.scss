@@ -1,3 +1,6 @@
+@use 'asset/index' as index;
+
+
 body{
     margin: 0;
     width: 100%;
@@ -181,6 +184,7 @@ p, a{
     font-family: $text-ja;
     text-decoration: none;
 }
+
 
 @mixin header{
     header{
@@ -701,6 +705,9 @@ footer{
         cursor: pointer;
         border: none;
         font-size: 15px;
+    }
+    .translate{
+
     }
     .scroll{
         opacity: 0;

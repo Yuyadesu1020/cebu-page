@@ -83,7 +83,7 @@
                     <h2>About me</h2>
                 </div>
                 <div class="tx-le">
-                    <h3>「なぜセブ生活が自分に必要だったのか」</h3>
+                    <h3 class="lang" data-ja="「なぜセブ生活が自分に必要だったのか」" data-en="The reason I am in Cebu Life">「なぜセブ生活が自分に必要だったのか」</h3>
                     <p class="info">
                         自分自身の自己成長と新たなる自分の才能を<br class="tb_br">開花させるため、情報収集し、 <br>
                         一人の社会人として一人のWebデザイナーに<br class="tb_br">なりたいと思いました。
@@ -211,7 +211,21 @@
         </div>
     </main>
     <footer>
-        <a href="#" class="pagetop scroll" id="top"><i class="fa-solid fa-caret-up go-top"></i></a>
+        <div href="#" class="pagetop scroll" id="top">
+            <i class="fa-solid fa-caret-up go-top"></i>
+        </div>
+        <form id="language-form">
+            <div id="label-container" class="translate">
+                <label id="hoge1Label" for="japanese">
+                    <input type="radio" name="language" class="checkBtn" id="japanese" checked="true" style="display: none;">
+                    <img src="./img/ja_logo .jpg" alt="日本国旗">
+                </label>
+                <label id="hoge2Label" for="english">
+                    <input type="radio" name="language" class="checkBtn" id="english" style="display: none;">
+                    <img src="./img/en_logo .jpg" alt="アメリカ国旗">
+                </label>
+            </div>
+        </form>
         <div class="column">
             <div class="footer-title">
                 <div class="logo">

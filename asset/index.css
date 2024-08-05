@@ -1064,23 +1064,19 @@ footer .translate {
   font-size: 10px;
   background-color: rgba(158, 249, 255, 0);
   top: 85%;
-  right: 5%;
-  width: 90px;
+  right: 3%;
   display: flex;
   gap: 30px;
   z-index: 1000;
 }
-@media screen and (max-width: 761px) {
-  footer .translate {
-    top: 90%;
-    right: 17%;
-  }
-}
 footer .translate img {
   border: 1px solid black;
-  width: 54px;
-  height: 41px;
+  width: 70px;
+  height: 70px;
   cursor: pointer;
+  border-radius: 80%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 footer .scroll {
   opacity: 0;

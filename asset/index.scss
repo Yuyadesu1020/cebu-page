@@ -964,20 +964,17 @@ footer{
         font-size: 10px;
         background-color: rgba( #9ef9ff, 0);
         top: 85%;
-        right: 5%;
-        width: 90px;
+        right:3%;
         display:  flex;
         gap: 30px;
         z-index: 1000;
-        @include mobile{
-            top: 90%;
-            right: 17%;
-        }
         img{
             border: 1px solid black;
-            width: 54px;
-            height: 41px;
+            width: 70px;
+            height: 70px;
             cursor: pointer;
+            border-radius: 80%;
+            object-fit: cover;
         }
     }
     .scroll{

@@ -98,6 +98,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const langElements = document.querySelectorAll('.lang');
     const youtubeVideo = document.getElementById('youtube-video');
     const headings = document.querySelectorAll('h1'); 
+    const hoge1Label = document.getElementById('hoge1Label');
+    const hoge2Label = document.getElementById('hoge2Label');
 
     // console.log(langRadios); // 確認用
     // console.log(langElements); // 確認用
@@ -114,6 +116,9 @@ document.addEventListener('DOMContentLoaded', function() {
             headings.forEach(heading => {
                 heading.setAttribute('data-content', '冒険をここから始める');
             });
+            hoge1Label.style.display = 'none';
+            hoge2Label.style.display = 'block';
+            
         } else if (selectedLang === 'english') {
             langElements.forEach(el => {
                 el.innerHTML = el.dataset.en;
@@ -122,10 +127,16 @@ document.addEventListener('DOMContentLoaded', function() {
             headings.forEach(heading => {
                 heading.setAttribute('data-content', 'Start your adventure here');
             });
+            
+            hoge1Label.style.display = 'block';
+            hoge2Label.style.display = 'none';
         }
     }
 
-    langRadios.forEach(radio => {
+    // langRadios.forEach(radio => {
+    //     radio.addEventListener('change', updateLanguage);
+    // });
+    document.querySelectorAll('input[name="language"]').forEach((radio) => {
         radio.addEventListener('change', updateLanguage);
     });
 
