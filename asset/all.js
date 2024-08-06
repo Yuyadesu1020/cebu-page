@@ -98,11 +98,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const langElements = document.querySelectorAll('.lang');
     const youtubeVideo = document.getElementById('youtube-video');
     const headings = document.querySelectorAll('h1'); 
-    const hoge1Label = document.getElementById('hoge1Label');
-    const hoge2Label = document.getElementById('hoge2Label');
+    // const hoge1Label = document.getElementById('hoge1Label');
+    // const hoge2Label = document.getElementById('hoge2Label');
+    const hoge1Labels = document.querySelectorAll('#hoge1Label');
+    const hoge2Labels = document.querySelectorAll('#hoge2Label');
 
-    // console.log(langRadios); // 確認用
-    // console.log(langElements); // 確認用
+    console.log(hoge2Label); // 確認用
+    console.log(hoge1Label); // 確認用
 
     function updateLanguage() {
         const selectedLang = document.querySelector('input[name="language"]:checked').id;
@@ -116,8 +118,12 @@ document.addEventListener('DOMContentLoaded', function() {
             headings.forEach(heading => {
                 heading.setAttribute('data-content', '冒険をここから始める');
             });
-            hoge1Label.style.display = 'none';
-            hoge2Label.style.display = 'block';
+            hoge1Labels.forEach(label => {
+                label.style.display = 'none';
+            });
+            hoge2Labels.forEach(label => {
+                label.style.display = 'block';
+            });
             
         } else if (selectedLang === 'english') {
             langElements.forEach(el => {
@@ -128,14 +134,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 heading.setAttribute('data-content', 'Start your adventure here');
             });
             
-            hoge1Label.style.display = 'block';
-            hoge2Label.style.display = 'none';
+            hoge1Labels.forEach(label => {
+                label.style.display = 'block';
+            });
+            hoge2Labels.forEach(label => {
+                label.style.display = 'none';
+            });
         }
     }
 
-    // langRadios.forEach(radio => {
-    //     radio.addEventListener('change', updateLanguage);
-    // });
     document.querySelectorAll('input[name="language"]').forEach((radio) => {
         radio.addEventListener('change', updateLanguage);
     });

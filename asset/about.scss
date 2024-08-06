@@ -1,4 +1,4 @@
-@use 'asset/index' as index;
+// @use 'asset/index' as index;
 
 
 body{
@@ -670,18 +670,13 @@ main{
     }
 }
 
-
-
-
-
-
 footer{
     padding-top: 50px;
     background-image: url(../img/footer_back.png);
     background-repeat: no-repeat;
     background-position: bottom right;
     background-size: contain;
-    height: 26svh;
+    height: 29svh; 
     @include tablet{
         height: 18vh;
     }
@@ -707,6 +702,22 @@ footer{
         font-size: 15px;
     }
     .translate{
+        @extend .pagetop;
+        font-size: 10px;
+        background-color: rgba( #9ef9ff, 0);
+        top: 85%;
+        right:3%;
+        display:  flex;
+        gap: 30px;
+        z-index: 1000;
+        img{
+            border: 1px solid black;
+            width: 70px;
+            height: 70px;
+            cursor: pointer;
+            border-radius: 80%;
+            object-fit: cover;
+        }
 
     }
     .scroll{
