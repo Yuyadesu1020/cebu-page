@@ -1008,6 +1008,9 @@ footer{
             .logo{
                 padding: 20px 20px;
                 background-color: rgba( #ffffff, 0);
+                @include mobile{
+                    padding: 10px 10px;
+                }
                 img{
                     border: 1px solid black;
                     border-radius: 50%;
@@ -1021,10 +1024,6 @@ footer{
                         width: 60px;
                         height: 60px;
                     }
-                    @include mobile{
-                        width: 40px;
-                        height: 40px;
-                    } 
                 }
             }
             h1{
@@ -1036,7 +1035,6 @@ footer{
                     font-size: 27px;
                 }  
                 &::after{
-                    // content: "冒険をここから始める";
                     content: attr(data-content);
                     font-size: 20px;
                     font-family: $text-ja;

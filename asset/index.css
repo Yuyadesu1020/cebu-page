@@ -1115,6 +1115,11 @@ footer .column .footer-title .logo {
   padding: 20px 20px;
   background-color: rgba(255, 255, 255, 0);
 }
+@media screen and (max-width: 761px) {
+  footer .column .footer-title .logo {
+    padding: 10px 10px;
+  }
+}
 footer .column .footer-title .logo img {
   border: 1px solid black;
   border-radius: 50%;
@@ -1131,12 +1136,6 @@ footer .column .footer-title .logo img {
   footer .column .footer-title .logo img {
     width: 60px;
     height: 60px;
-  }
-}
-@media screen and (max-width: 761px) {
-  footer .column .footer-title .logo img {
-    width: 40px;
-    height: 40px;
   }
 }
 footer .column .footer-title h1 {

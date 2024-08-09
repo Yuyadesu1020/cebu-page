@@ -47,6 +47,76 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+//一定スクロールすると、表示
+window.addEventListener('scroll', function() {
+    var fixedHeader = document.getElementById('fixed-header');
+    var scrollPosition = window.scrollY || window.pageYOffset;
+    var triggerHeight = 400; // トリガーとなるスクロールの高さ（例として200px）
+
+    if (scrollPosition > triggerHeight) {
+        fixedHeader.classList.add('active');
+    } else {
+        fixedHeader.classList.remove('active');
+    }
+});
+
+// 言語翻訳・同時に動画変更
+document.addEventListener('DOMContentLoaded', function() {
+    // console.log("DOM fully loaded and parsed"); // 確認用
+
+    const langRadios = document.querySelectorAll('input[name="language"]');
+    const langElements = document.querySelectorAll('.lang');
+    const youtubeVideo = document.getElementById('youtube-video');
+    const headings = document.querySelectorAll('h1'); 
+    const hoge1Labels = document.querySelectorAll('#hoge1Label');
+    const hoge2Labels = document.querySelectorAll('#hoge2Label');
+
+    console.log(hoge2Label); // 確認用
+    console.log(hoge1Label); // 確認用
+
+    function updateLanguage() {
+        const selectedLang = document.querySelector('input[name="language"]:checked').id;
+        // console.log("Selected Language: ", selectedLang); // 確認用
+
+        if (selectedLang === 'japanese') {
+            langElements.forEach(el => {
+                el.innerHTML = el.dataset.ja;
+            });
+            headings.forEach(heading => {
+                heading.setAttribute('data-content', '冒険をここから始める');
+            });
+            hoge1Labels.forEach(label => {
+                label.style.display = 'none';
+            });
+            hoge2Labels.forEach(label => {
+                label.style.display = 'block';
+            });
+            
+        } else if (selectedLang === 'english') {
+            langElements.forEach(el => {
+                el.innerHTML = el.dataset.en;
+            });
+            headings.forEach(heading => {
+                heading.setAttribute('data-content', 'Start your adventure here');
+            });
+            
+            hoge1Labels.forEach(label => {
+                label.style.display = 'block';
+            });
+            hoge2Labels.forEach(label => {
+                label.style.display = 'none';
+            });
+        }
+    }
+
+    document.querySelectorAll('input[name="language"]').forEach((radio) => {
+        radio.addEventListener('change', updateLanguage);
+    });
+
+    updateLanguage(); // 初期状態で言語を設定
+});
+
+
 //スライドショー/フェードインアウト
 document.addEventListener("DOMContentLoaded", function() {
     var images = [
@@ -73,83 +143,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // 3秒ごとに画像を切り替える（任意の間隔で実行）
     setInterval(changeImage, 4000);
 });
-
-
-//一定スクロールすると、表示
-window.addEventListener('scroll', function() {
-    var fixedHeader = document.getElementById('fixed-header');
-    var scrollPosition = window.scrollY || window.pageYOffset;
-    var triggerHeight = 400; // トリガーとなるスクロールの高さ（例として200px）
-
-    if (scrollPosition > triggerHeight) {
-        fixedHeader.classList.add('active');
-    } else {
-        fixedHeader.classList.remove('active');
-    }
-});
-
-
-
-// 言語翻訳・同時に動画変更
-document.addEventListener('DOMContentLoaded', function() {
-    // console.log("DOM fully loaded and parsed"); // 確認用
-
-    const langRadios = document.querySelectorAll('input[name="language"]');
-    const langElements = document.querySelectorAll('.lang');
-    const youtubeVideo = document.getElementById('youtube-video');
-    const headings = document.querySelectorAll('h1'); 
-    // const hoge1Label = document.getElementById('hoge1Label');
-    // const hoge2Label = document.getElementById('hoge2Label');
-    const hoge1Labels = document.querySelectorAll('#hoge1Label');
-    const hoge2Labels = document.querySelectorAll('#hoge2Label');
-
-    console.log(hoge2Label); // 確認用
-    console.log(hoge1Label); // 確認用
-
-    function updateLanguage() {
-        const selectedLang = document.querySelector('input[name="language"]:checked').id;
-        // console.log("Selected Language: ", selectedLang); // 確認用
-
-        if (selectedLang === 'japanese') {
-            langElements.forEach(el => {
-                el.innerHTML = el.dataset.ja;
-            });
-            youtubeVideo.src = 'https://www.youtube.com/embed/l2TN06l8akE?si=K3Q9_YpscDPtMA31'; 
-            headings.forEach(heading => {
-                heading.setAttribute('data-content', '冒険をここから始める');
-            });
-            hoge1Labels.forEach(label => {
-                label.style.display = 'none';
-            });
-            hoge2Labels.forEach(label => {
-                label.style.display = 'block';
-            });
-            
-        } else if (selectedLang === 'english') {
-            langElements.forEach(el => {
-                el.innerHTML = el.dataset.en;
-            });
-            youtubeVideo.src = 'https://www.youtube.com/embed/4jzph6P38l8?si=YdGbrnQ45FSBx1US'; 
-            headings.forEach(heading => {
-                heading.setAttribute('data-content', 'Start your adventure here');
-            });
-            
-            hoge1Labels.forEach(label => {
-                label.style.display = 'block';
-            });
-            hoge2Labels.forEach(label => {
-                label.style.display = 'none';
-            });
-        }
-    }
-
-    document.querySelectorAll('input[name="language"]').forEach((radio) => {
-        radio.addEventListener('change', updateLanguage);
-    });
-
-    updateLanguage(); // 初期状態で言語を設定
-});
-
 
 
 //スライドショー/矢印移動

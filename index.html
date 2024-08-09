@@ -247,5 +247,32 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="./asset/all.js"></script>
+
+    <script>
+            // 言語翻訳・同時に動画変更
+    document.addEventListener('DOMContentLoaded', function() {
+        // console.log("DOM fully loaded and parsed"); // 確認用
+
+        const langRadios = document.querySelectorAll('input[name="language"]');
+        const langElements = document.querySelectorAll('.lang');
+        const youtubeVideo = document.getElementById('youtube-video');
+
+        function updateLanguage() {
+            const selectedLang = document.querySelector('input[name="language"]:checked').id;
+
+            if (selectedLang === 'japanese') {
+                youtubeVideo.src = 'https://www.youtube.com/embed/l2TN06l8akE?si=K3Q9_YpscDPtMA31'; 
+            } else if (selectedLang === 'english') {               
+                youtubeVideo.src = 'https://www.youtube.com/embed/4jzph6P38l8?si=YdGbrnQ45FSBx1US'; 
+            }
+        }
+
+        document.querySelectorAll('input[name="language"]').forEach((radio) => {
+            radio.addEventListener('change', updateLanguage);
+        });
+
+        updateLanguage(); // 初期状態で言語を設定
+    });
+    </script>
 </body>
 </html>
