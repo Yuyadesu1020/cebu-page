@@ -552,6 +552,7 @@ main .phrasebox {
 main .phrasebox .btn1 {
   /* アニメーションの起点とするためrelativeを指定 */
   position: relative;
+  z-index: 2;
   overflow: hidden;
   /* ボタンの形状 */
   text-decoration: none;
@@ -581,7 +582,7 @@ main .phrasebox .btn1 span {
   }
 }
 main .phrasebox .btn1:hover span {
-  color: #fff;
+  color: #fff !important;
 }
 main .phrasebox .btn1:hover.bgtop:before {
   height: 100%;

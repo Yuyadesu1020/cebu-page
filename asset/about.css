@@ -482,7 +482,7 @@ main section .display .info {
   margin: 0 auto;
   padding-top: 60px;
   font-size: 15px;
-  letter-spacing: 0.4em;
+  letter-spacing: 0.2em;
   line-height: 31px;
 }
 main section .display .info .tb_br {
@@ -503,7 +503,7 @@ main section .display .info .tb_br {
   }
 }
 main section .margin, main section .mx-width100 {
-  max-width: 80%;
+  max-width: 95%;
   margin: 80px auto 0 auto;
 }
 @media screen and (max-width: 761px) {
@@ -529,6 +529,7 @@ main section .margin .display2 table tbody tr th, main section .mx-width100 .dis
 }
 @media screen and (max-width: 761px) {
   main section .margin .display2 table tbody tr th, main section .mx-width100 .display2 table tbody tr th {
+    width: 31%;
     font-size: 10px;
   }
 }
@@ -673,17 +674,17 @@ footer {
 }
 @media screen and (max-width: 1130px) {
   footer {
-    height: 18vh;
+    height: 20vh;
   }
 }
 @media screen and (max-width: 1010px) {
   footer {
-    height: 20vh;
+    height: 24vh;
   }
 }
 @media screen and (max-width: 761px) {
   footer {
-    height: 16svh;
+    height: 23svh;
   }
 }
 @media screen and (max-width: 400px) {

@@ -21,6 +21,7 @@ $text-en:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     .btn1 {
         /* アニメーションの起点とするためrelativeを指定 */
         position: relative;
+        z-index: 2;
         overflow: hidden;
         /* ボタンの形状 */
         text-decoration: none;
@@ -46,7 +47,7 @@ $text-en:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     
         &:hover {
             span {
-                color: #fff;
+                color: #fff !important;
             }
     
             &.bgtop:before {
@@ -485,9 +486,6 @@ main{
             height: 100%;
             z-index: 10;
             box-shadow: inset 0 -56px 40px rgba(255, 255, 255, 1); 
-            // @include mobile{
-            //     box-shadow: inset 0 50px 40px rgba(255, 255, 255, 1); 
-            // }
         }
         img{
             position: relative;

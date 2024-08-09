@@ -509,7 +509,7 @@ main{
                 margin: 0 auto;
                 padding-top: 60px;
                 font-size: 15px;
-                letter-spacing: 0.4em;
+                letter-spacing: 0.2em;
                 line-height: 31px;
                 .tb_br{
                     display: none;
@@ -530,7 +530,7 @@ main{
         }
 
         .margin, .mx-width100{
-            max-width: 80%;
+            max-width: 95%;
             margin: 80px auto 0 auto;
             @include mobile{
                 margin: 40px auto 0 auto;
@@ -552,6 +552,7 @@ main{
                                 width: 30%;
                                 padding: 20px 0;
                                 @include mobile{
+                                    width: 31%;
                                     font-size: 10px;
                                 }
                             }
@@ -680,13 +681,13 @@ footer{
     background-size: contain;
     height: 29svh; 
     @include tablet{
-        height: 18vh;
-    }
-    @include mini-tablet{
         height: 20vh;
     }
+    @include mini-tablet{
+        height: 24vh;
+    }
     @include mobile{
-        height: 16svh;
+        height: 23svh;
     }
     @include mini-mobile{
         height: 27svh;
