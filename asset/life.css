@@ -470,7 +470,6 @@ main section .display p, main section .display .contact .content a, main .contac
   text-align: center;
 }
 main section .display p span, main section .display .contact .content a span, main .contact .content section .display a span, main section .display2 p span, main section .display2 .contact .content a span, main .contact .content section .display2 a span, main section .display3 p span, main section .display3 .contact .content a span, main .contact .content section .display3 a span, main section .display4 p span, main section .display4 .contact .content a span, main .contact .content section .display4 a span {
-  background-color: rgba(255, 255, 255, 0.6);
   padding: 2px 0;
 }
 main section .display p span .mini_tr, main section .display .contact .content a span .mini_tr, main .contact .content section .display a span .mini_tr, main section .display2 p span .mini_tr, main section .display2 .contact .content a span .mini_tr, main .contact .content section .display2 a span .mini_tr, main section .display3 p span .mini_tr, main section .display3 .contact .content a span .mini_tr, main .contact .content section .display3 a span .mini_tr, main section .display4 p span .mini_tr, main section .display4 .contact .content a span .mini_tr, main .contact .content section .display4 a span .mini_tr {
@@ -580,7 +579,7 @@ main section .flex-row2 div .fourth-image:hover, main section .flex-row2 div .fl
 main section .flex-row2 div p, main section .flex-row2 div .contact .content a, main .contact .content section .flex-row2 div a {
   text-align: center;
   font-size: 30px;
-  color: #fff;
+  font-weight: 900;
 }
 @media screen and (max-width: 761px) {
   main section .flex-row2 div p, main section .flex-row2 div .contact .content a, main .contact .content section .flex-row2 div a {
@@ -648,6 +647,7 @@ main .back-image {
   position: fixed;
   top: 0;
   left: 0;
+  opacity: 0.5;
 }
 @media screen and (max-width: 1130px) {
   main .back-image {
@@ -739,16 +739,6 @@ footer {
   background-position: bottom right;
   background-size: contain;
   height: 26svh;
-}
-@media screen and (max-width: 1130px) {
-  footer {
-    height: 18vh;
-  }
-}
-@media screen and (max-width: 1010px) {
-  footer {
-    height: 20vh;
-  }
 }
 @media screen and (max-width: 761px) {
   footer {

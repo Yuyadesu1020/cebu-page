@@ -2,8 +2,8 @@ body{
     margin: 0;
     padding: 0;
     width: 100%;
-    // height: 100%;
 }
+
 
 // 変数セレクタ
 $main_color: #4ea9ff;
@@ -475,7 +475,6 @@ main{
             p{
                 text-align: center;
                 span{
-                    background-color: rgba( #ffffff, 0.6);
                     padding: 2px 0;
                     .mini_tr{
                         display: none;
@@ -575,7 +574,7 @@ main{
                 p{
                     text-align: center;
                     font-size: 30px;
-                    color: #fff;
+                    font-weight: 900;
                     @include mobile{
                         font-size: 14px;
                         margin-top: 20px;
@@ -648,6 +647,7 @@ main{
         position: fixed;
         top: 0;
         left: 0;
+        opacity: 0.5;
         @include tablet{
             object-fit: cover;
         }
@@ -724,12 +724,12 @@ footer{
     background-position: bottom right;
     background-size: contain;
     height: 26svh;
-    @include tablet{
-        height: 18vh;
-    }
-    @include mini-tablet{
-        height: 20vh;
-    }
+    // @include tablet{
+    //     height: 26vh;
+    // }
+    // @include mini-tablet{
+    //     height: 20vh;
+    // }
     @include mobile{
         height: 16svh;
     }
