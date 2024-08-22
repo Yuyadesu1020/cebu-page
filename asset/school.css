@@ -631,6 +631,16 @@ main section .row-right div {
   max-width: 100%;
   height: 100%;
 }
+@media screen and (max-width: 1130px) {
+  main section .row-right div {
+    margin-left: 30px;
+  }
+}
+@media screen and (max-width: 761px) {
+  main section .row-right div {
+    margin: 0;
+  }
+}
 main section .row-right p span, main section .row-right .contact .content a span, .contact .content main section .row-right a span {
   background: linear-gradient(to top, #00C09B 10%, #ffffff 50%);
 }
