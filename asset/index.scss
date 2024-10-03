@@ -46,8 +46,9 @@ $text-en:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
     
         &:hover {
-            span {
-                color: #fff !important;
+            span{
+                color: white;
+                z-index: 20;
             }
     
             &.bgtop:before {
@@ -738,9 +739,9 @@ main{
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                .first_row{
-                    border-top: 1px solid #ccc;
-                }
+                // .first_row{
+                //     border-top: 1px solid #ccc;
+                // }
                 dl{
                     width: 100%;
                     text-align: left;
