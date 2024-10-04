@@ -582,7 +582,8 @@ main .phrasebox .btn1 span {
   }
 }
 main .phrasebox .btn1:hover span {
-  color: #fff !important;
+  color: white;
+  z-index: 20;
 }
 main .phrasebox .btn1:hover.bgtop:before {
   height: 100%;
@@ -814,9 +815,6 @@ main .news .flex div {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-main .news .flex div .first_row {
-  border-top: 1px solid #ccc;
 }
 main .news .flex div dl {
   width: 100%;

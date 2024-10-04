@@ -516,8 +516,9 @@ main section .margin .display2, main section .mx-width100 .display2 {
   width: 100%;
 }
 main section .margin .display2 table, main section .mx-width100 .display2 table {
-  width: 100%;
+  width: 70%;
   padding-left: 100px;
+  margin: 0 auto;
   border-collapse: collapse;
 }
 main section .margin .display2 table tbody tr th, main section .margin .display2 table tbody tr td, main section .mx-width100 .display2 table tbody tr th, main section .mx-width100 .display2 table tbody tr td {
