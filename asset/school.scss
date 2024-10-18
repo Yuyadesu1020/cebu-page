@@ -454,9 +454,13 @@ main{
         margin-top: 170px;
     }
     section{
-        @include mobile{
-            margin: 0 20px;
-        }
+            background-image: url(../img/school_background.jpg);
+            background-position: 50% 70%;
+            background-repeat: no-repeat;
+            background-size: contain;
+        // @include mobile{
+        //     // margin: 0 20px;
+        // }
         .slide-hero{
             h3{
                 @include mobile{
@@ -570,10 +574,9 @@ main{
                 max-width: 100%;
                 height: 100%;
                 .shadow-img{
-                    width: 18vw;
-                    height: 45vh;
-                    object-fit: cover;
-                    box-shadow: 30px 30px 2px #a5fffd;
+                    width: 20vw;
+                    height: 50vh;
+                    object-fit: contain;
                     @include tablet{
                         height: 23vh;
                     }

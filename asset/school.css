@@ -459,10 +459,11 @@ main h2::after {
     margin-top: 170px;
   }
 }
-@media screen and (max-width: 761px) {
-  main section {
-    margin: 0 20px;
-  }
+main section {
+  background-image: url(../img/school_background.jpg);
+  background-position: 50% 70%;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 main section .slide-hero {
   /*矢印の設定*/
@@ -584,11 +585,10 @@ main section .row-left div, main section .row-right div {
   height: 100%;
 }
 main section .row-left div .shadow-img, main section .row-right div .shadow-img {
-  width: 18vw;
-  height: 45vh;
-  -o-object-fit: cover;
-     object-fit: cover;
-  box-shadow: 30px 30px 2px #a5fffd;
+  width: 20vw;
+  height: 50vh;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 @media screen and (max-width: 1130px) {
   main section .row-left div .shadow-img, main section .row-right div .shadow-img {
