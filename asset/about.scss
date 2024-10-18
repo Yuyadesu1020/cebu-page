@@ -504,9 +504,9 @@ main{
             }
 
             .info{
-                text-align: center;
+                text-align-last: left;
                 max-width: 70vw;
-                margin: 0 auto;
+                margin-left: 70px;
                 padding-top: 60px;
                 font-size: 15px;
                 letter-spacing: 0.2em;
@@ -525,6 +525,7 @@ main{
                     font-size: 9px;
                     letter-spacing: 0em;
                     padding-top: 40px;
+                    margin-left: 50px;
                 }
             }
         }

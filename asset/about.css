@@ -477,9 +477,10 @@ main section .display .tx-le h3 {
   }
 }
 main section .display .info {
-  text-align: center;
+  -moz-text-align-last: left;
+       text-align-last: left;
   max-width: 70vw;
-  margin: 0 auto;
+  margin-left: 70px;
   padding-top: 60px;
   font-size: 15px;
   letter-spacing: 0.2em;
@@ -500,6 +501,7 @@ main section .display .info .tb_br {
     font-size: 9px;
     letter-spacing: 0em;
     padding-top: 40px;
+    margin-left: 50px;
   }
 }
 main section .margin, main section .mx-width100 {
