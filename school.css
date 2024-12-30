@@ -1,0 +1,1028 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+h2, h3 {
+  font-family: serif;
+}
+
+p, .contact .content a, a {
+  font-size: 17px;
+  color: black;
+  font-family: serif;
+  text-decoration: none;
+  line-height: 60px;
+  text-align: left;
+  max-width: 95%;
+}
+@media screen and (max-width: 1130px) {
+  p, .contact .content a, a {
+    font-size: 17px;
+    line-height: 50px;
+  }
+}
+@media screen and (max-width: 1010px) {
+  p, .contact .content a, a {
+    font-size: 13px;
+    line-height: 40px;
+  }
+}
+@media screen and (max-width: 761px) {
+  p, .contact .content a, a {
+    line-height: 20px;
+    font-size: 10px;
+  }
+}
+
+header {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: none;
+  z-index: 10;
+  padding-top: 50px;
+  width: 100%;
+}
+@media screen and (max-width: 1130px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 25px;
+    position: fixed;
+    top: 0;
+    gap: 80px;
+  }
+}
+header .header-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0);
+  z-index: -100;
+}
+header .header-title .logo {
+  padding: 20px 20px;
+  background-color: rgba(255, 255, 255, 0);
+}
+header .header-title .logo img {
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 130px;
+  height: 130px;
+}
+@media screen and (max-width: 1130px) {
+  header .header-title .logo img {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media screen and (max-width: 761px) {
+  header .header-title .logo img {
+    width: 60px;
+    height: 60px;
+  }
+}
+header .header-title h1 {
+  text-align: left;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 40px;
+}
+@media screen and (max-width: 1130px) {
+  header .header-title h1 {
+    font-size: 37px;
+  }
+}
+@media screen and (max-width: 761px) {
+  header .header-title h1 {
+    font-size: 25px;
+  }
+}
+header .header-title h1::after {
+  content: attr(data-content);
+  display: flex;
+  flex-direction: column;
+  font-size: 22px;
+  font-family: serif;
+}
+@media screen and (max-width: 1130px) {
+  header .header-title h1::after {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 761px) {
+  header .header-title h1::after {
+    font-size: 15px;
+  }
+}
+header nav {
+  padding: 0 60px 10px 0;
+  display: flex;
+  flex-direction: column;
+}
+header nav ul {
+  list-style-type: none;
+}
+@media screen and (max-width: 1130px) {
+  header nav ul {
+    margin-right: 5px;
+    margin: auto;
+  }
+}
+header nav ul li a {
+  text-decoration: none;
+  font-size: 30px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+@media screen and (max-width: 761px) {
+  header nav ul li a {
+    font-size: 18px;
+  }
+}
+header nav ul li a span {
+  font-family: serif;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateX(-50%);
+  opacity: 1;
+  white-space: nowrap;
+}
+header nav ul li a span:nth-child(2) {
+  font-family: serif;
+  opacity: 0;
+  transform: translateX(-50%) translateY(100%);
+}
+@media screen and (max-width: 1130px) {
+  header nav ul li a span {
+    left: auto;
+  }
+}
+header nav ul li a:hover span:nth-child(1) {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-100%);
+}
+header nav ul li a:hover span:nth-child(2) {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0%);
+}
+header nav li {
+  padding: 50px 40px;
+}
+header nav li a {
+  font-weight: 90;
+  color: #ffffff;
+  font-family: serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+@media screen and (max-width: 1130px) {
+  header nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    background: linear-gradient(45deg, rgba(78, 169, 255, 0.6), rgba(160, 255, 184, 0.6) 80%);
+    right: -200%;
+    z-index: 1000;
+    transition: all 0.4s ease-in-out;
+  }
+  header nav ul {
+    padding: 0;
+  }
+  header nav ul li {
+    padding: 35px 40px;
+  }
+}
+@media screen and (max-width: 1130px) and (max-width: 1130px) {
+  header nav ul li {
+    margin-top: 30px;
+  }
+}
+@media screen and (max-width: 1130px) {
+  header nav ul li a {
+    color: #ffffff;
+    font-family: serif;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  }
+}
+@media screen and (max-width: 1130px) and (max-width: 1130px) {
+  header nav ul li a {
+    font-size: 25px;
+    color: #000000;
+  }
+}
+header nav.active {
+  right: 0;
+  padding: 0;
+}
+header .openbtn {
+  /* ボタン内側の基点となるためrelativeを指定。
+  追従するナビゲーションの場合はfixed＋top、rightといった位置をセットで指定 */
+  position: relative;
+  top: 24px;
+  right: 6%;
+  background: rgba(158, 249, 255, 0);
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  display: none;
+  /* ボタン内側 */
+  /* activeクラスが付与されると線が回転して×に */
+}
+@media screen and (max-width: 1130px) {
+  header .openbtn {
+    display: inline-block;
+    z-index: 1000;
+  }
+}
+header .openbtn span {
+  display: inline-block;
+  transition: all 0.4s; /* アニメーションの設定 */
+  position: absolute;
+  left: 14px;
+  height: 3px;
+  border-radius: 2px;
+  background: #000000;
+  width: 45%;
+}
+header .openbtn span:nth-of-type(1) {
+  top: 15px;
+}
+header .openbtn span:nth-of-type(2) {
+  top: 23px;
+}
+header .openbtn span:nth-of-type(3) {
+  top: 31px;
+}
+header .openbtn.active span:nth-of-type(1) {
+  top: 18px;
+  left: 18px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 30%;
+}
+header .openbtn.active span:nth-of-type(2) {
+  opacity: 0; /* 真ん中の線は透過 */
+}
+header .openbtn.active span:nth-of-type(3) {
+  top: 30px;
+  left: 18px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 30%;
+}
+
+.fixed-header {
+  background-image: url(../img/header_back.png);
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: contain;
+  background-color: rgba(255, 255, 255, 0);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15vh;
+  color: #000000;
+  padding: 10px 0;
+  text-align: center;
+  z-index: 1000;
+  transition: top 0.8s ease;
+}
+.fixed-header.active {
+  top: 0;
+}
+@media screen and (max-width: 1130px) {
+  .fixed-header {
+    display: none;
+  }
+}
+.fixed-header .fixed-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0);
+}
+.fixed-header .fixed-title .fixed-logo {
+  padding: 20px 20px;
+  background-color: rgba(255, 255, 255, 0);
+}
+.fixed-header .fixed-title .fixed-logo img {
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+@media screen and (max-width: 1130px) {
+  .fixed-header .fixed-title .fixed-logo img {
+    width: 80px;
+    height: 80px;
+  }
+}
+.fixed-header .fixed-title h1 {
+  text-align: left;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 40px;
+}
+@media screen and (max-width: 1130px) {
+  .fixed-header .fixed-title h1 {
+    font-size: 37px;
+  }
+}
+@media screen and (max-width: 761px) {
+  .fixed-header .fixed-title h1 {
+    font-size: 25px;
+  }
+}
+.fixed-header .fixed-title h1::after {
+  content: attr(data-content);
+  display: flex;
+  flex-direction: column;
+  font-size: 22px;
+  font-family: serif;
+}
+@media screen and (max-width: 1130px) {
+  .fixed-header .fixed-title h1::after {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 761px) {
+  .fixed-header .fixed-title h1::after {
+    font-size: 15px;
+  }
+}
+.fixed-header nav ul {
+  list-style-type: none;
+}
+@media screen and (max-width: 1130px) {
+  .fixed-header nav ul {
+    margin-right: 5px;
+    margin: auto;
+  }
+}
+.fixed-header nav ul li a {
+  text-decoration: none;
+  font-size: 30px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+@media screen and (max-width: 761px) {
+  .fixed-header nav ul li a {
+    font-size: 18px;
+  }
+}
+.fixed-header nav ul li a span {
+  font-family: serif;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateX(-50%);
+  opacity: 1;
+  white-space: nowrap;
+}
+.fixed-header nav ul li a span:nth-child(2) {
+  font-family: serif;
+  opacity: 0;
+  transform: translateX(-50%) translateY(100%);
+}
+@media screen and (max-width: 1130px) {
+  .fixed-header nav ul li a span {
+    left: auto;
+  }
+}
+.fixed-header nav ul li a:hover span:nth-child(1) {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-100%);
+}
+.fixed-header nav ul li a:hover span:nth-child(2) {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0%);
+}
+.fixed-header nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: 55px;
+}
+.fixed-header nav ul li a {
+  color: #000000;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+@media screen and (max-width: 761px) {
+  .fixed-header nav ul li a {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 1130px) {
+  .fixed-header nav ul {
+    gap: 20px;
+  }
+}
+
+main {
+  margin-top: 210px;
+  text-align: center;
+}
+main h2 {
+  font-size: 50px;
+  margin-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 761px) {
+  main h2 {
+    font-size: 27px;
+    margin-bottom: 60px;
+  }
+}
+main h2::after {
+  content: "学校";
+  font-size: 17px;
+}
+@media screen and (max-width: 761px) {
+  main {
+    margin-top: 170px;
+  }
+}
+main section {
+  background-image: url(../img/school_background.jpg);
+  background-position: 50% 70%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+main section .slide-hero {
+  /*矢印の設定*/
+  /*戻る、次へ矢印の位置*/
+  /*ドットナビゲーションの設定*/
+}
+@media screen and (max-width: 761px) {
+  main section .slide-hero h3 {
+    font-size: 12px;
+  }
+}
+main section .slide-hero .slider {
+  /*横幅94%で左右に余白を持たせて中央寄せ*/
+  width: 94%;
+  margin: 40px auto;
+}
+@media screen and (max-width: 761px) {
+  main section .slide-hero .slider {
+    padding: 0;
+  }
+}
+main section .slide-hero .slider img {
+  width: 60vw; /*スライダー内の画像を60vwにしてレスポンシブ化*/
+  height: 65svh;
+}
+@media screen and (max-width: 1130px) {
+  main section .slide-hero .slider img {
+    height: 31svh;
+  }
+}
+@media screen and (max-width: 761px) {
+  main section .slide-hero .slider img {
+    height: 25svh;
+  }
+}
+main section .slide-hero .slider .slick-slide {
+  transform: scale(0.8); /*左右の画像のサイズを80%に*/
+  transition: all 0.5s; /*拡大や透過のアニメーションを0.5秒で行う*/
+  opacity: 0.5; /*透過50%*/
+}
+main section .slide-hero .slider .slick-slide.slick-center {
+  transform: scale(1); /*中央の画像のサイズだけ等倍に*/
+  opacity: 1; /*透過なし*/
+}
+main section .slide-hero .slick-prev,
+main section .slide-hero .slick-next {
+  position: absolute; /*絶対配置にする*/
+  top: 42%;
+  cursor: pointer; /*マウスカーソルを指マークに*/
+  outline: none; /*クリックをしたら出てくる枠線を消す*/
+  border-top: 2px solid #666; /*矢印の色*/
+  border-right: 2px solid #666; /*矢印の色*/
+  height: 15px;
+  width: 15px;
+}
+main section .slide-hero .slick-prev {
+  /*戻る矢印の位置と形状*/
+  left: -1.5%;
+  transform: rotate(-135deg);
+}
+main section .slide-hero .slick-next {
+  /*次へ矢印の位置と形状*/
+  right: -1.5%;
+  transform: rotate(45deg);
+}
+main section .slide-hero .slick-dots {
+  text-align: center;
+  margin: 20px 0 0 0;
+}
+@media screen and (max-width: 761px) {
+  main section .slide-hero .slick-dots {
+    padding: 0;
+  }
+}
+main section .slide-hero .slick-dots li {
+  display: inline-block;
+  margin: 0 5px;
+}
+main section .slide-hero .slick-dots li button {
+  color: transparent;
+  outline: none;
+  width: 5px; /*ドットボタンのサイズ*/
+  height: 12px; /*ドットボタンのサイズ*/
+  display: block;
+  border-radius: 50%;
+  background: #ccc; /*ドットボタンの色*/
+}
+@media screen and (max-width: 761px) {
+  main section .slide-hero .slick-dots li button {
+    display: none;
+  }
+}
+main section .slide-hero .slick-dots li.slick-active button {
+  background: #4e4e4e; /*ドットボタンの現在地表示の色*/
+}
+main section .row-left, main section .row-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+@media screen and (max-width: 1130px) {
+  main section .row-left, main section .row-right {
+    gap: 20px;
+  }
+}
+@media screen and (max-width: 761px) {
+  main section .row-left, main section .row-right {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+}
+main section .row-left div, main section .row-right div {
+  max-width: 100%;
+  height: 100%;
+}
+main section .row-left div .shadow-img, main section .row-right div .shadow-img {
+  width: 20vw;
+  height: 50vh;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+@media screen and (max-width: 1130px) {
+  main section .row-left div .shadow-img, main section .row-right div .shadow-img {
+    height: 23vh;
+  }
+}
+@media screen and (max-width: 761px) {
+  main section .row-left div .shadow-img, main section .row-right div .shadow-img {
+    width: 54vw;
+    height: 33vh;
+    box-shadow: 12px 12px 2px #a5fffd;
+  }
+}
+main section .row-left div .tb_br, main section .row-right div .tb_br {
+  display: none;
+}
+@media screen and (max-width: 1010px) {
+  main section .row-left div .tb_br, main section .row-right div .tb_br {
+    display: block;
+  }
+}
+main section .row-left div .br_none, main section .row-right div .br_none {
+  display: none;
+}
+main section .row-right {
+  margin-top: 80px;
+}
+@media screen and (max-width: 1130px) {
+  main section .row-right {
+    gap: 50px;
+  }
+}
+@media screen and (max-width: 761px) {
+  main section .row-right {
+    flex-direction: column;
+    margin-top: 40px;
+  }
+}
+main section .row-right div {
+  max-width: 100%;
+  height: 100%;
+}
+@media screen and (max-width: 1130px) {
+  main section .row-right div {
+    margin-left: 30px;
+  }
+}
+@media screen and (max-width: 761px) {
+  main section .row-right div {
+    margin: 0;
+  }
+}
+main section .row-right p span, main section .row-right .contact .content a span, .contact .content main section .row-right a span {
+  background: linear-gradient(to top, #00C09B 10%, #ffffff 50%);
+}
+main section .schedule {
+  margin: 100px auto 0 auto;
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+}
+@media screen and (max-width: 761px) {
+  main section .schedule {
+    gap: 20px;
+  }
+}
+main section .schedule p, main section .schedule .contact .content a, .contact .content main section .schedule a {
+  font-family: serif;
+  text-align: left;
+  max-width: 50%;
+  letter-spacing: 0.3em;
+  line-height: 45px;
+}
+@media screen and (max-width: 1130px) {
+  main section .schedule p, main section .schedule .contact .content a, .contact .content main section .schedule a {
+    font-size: 15px;
+    line-height: 25px;
+  }
+}
+@media screen and (max-width: 761px) {
+  main section .schedule p, main section .schedule .contact .content a, .contact .content main section .schedule a {
+    font-size: 10px;
+    letter-spacing: 0em;
+    line-height: 17px;
+  }
+}
+main section .schedule p span, main section .schedule .contact .content a span, .contact .content main section .schedule a span {
+  font-size: 20px;
+}
+@media screen and (max-width: 761px) {
+  main section .schedule p span, main section .schedule .contact .content a span, .contact .content main section .schedule a span {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 761px) {
+  main section .schedule p small, main section .schedule .contact .content a small, .contact .content main section .schedule a small {
+    font-size: 7px;
+    position: relative;
+    top: 0;
+  }
+}
+main section .schedule div {
+  max-width: 50%;
+  height: auto;
+  position: relative;
+}
+main section .schedule div img {
+  border-radius: 7%;
+  max-width: 100%;
+  height: 50svh;
+}
+@media screen and (max-width: 1130px) {
+  main section .schedule div img {
+    margin-top: 30px;
+    height: 28svh;
+  }
+}
+@media screen and (max-width: 761px) {
+  main section .schedule div img {
+    height: 18svh;
+  }
+}
+main section .schedule div img:nth-child(2) {
+  max-width: 80%;
+  height: 35svh;
+  margin: -50px 0 0 230px;
+}
+@media screen and (max-width: 1130px) {
+  main section .schedule div img:nth-child(2) {
+    height: 23svh;
+    margin: -30px 0 0 120px;
+  }
+}
+@media screen and (max-width: 761px) {
+  main section .schedule div img:nth-child(2) {
+    height: 11svh;
+    margin: -30px 0 0 80px;
+  }
+}
+
+.contact {
+  margin-top: 100px;
+  text-align: center;
+  height: 50vh;
+  position: relative;
+}
+@media screen and (max-width: 1130px) {
+  .contact {
+    height: 30vh;
+  }
+}
+@media screen and (max-width: 761px) {
+  .contact {
+    margin-top: 50px;
+    height: 20vh;
+  }
+}
+.contact img {
+  width: 100%;
+  height: 50vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 40%;
+     object-position: 50% 40%;
+}
+@media screen and (max-width: 1130px) {
+  .contact img {
+    height: 30vh;
+  }
+}
+@media screen and (max-width: 761px) {
+  .contact img {
+    height: 20vh;
+  }
+}
+.contact .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0);
+}
+.contact .content p, .contact .content a {
+  text-align: center;
+  font-size: 25px;
+  color: #fff;
+  margin: 40px 0;
+  max-width: 100%;
+}
+@media screen and (max-width: 1130px) {
+  .contact .content p, .contact .content a {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 761px) {
+  .contact .content p, .contact .content a {
+    font-size: 13px;
+    margin: 20px 0;
+    line-height: 20px;
+  }
+}
+.contact .content a {
+  padding: 20px 80px;
+  border: 1px solid #fff;
+  border-radius: 40px;
+  transition: background-color 0.4s ease;
+}
+@media screen and (max-width: 761px) {
+  .contact .content a {
+    padding: 10px 40px;
+  }
+}
+.contact .content a:hover {
+  background-color: #00C09B;
+}
+
+footer {
+  padding-top: 50px;
+  background-image: url(../img/footer_back.png);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: contain;
+}
+footer .pagetop, footer .translate {
+  border-radius: 80%;
+  background-color: rgba(58, 227, 194, 0.5);
+  width: 70px;
+  height: 70px;
+  position: fixed;
+  top: 73%;
+  right: 3%;
+  cursor: pointer;
+  border: none;
+  font-size: 15px;
+}
+footer .scroll {
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+footer .scroll:hover {
+  transform: scale(1.1);
+  background-color: #00C09B;
+}
+footer .scroll:active {
+  transform: translateY(20px);
+}
+footer .scroll.visible {
+  opacity: 1;
+}
+footer .scroll .go-top {
+  font-size: 35px;
+  color: black;
+  padding-left: 24px;
+  line-height: 70px;
+}
+footer .translate {
+  font-size: 10px;
+  background-color: rgba(158, 249, 255, 0);
+  top: 85%;
+  right: 3%;
+  display: flex;
+  gap: 30px;
+  z-index: 1000;
+}
+footer .translate img {
+  border: 1px solid black;
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+  border-radius: 80%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+footer .scroll {
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+footer .scroll:hover {
+  transform: scale(1.1);
+  background-color: #00C09B;
+}
+footer .scroll:active {
+  transform: translateY(20px);
+}
+footer .scroll.visible {
+  opacity: 1;
+}
+footer .scroll .go-top {
+  font-size: 35px;
+  color: black;
+  padding-left: 24px;
+  line-height: 70px;
+}
+footer .column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+footer .column .footer-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+footer .column .footer-title .logo {
+  padding: 20px 20px;
+  background-color: rgba(255, 255, 255, 0);
+}
+footer .column .footer-title .logo img {
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+@media screen and (max-width: 1130px) {
+  footer .column .footer-title .logo img {
+    width: 80px;
+    height: 80px;
+  }
+}
+@media screen and (max-width: 1010px) {
+  footer .column .footer-title .logo img {
+    width: 60px;
+    height: 60px;
+  }
+}
+@media screen and (max-width: 761px) {
+  footer .column .footer-title .logo img {
+    width: 40px;
+    height: 40px;
+  }
+}
+footer .column .footer-title h1 {
+  font-size: 30px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 761px) {
+  footer .column .footer-title h1 {
+    font-size: 27px;
+  }
+}
+footer .column .footer-title h1::after {
+  content: attr(data-content);
+  font-size: 20px;
+  font-family: serif;
+}
+@media screen and (max-width: 761px) {
+  footer .column .footer-title h1::after {
+    font-size: 13px;
+  }
+}
+footer .column nav ul {
+  list-style-type: none;
+}
+@media screen and (max-width: 1130px) {
+  footer .column nav ul {
+    margin-right: 5px;
+    margin: auto;
+  }
+}
+footer .column nav ul li a {
+  text-decoration: none;
+  font-size: 30px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+@media screen and (max-width: 761px) {
+  footer .column nav ul li a {
+    font-size: 18px;
+  }
+}
+footer .column nav ul li a span {
+  font-family: serif;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateX(-50%);
+  opacity: 1;
+  white-space: nowrap;
+}
+footer .column nav ul li a span:nth-child(2) {
+  font-family: serif;
+  opacity: 0;
+  transform: translateX(-50%) translateY(100%);
+}
+@media screen and (max-width: 1130px) {
+  footer .column nav ul li a span {
+    left: auto;
+  }
+}
+footer .column nav ul li a:hover span:nth-child(1) {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-100%);
+}
+footer .column nav ul li a:hover span:nth-child(2) {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0%);
+}
+footer .column nav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  gap: 130px;
+}
+@media screen and (max-width: 761px) {
+  footer .column nav ul {
+    position: relative;
+    gap: 61px;
+    padding: 0;
+  }
+}
+footer .column nav ul li a {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+@media screen and (max-width: 761px) {
+  footer .column nav ul li a {
+    font-size: 10px;
+  }
+}
+footer .column .copyright {
+  text-align: center;
+  padding: 20px 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+@media screen and (max-width: 761px) {
+  footer .column .copyright {
+    font-size: 7px;
+  }
+}/*# sourceMappingURL=school.css.map */
